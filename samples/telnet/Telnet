@@ -1,0 +1,395 @@
+<HTML>
+<META NAME="Keywords" CONTENT="telnet applet java">
+<META NAME="Description" CONTENT="The Java Telnet Applet is a fully featured Telnet applet/application with embedded VT320/ANSI emulation. It can be used to provide access to telnet services via a java capable WWW browser.">
+<HEAD>
+<TITLE>Java Telnet Applet</TITLE>
+</HEAD>
+
+<H1>The Java(tm) Telnet Applet</H1>
+(hybrid Applet/Application version)
+&copy; 1996, 97 <A HREF="mailto:leo@first.gmd.de">Matthias L. Jugel</A>,
+<A HREF="mailto:msmeissn@cip.informatik.uni-erlangen.de">Marcus Mei&szlig;ner</A> 
+<HR>
+
+<H3 ALIGN=CENTER>
+[<A HREF="index.test.html">Test the Applet</A> |
+ <A HREF="#users">Applet Users</A> |
+ <A HREF="#download"><I>Download</I></A> ]<BR>
+[<A HREF="#userdoc">User Documentation</A> |
+ <A HREF="Documentation/AllNames.html">Source Documentation</A> |
+ <A HREF="#revision">Revision</A> |
+ <A HREF="#licence">Licence</A>] 
+</H3>
+<H4 ALIGN=CENTER>
+    <I><B>Note:</B></I> There will be some restructuring until we release the
+    next version (There may be some bug fixes, though). It will mainly
+    be the <A HREF="telnet.java">telnet.java</A>
+    class. It will be divided to make it easier to have the telnet in an
+    extra window and we want to clean up some of the button code.<P>
+    We also look forward to the new release of the 
+    <A HREF="http://www.javasoft.com/products/JDK/1.1/index.html">JDK 
+    (version 1.1)</A> which will have
+    some enhancements over the current release. Hopefully web browsers will
+    support the new JDK soon. Until there is a wide acceptance we will not
+    provide classes optimized to the new version.
+</H4>
+<HR>
+
+<B>The JAVA Telnet Applet</B> is a fully featured telnet applet/application
+with embedded <B>VT320/ANSI</B> emulation. It may be used to allow access to
+telnet based applications via the web without expecting the user to have his
+own telnet application. If you want to test drive it
+<A HREF="index.test.html">click here</A>.
+<P>
+
+The package contains two parts which divide the functionality into
+<A HREF="Documentation/Package-display.html">Display</A> and
+<A HREF="Documentation/Package-socket.html">Socket</A> functions. Both may be
+used without the telnet itself and are provided to programmers for their own
+use. All files have full documentation as
+<A HREF="Documentation/AllNames.html">inline java documentation</A>.
+<P>
+
+We have added some example applets and applications to either overcome
+security restrictons or to show the functionality of the package.
+<UL TYPE="SQUARE">
+<LI><A HREF="Documentation/appWrapper.html">appWrapper</A> is an
+    applet load to be used to allow some independency from web 
+    browsers (The <B>\$detach()</B> function will not work properly without 
+    <A HREF="Documentation/appWrapper.html">appWrapper</A>!)
+    <P>
+<LI><A HREF="Documentation/proxy.html">proxy</A> is a simple proxy server for
+    telnet (it can be used to redirect connections). Run this little program
+    on your web server if your telnet service is located elsewhere!
+    <P>
+<LI><A HREF="IOtest.java">IOtest.java</A> shows how to use the socket
+    package for simple access (works like a script executor).
+    <P>
+<LI><A HREF="CharDisplay.html">CharDisplayTest</A> shows the abilities of
+    the <A HREF="display/CharDisplay.java">display/CharDisplay.java</A> class.
+</UL>
+<P>
+
+We would really appreciate if users of our applet/application would write us
+their impressions (<A HREF="mailto:leo@first.gmd.de">MAILTO LINK</A>) and if
+it is used as service please notify us so we can put
+your page onto our list of <A HREF="#users">Telnet Applet Users</A>.
+<HR>
+<A NAME="download">
+<H2>Package download and unpacking</H2>
+The packages contain all source files as well as compiled .class files, the
+full <A HREF="Documentation/AllNames.html">documentation</A>, some test files,
+<A HREF="report/">bug reports</A> and <A HREF="INSTALL">installation hints</A>.
+<CENTER>
+<TABLE BORDER>
+  <TD ALIGN=CENTER><B>UNIX</B></TD> <TD><B>Windows 95/NT</B><TR><P>
+  <TD><A HREF="../telnet.tgz">telnet.tgz</A></TD>
+  <TD><A HREF="../telnet.zip">telnet.zip (long filenames)!</A></TD>
+</TABLE> 
+</CENTER>
+<DL>
+  <DT><B><I>UNIX users:</I></B>
+  <DD>The package is tared and gzipped. To unpack it use the following
+      command:<BR>
+      <B><CODE>gzip -cd telnet.tgz | tar xvf -</CODE></B><BR>
+      This will unpack all files into a subdirectory called <B>Telnet/</B>.
+      <P>
+  <DT><B><I>Windows users:</I></B>
+  <DD>The package is zipped with the 1  equivalent of PKzip and contains
+      long file names. You will not be able to use the applet if your
+      filesystem does not support long file names (Windows 95 VFAT
+      does). Unpack the files with the following command in a DOS window:<BR>
+      <B><CODE>pkunzip -d telnet.zip</CODE></B><BR>
+      You need to give the option <B>-d</B> to force pkunzip to extract the
+      subdirectories as well. If you have a Windows program installed that
+      unzips .zip packages do not forget to check whether it extracts the
+      subdirectories as well!
+</DL> 
+</A>
+
+<HR>
+<A NAME="users">
+<H2>User of the Telnet Applet</H2>
+We have collected some pages using the applet. If you see your page missing
+drop me a <A HREF="mailto:leo@first.gmd.de">note</A>.
+<P>
+<TABLE BORDER>
+<TD ALIGN=CENTER COLSPAN=2><B><I><BIG>G</BIG>AMES</I></B>
+<TD ALIGN=CENTER COLSPAN=2><B><I><BIG>C</BIG>HAT</I></B>
+<TD ALIGN=CENTER COLSPAN=2><B><I><BIG>S</BIG>ERVICE <BIG>A</BIG>CCESS</I></B>
+<TR>
+<TD ALIGN=CENTER>Home</A>
+<TD ALIGN=CENTER>Telnet</A>
+<TD ALIGN=CENTER>Home</A>
+<TD ALIGN=CENTER>Telnet</A>
+<TD ALIGN=CENTER>Home</A>
+<TD ALIGN=CENTER>Telnet</A>
+<TR>
+<TD><A HREF="http://dtk.campus.luth.se/">DTK (Luth, Sweden)</A> 
+<TD ALIGN=CENTER><A HREF="http://dtk.campus.luth.se/telnet/"><I>go</I></A>
+<TD><A HREF="http://www.talkers.org/cn/">Cirrus Nebula</A>
+<TD ALIGN=CENTER><A HREF="http://www.talkers.org/cn/telnet.html"><I>go</I></A>
+<TD><A HREF="http://library.princeton.edu/">Princeton University Library</A>
+<TD ALIGN=CENTER><A HREF="http://library.princeton.edu/catalogs_and_databases/online_catalog.html"><I>go</I></A><BR>
+<TR>
+<TD><A HREF="http://surprise.pro.ufz.de:8080/">TAPPMud</A>
+<TD ALIGN=CENTER><A HREF="http://surprise.pro.ufz.de:8080/mud.html"><I>go</I></A>
+<TD><A HREF="http://amaterasu.math.orst.edu:8080/~sharpej/information/backyard.html">The Backyard</A>
+<TD ALIGN=CENTER><A HREF="http://amaterasu.math.orst.edu:8080/~sharpej/information/telnet.html"><I>go</I></A><BR>
+<TD><A HREF="http://www.nyx.net/">Nyx.net</A> - A public access UNIX System
+<TD ALIGN=CENTER><A HREF="http://www.nyx.net/telnet.html"><I>go</I></A>
+<TR>
+<TD><A HREF="http://mg.uni-muenster.de/">MorgenGrauen</A> 
+<TD ALIGN=CENTER><A HREF="http://mg.uni-muenster.de/Interaktiv/telnet.html"><I>go</I></A> 
+<TD><A HREF="http://www.cu-muc.de/">Connection Universe</A><BR>
+<TD ALIGN=CENTER><A HREF="http://www.cu-muc.de/chat/"><I>go</I></A><BR>
+<TD><A HREF="http://www.inconnect.com/">INTERNET CONNECT</A><BR>
+<TD ALIGN=CENTER><A HREF="http://www.inconnect.com/telnet.html"><I>go</I></A><BR>
+<TR>
+<TD><A HREF="http://www-hppool.cs.uni-magdeburg.de/~mud/">FinalFrontier</A>
+<TD ALIGN=CENTER><A HREF="http://www-hppool.cs.uni-magdeburg.de/~mud/play.html"><I>go</I></A>
+<TD><A HREF="http://www.zait.uni-bremen.de/Esperanto/VEK/">VEKejo 
+    (Esperanto)</A>
+<TD ALIGN=CENTER><A HREF="http://www.zait.uni-bremen.de/Esperanto/VEK/telnet.html"><I>go</I></A>
+<TD><A HREF="http://jerome.cs.unm.edu/">ISTEC Libraries</A>
+<TD ALIGN=CENTER><A HREF="http://jerome.cs.unm.edu/Telnet/welcome.html">
+    <I>go</I></A>
+<TR>
+<TD><A HREF="http://UNItopia.uni-stuttgart.de/">UNItopia</A>
+<TD ALIGN=CENTER><A HREF="http://UNItopia.uni-stuttgart.de/telnet/"><I>go</I></A>
+<TD><A HREF="http://uncnsrd.mt-kisco.ny.us/">UNCENSORED! BBS</A>
+<TD ALIGN=CENTER><A HREF="http://uncnsrd.mt-kisco.ny.us/Telnet/"><I>go</I></A>
+<TR>
+<TD><A HREF="http://sdphul.ucsd.edu/antan/">The Marches of Antan</A>
+<TD ALIGN=CENTER><A HREF="http://sdphul.ucsd.edu/antan/telnet/"><I>go</I></A>
+<TR>
+<TD><A HREF="http://wilma.rz.uni-leipzig.de/mud/">Wunderland</A> 
+<TD ALIGN=CENTER><A HREF="http://wilma.rz.uni-leipzig.de/mud/telnet.html"><I>go</I></A> 
+<TR>
+<TD><A HREF="http://www.insomnia-mud.com/~insomnia/">Insomnia-MUD</A>
+<TD ALIGN=CENTER><A HREF="http://www.insomnia-mud.com/~insomnia/Telnet/mud.html"><I>go</I></A>
+<TR>
+<TD><A HREF="http://abyss.nucleus.com/">The Abyss</A>
+<TD ALIGN=CENTER><A HREF="http://abyss.nucleus.com/telnet.html"><I>go</I></A>
+<TR>
+</TABLE>
+
+<HR>
+<A NAME="revision">
+<H2>Revision information:</H2>
+The revision numbers tell you if there has been some change from the last
+version you downloaded. Please check from time to time or write to <A
+HREF="mailto:leo@first.gmd.de">leo@first.gmd.de</A> if you want to be notified
+of important <A HREF="CHANGES">changes</A>.
+<PRE>
+CharDisplayTest.java:       1.7  (1997/02/17)
+IOtest.java:                1.1  (1996/08/29)
+appWrapper.java:            1.3  (1997/02/18)
+telnet.java:                1.28 (1997/02/18)
+display/CharDisplay.java:   1.38 (1997/02/18)
+display/Terminal.java:      1.14 (1996/09/06)
+display/vt320.java:         1.15 (1997/02/16)
+socket/StatusPeer.java:     1.3  (1996/08/29)
+socket/TelnetIO.java:       1.15 (1996/07/19)
+tools/proxy.java:           1.3  (1997/02/17)
+
+</PRE>
+</A>
+
+<HR>
+<A NAME="userdoc">
+<H2>User documentation</H2>
+<DL>
+<DT><STRONG><A HREF="Documentation/telnet.html">Telnet</A></STRONG>
+<DD>The current version has a special feature which allows some sort of 
+    programmable buttons and input areas as shown in the example
+    below.<P>
+    <DL>
+    <DT><B>Buttons</B>
+    <DD><PRE>&lt;PARAM NAME=<B><I>number</I></B>#Button VALUE=&quot;<B><I>buttontext</I></B>|<B><I>buttonaction</I></B>&quot;&gt;</PRE>
+    <DD><B><I>number</I></B> is the sequence number and determines the place
+        of the button on the row.
+	<P>
+    <DD><B><I>buttontext</I></B> is a string displayed on the button.
+	<P>
+    <DD><A NAME="buttonaction"><B><I>buttonaction</I></B></A> may be one
+        of the following functions or strings<BR>
+	<FONT SIZE=-1>(<I>Note:</I> the backslash character
+	in front of the dollar sign is mandatory!)</FONT>
+        <UL>
+	<LI><PRE><I>simple text</I></PRE>
+	    to be sent to the remote host. Newline and/or carriage return
+	    characters may be added in C syntax <B>\n</B> and <B>\r</B>
+	    The text may contain <A HREF="#fieldreference"><B><I>field 
+	    reference(s)</I></B></A>.
+	<P>
+	<LI><PRE>\$connect(<B><I>host</I></B>[,<B><I>port</I></B>])</PRE> 
+	    tries to initiate a connection to the <B><I>host</I></B>
+	    at the <B><I>port</I></B>, if given. The standard port is
+	    23. <B><I>host</I></B> and <B><I>port</I></B> may be hostname
+	    and number or <A HREF="#fieldreference"><B><I>field
+	    reference(s)</I></B></A>. If a connection already exists
+	    nothing will happen.<BR>
+	    <FONT SIZE=-1>(<I>Note:</I> It is not allowed to have
+	    spaces anywhere inside the parenthesis!)</FONT>
+	    <P>
+	<LI><PRE>\$disconnect()</PRE>
+	    terminates the current connection, but if there was no
+	    connection nothing will happen.
+	    <P>
+	<LI><PRE>\$detach()</PRE>
+	    detaches the applet from the web browser window and
+	    creates a new frame externally. This may be used to allow
+	    users to use the applet while browsing the web with the
+	    same browser window.<BR>
+	    <FONT SIZE=-1>(<I>Note:</I> You need to load the applet via the
+            <A HREF="Documentation/appWrapper.html">appWrapper class</A> or
+	    it will not work properly!)</FONT>
+	</UL>
+    <DD><B>Examples:</B><BR>
+        <FONT SIZE=-1>(<I>Note:</I> It makes sense if you look at the
+	examples for input fields below.)</FONT>
+        <PRE>
+	&lt;PARAM NAME=1#Button VALUE="HELP!|help\r\n"&gt;
+	&lt;PARAM NAME=2#Button VALUE="HELP:|help \@help@\r\n"&gt;
+	&lt;PARAM NAME=4#Button VALUE="simple|\$connect(localhost)"&gt;
+	&lt;PARAM NAME=5#Button VALUE="complete|\$connect(www,4711)"&gt;
+	&lt;PARAM NAME=6#Button VALUE="connect|\$connect(\@address@)"&gt;
+	&lt;PARAM NAME=8#Button VALUE="connect to port|\$connect(\@address@,\@port@)"&gt;
+	&lt;PARAM NAME=10#Button VALUE="window|\$detach()"&gt;
+	
+	</PRE>
+	<P>
+    <DT><B>Input fields</B>
+    <DD><PRE>&lt;PARAM NAME=<B><I>number</I></B>#Input VALUE=&quot;<B><I>fieldname</I></B>[#<I><B>length</B></I>]|<B><I>initial text</I></B>&quot;&gt;</B></PRE>
+    <DD><B><I>number</I></B> is the sequence number and determines the place
+        of the field on the row.
+	<P>
+    <DD><A NAME="fieldreference"><B><I>fieldname</I></B></A> is a
+        symbolic name to reference the input field. A reference may be used in 
+	<A HREF="#buttonaction"><B><I>button actions</I></B></A> and
+	is constructed as follows:
+	<PRE>\@<B><I>fieldname</I></B>@</PRE>
+	The <B>\@fieldname@</B> macro will be replaced by the string entered in
+	the text field.
+	<P>
+    <DD><B><I>length</I></B> is the length of the input field in numbers of
+	characters.
+	<P>
+    <DD><B><I>initial text</I></B> is the text to be placed into the input
+        field on startup
+    <DD><B>Examples:</B><BR>
+        <FONT SIZE=-1>(<I>Note:</I> It makes sense if you look at the
+	examples for buttons before.)</FONT>
+        <PRE>
+	&lt;PARAM NAME=3#Input VALUE="help#10|"&gt;
+	&lt;PARAM NAME=7#Input VALUE="address|www.first.gmd.de"&gt;
+	&lt;PARAM NAME=9#Input VALUE="port#5|4711"&gt;
+	</PRE>
+	<P>
+     <DT><B>Scripts</B>
+     <DD><PRE>&lt;PARAM NAME=script VALUE=&quot;<B><I>pattern</I></B>|<B><I>text</I></B>|<B><I>...</I></B>&quot;&gt;</PRE>
+     <DD>A script contains of pairs of <I>pattern</I> and <I>text</I> strings.
+	 If the pattern is matched against the output from the remote host,
+	 the corresponding text will be sent. Each pattern will match only
+	 <B>once</B>.
+	 Thus it is possible to program an autologin as follows:<BR>
+	 <PRE><B>"login:|leo|Password:|mypassword|leo@www|ls"</B></PRE>
+	 Newlines will be added automatically to the string sent! At the
+	 moment the order of the pattern and text pairs is <I>not</I> relevant.
+     </DL>
+     <HR>
+     <P> 
+<DT><STRONG><A HREF="CharDisplay.html">CharDisplayTest</A></STRONG>
+<DD><A HREF="CharDisplay.html">CharDisplayTest</A> shows some of
+    features of the 
+    <A HREF="Documentation/display.CharDisplay.html">CharDisplay</A>
+    class, which include:<P>
+    <UL>
+    <LI>direct character placement on the display (row, colums)
+    <LI>character and line insertion
+    <LI>character attributes (ANSI colours, invert, bold, underline)
+    <LI>scroll regions
+    <LI>scrolling up and down
+    <LI>scrollback buffer
+    <LI>automatic screen resize/font resize
+    </UL>
+    <HR>
+    <P>
+<DT><STRONG><A HREF="tools/proxy.java">The Proxy Server</A></STRONG>
+<DD><A HREF="tools/proxy.java">proxy.java</A> is a small java program
+    to overcome the security restrictions of java capable web
+    browsers.<P>
+    The proxy is used to redirect a connection to a given
+    host. Usually an applet can only connect to the web server it has
+    been loaded from. Installing the proxy on your web server allows the
+    applet to connect to a host you would like to connect to.<P>
+    <DL>
+    <DT><B>How to run the proxy application</B>
+    <DD>To run the proxy you require the following
+        <OL>
+	<LI>A java interpreter (usually included in the JDK)
+	<LI>A compiled version of the proxy 
+	    (<A HREF="tools/proxy.class">proxy.class</A>)
+	</OL>
+	On a command line run the proxy server as follows:<BR>
+	<PRE>
+	java proxy 9999 remotehostname 23
+	</PRE>
+	This lets the proxy listen on port 9999 and it redirects
+	all connections to the host "remotehostname" at port 23. You
+	can leave the port parameter out if it is 23 (telnet port).
+	<P>
+	The proxy should start with something like the output below:
+	<PRE>
+	proxy: destination host is remotehostname at port 23
+	proxy: listening on port 9999
+	</PRE>
+	Upon successful connection the output should produce something
+	like this:
+	<PRE>
+	proxy: accepted connection from augra.first.gmd.de
+	proxy: connecting www.first.gmd.de <-> remotehostname
+	</PRE>
+    <DT><B>How to shut down the proxy?</B>
+    <DD>To shut down the proxy press ^C (Ctrl+C or Strg+C on a german
+        keyboard) if you have startet it normally. More advanced users
+	will run the proxy like 
+	<PRE>java proxy 9999 remotehost 23 >&amp; errorlog &amp;</PRE>
+	to put it into the background. The "errorlog" file should then
+	contain any messages. You can kill that process by looking for
+	the process id (ps | grep proxy) and issuing the kill 
+	&lt;processid&gt; command (this applies to UNIX only).
+	<P>
+    <DT><B>I get an error message like "class proxy not found"!</B>
+    <DD>You may have to set the CLASSPATH environment variable to
+        point to the current directory or to the directory where
+	proxy.class is located.
+    </DL>
+</DL>
+
+<HR>
+<A NAME="licence">
+<H2>License information</H2>
+<B>The Java Telnet Applet</B> is available under the terms of the GNU general
+public license as stated below. To read the full license have a look at the
+file <A HREF="COPYING">COPYING</A>.
+<STRONG><PRE>
+ * This is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2, or (at your option)
+ * any later version.
+ *
+ * "The Java Telnet Applet" is distributed in the hope that it will be
+ * useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with "The Java Telnet Applet"; see the file COPYING.  If not, 
+ * write to the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+ * Boston, MA 02111-1307, USA.
+</PRE></STRONG>
+</A>
+<P>
+</HTML>

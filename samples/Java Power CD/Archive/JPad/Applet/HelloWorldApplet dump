@@ -1,0 +1,28 @@
+Compiled from HelloWorldApplet.java
+public class HelloWorldApplet extends java.applet.Applet {
+    public void init();
+    public void paint(java.awt.Graphics);
+    public HelloWorldApplet();
+
+Method void init()
+   0 aload_0
+   1 sipush 150
+   4 bipush 25
+   6 invokevirtual #7 <Method java.applet.Applet.resize(II)V>
+   9 return
+
+Method void paint(java.awt.Graphics)
+   0 aload_1
+   1 ldc #1 <String "Hello world!">
+   3 bipush 50
+   5 bipush 25
+   7 invokevirtual #5 <Method java.awt.Graphics.drawString(Ljava/lang/String;II)V>
+  10 return
+
+Method HelloWorldApplet()
+   0 aload_0
+   1 invokenonvirtual #6 <Method java.applet.Applet.<init>()V>
+   4 return
+
+}
+ 

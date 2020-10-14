@@ -1,0 +1,70 @@
+<HTML>
+<HEAD>
+<TITLE>FunScroll Examples</TITLE>
+<!-- Changed by: Jan Andersson, 16-May-1996 -->
+
+</HEAD>
+<BODY BGCOLOR="#FFCC99">
+<H2>FunScroll Examples (1)</H2>
+The following are some examples of FunScroll usage:
+<P>
+<H3>Example 1</H3>
+Here we use several animation features as well as specifying
+different colors for some text lines. The font, font style and font size is
+also specified.
+<PRE>
+&lt;APPLET CODE="FunScroll.class" WIDTH=420 HEIGHT=60&gt;
+&lt;PARAM NAME=line0 VALUE="&lt;20&gt;Simple Text, delayed 20 units"&gt;
+&lt;PARAM NAME=line1 VALUE="&lt;20&gt;&lt;nervous&gt;&lt;color=#FF0000&gt;Same, but nervous and red"&gt;
+&lt;PARAM NAME=line2 VALUE="&lt;20&gt;&lt;sine-wave&gt;Same, but sine-wave"&gt;
+&lt;PARAM NAME=line3 VALUE="&lt;15&gt;&lt;up&gt;Scroll up, delay, and scroll down&lt;down&gt;"&gt;
+&lt;PARAM NAME=line4 VALUE="&lt;15&gt;&lt;up&gt;&lt;color=#FF0000&gt;Scroll, delay, scroll and delay&lt;15&gt;&lt;down&gt;"&gt;
+&lt;PARAM NAME=line5 VALUE="&lt;15&gt;&lt;up&gt;Line with line-break\ncontinuing here.&lt;down&gt;"&gt;
+&lt;PARAM NAME=font VALUE="Courier"&gt;
+&lt;PARAM NAME=style VALUE="Italic"&gt;
+&lt;PARAM NAME=size VALUE="20"&gt;
+&lt;PARAM NAME=bgcolor VALUE="#FFCC99"&gt;
+&lt;PARAM NAME=fgcolor VALUE="#0000FF"&gt;
+&lt;/APPLET&gt;
+</PRE>
+
+<APPLET CODE="FunScroll.class" WIDTH=420 HEIGHT=60>
+<PARAM NAME=line0 VALUE="<20>Simple Text, delayed 15 units">
+<PARAM NAME=line1 VALUE="<20><nervous><color=#FF0000>Same, but nervous and red">
+<PARAM NAME=line2 VALUE="<20><sine-wave>Same, but sine-wave">
+<PARAM NAME=line3 VALUE="<15><up>Scroll up, delay, and scroll down<down>">
+<PARAM NAME=line4 VALUE="<15><up><color=#FF0000>Scroll, delay, scroll and delay<15><down>">
+<PARAM NAME=line5 VALUE="<15><up>Line with line-break\ncontinuing here.<down>">
+<PARAM NAME=font VALUE="Courier">
+<PARAM NAME=style VALUE="Italic">
+<PARAM NAME=size VALUE="20">
+<PARAM NAME=bgcolor VALUE="#FFCC99">
+<PARAM NAME=fgcolor VALUE="#0000FF">
+</APPLET>
+<H3>Example 2</H3>
+Here we make the text move faster (and not so smooth) by setting dx, dy and
+the delay parameter. 
+<PRE>
+&lt;APPLET CODE="FunScroll.class" WIDTH=380 HEIGHT=70&gt;
+&lt;PARAM NAME=line0 VALUE="&lt;20&gt;&lt;down&gt;We can move faster&lt;up&gt;"&gt;
+&lt;PARAM NAME=line1 VALUE="&lt;left&gt;In both directions"&gt;
+&lt;PARAM NAME=line2 VALUE="&lt;left&gt;&lt;sine-wave&gt;&lt;20&gt;&lt;Two-liner with\nsine-wave..."&gt;
+&lt;PARAM NAME=delay VALUE="50"&gt;
+&lt;PARAM NAME=dx VALUE="4"&gt;
+&lt;PARAM NAME=dy VALUE="3"&gt;
+&lt;PARAM NAME=fgcolor VALUE="#FF0000"&gt;
+&lt;PARAM NAME=bgcolor VALUE="#FFCC99"&gt;
+&lt;/APPLET&gt;
+</PRE>
+<APPLET CODE="FunScroll.class" WIDTH=380 HEIGHT=70>
+<PARAM NAME=line0 VALUE="<20><down>We can move faster<up>">
+<PARAM NAME=line1 VALUE="<left>In both directions">
+<PARAM NAME=line2 VALUE="<left><sine-wave><20>Two-liner with\nsine-wave...">
+<PARAM NAME=delay VALUE="50">
+<PARAM NAME=dx VALUE="3">
+<PARAM NAME=dy VALUE="2">
+<PARAM NAME=fgcolor VALUE="#FF0000">
+<PARAM NAME=bgcolor VALUE="#FFCC99">
+</APPLET>
+</BODY>
+</HTML>

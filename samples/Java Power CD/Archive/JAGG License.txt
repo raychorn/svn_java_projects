@@ -1,0 +1,7 @@
+License Agreement
+
+This is a legal agreement between you and BulletProof Corporation.  By installing JAGG, you are agreeing to the terms as outlined in the Agreement below.  If you do not agree to these terms, do not install JAGG.
+
+BulletProof Corporation grants to you the non-exclusive license to use one copy of JAGG on one web server system.  This Agreement and the license granted may not be transferred, assigned, leased, rented, sublicensed or otherwise transferred by you.  You may not use this copy of JAGG on more than one server at a time.
+
+Additional server licenses may be purchased from BulletProof Corporation. The software was developed by BulletProof Corporation and is solely owned by BulletProof Corporation.

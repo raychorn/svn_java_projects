@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML> <HEAD>
+<TITLE>Graph2D Class</TITLE>
+</HEAD>
+<BODY>
+<A HREF="mailto:leigh@igpp.llnl.gov"><IMG
+SRC="http://www-igpp.llnl.gov/closed/leigh/mail.xbm" ALIGN=RIGHT></A>
+<H1 ALIGN=CENTER>2D Plotting with Java</H1>
+<HR>
+<B> Version 2.0 of the classes and applets described below should
+be available here in the first few weeks of 1996. The improvements
+will include asynchronous data loading, a general applet for plotting
+that interprets a descriptive plotting language (similar to gnuplot).
+</B>
+<HR>
+This page contains pointers to freely available Java software I have written.
+All the applets should work with
+Netscape Version 2.0b1J as they were developed
+using the Java Developers Kit Version 1.0 Pre-Beta 1.<BR>
+Keeping in the above spirit of version numbering I think that the software here
+should be considered Version 1.0 Alpha pre-Beta.
+<P>
+The main idea of the classes distributed here is to provide a class
+interface to plot 2D data.
+At the moment the classes are distributed seperately but as
+the number grow they should be incorporated into a package.
+<P>
+The idea of yet another plotting package might offend the sensibilities
+of some people. But the justification in this case is to allow people to
+view data interactively. Currently the only way to display data on
+a web client is through static images. With applets only the data need be sent
+to the client (in most cases this is a considerably smaller data stream than
+a static image). The user can then format and manipulate the data locally.
+<P>
+Currently the interface is basic and consists of only 3 classes and will only
+plot 2D data.
+<H3>Classes</H3>
+<DL COMPACT>
+  <DT> <A HREF="Graph2D.java">Graph2D Class</A> Version 1.0.
+  <DD> This is the main class that controls the Canvas to be drawn to.
+       It positions the axis and the data window, and its update/paint
+       methods do the complete redrawing of the canvas.
+  <DT> <A HREF="G2Dint.java">G2Dint Class</A> Version 1.0.
+  <DD> This is an extension of the Graph2D class that incorporates event
+       handling. This allows the user to modify the data window using
+       mouse drag events.
+  <DT> <A HREF="DataSet.java">DataSet Class</A> Version 1.0.
+  <DD> This is the class that stores each data set, and the associated
+       style variables such as color, markers, etc.
+  <DT> <A HREF="Axis.java">Axis Class</A> Version 1.0.
+  <DD> This is the class that stores information about each axis to be drawn.
+  <DT> <A HREF="StringKludge.java">StringKludge Class</A> Version 0.0.
+  <DD> This is required as the float to string and double to string conversion
+       does not work in Netscape Version 2.0b1J. A stupid oversight. This class
+       is a quick hack and will fail but is OK as an interim fix.<BR>
+       Because  this is a quick fix it should be noted that the axis labels
+       sometimes look odd, the labels are drawn using StringKludge.
+</DL>
+<P>
+<B>
+Please send me mail if you find the classes described here useful, find bugs,
+have
+any suggestions for improvement or have extended them in any way. I am
+continuing to work on improving and extending them, though as I will
+be unemployed from November 1995, this work could be intermittent.</B>
+
+<H2>Examples</H2>
+There are a number of <A HREF="examples.html">example applets</A>
+showing what can be done using the graphing classes.
+
+<HR>
+<H5>
+Jump To:<BR>
+<A HREF="http://www-igpp.llnl.gov/people/brookshaw.html">My Page</A>
+<BR>
+<A HREF="http://www-igpp.llnl.gov/Top.html">IGPP</A>
+<BR>
+<A HREF="http://www-phys.llnl.gov/index.html">Physics and Space Technology</A>
+<BR>
+<A HREF="http://www.llnl.gov/">LLNL</A>
+<BR>
+</H5>
+<HR>
+<!-- hhmts start -->
+Last modified: Mon Oct 30 09:34:28 PST 1995
+<!-- hhmts end -     ->
+</BODY> </HTML>

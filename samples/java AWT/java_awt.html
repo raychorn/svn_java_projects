@@ -1,0 +1,54 @@
+<HTML>
+<HEAD>
+<TITLE>Java AWT Classes</TITLE>
+</HEAD>
+<BODY BGCOLOR=FFFFFF>
+<H1 ALIGN=CENTER>Java AWT Classes</H1>
+<P>As I've run across problems with the AWT, I've subclassed a lot to fix
+things.  Here are a few good examples:</P>
+<DL>
+<DT><A HREF=java/source/Slider.java>Slider</A></DT>
+<DD>This is a combination of a Scrollbar and TextField.  You can
+change the value stored by moving the Scrollbar or typing in the
+TextField.  It rejects key other than numbers (and arrows, del, etc.),
+and won't let you exceed the min/max that you specify.  There's also
+a constructor that lets you specify a label, that will be placed
+above the rest.</DD>
+<DT><A HREF=java/source/Popup.java>Popup</A></DT>
+<DD>This is a popup Window.  It draws a bunch of menu options, and sends
+a LIST_SELECT to the parent Frame when you pick one.  I had a
+<EM>really</EM> hard time getting the thing to close when you just move
+the mouse away, because Window doesn't care to receive most MOUSE_EXIT
+events.  Sigh.  It'll be better once JDK1.1 arrives!  Note that this
+class work fine under the appletviewer, but I haven't found a browser
+yet that shows it in exactly the right place...</DD>
+<DT><A HREF=java/source/FrameClose.java>FrameClose</A></DT>
+<DD>I created this so a Frame would actually close when you issue the
+WINDOW_DESTROY command - in my case, clicking the close window button under
+Windows 95</DD>
+<DT><A HREF=java/source/FrameTab.java>FrameTab</A></DT>
+<DD>Implements <EM>TabParent</EM>.  I created this so you could press <CODE>Tab</CODE>
+to move between Components in a window.  It allows you to specify a Tab
+order position when you add a Component.</DD>
+<DT><A HREF=java/source/AppletTab.java>AppletTab</A></DT>
+<DD>Implements <EM>TabParent</EM>.  This lets you tab around in Applets.</DD>
+<DT><A HREF=java/source/PanelTab.java>PanelTab</A></DT>
+<DD>This lets you tab around in panels that you include in a
+FrameTab or AppletTab (or other TabParent).</DD>
+<DT><A HREF=java/source/PanelTabP.java>PanelTabP</A></DT>
+<DD>Implements <EM>TabParent</EM>.  I found that I needed a Panel to
+be a TabParent in order to have different pages of a CardLayout
+maintain different Tab Orders.</DD>
+<DT><A HREF=java/source/TabParent.java>TabParent</A></DT>
+<DD>This is an interface for whatever class will actually keep track
+of the Tab Order.  When you add a TabPanel, for instance, it doesn't
+keep the records, it just passes the data on to the TabParent.  That
+way you can alternate the tab order between Components in and out of
+the Panel.</DD>
+</DL>
+<P ALIGN=CENTER><EM><A HREF=java.html>Aaron's Java Classes</A></EM></P>
+<HR>
+<P><EM>Last modified on August 16, 1996.</EM></P>
+<ADDRESS><A HREF=mailer.html>ammulder@princeton.edu</A></ADDRESS>
+</BODY>
+</HTML>

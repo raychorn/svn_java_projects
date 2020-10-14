@@ -1,0 +1,368 @@
+<html>
+<head>
+<a name="_top_"></a>
+<title>
+Class Button
+</title>
+</head>
+<body>
+<a name="_top_"></a>
+<h1>
+Class Button
+</h1>
+<pre>
+<a href="java.lang.Object.html#_top_">java.lang.Object</a>
+   |
+   +----Button
+</pre>
+<hr>
+<dl>
+<dt>
+class <b>
+Button</b>
+<dt>
+extends <a href="java.lang.Object.html#_top_">Object</a>
+</dl>
+Button is the main class for creating buttons.
+<dl>
+<dt>
+<b>See Also:</b>
+<dd>
+<a href="ToggleButton.html#_top_">ToggleButton</a>,
+<a href="MEXButton.html#_top_">MEXButton</a>,
+<a href="MEXButtonList.html#_top_">MEXButtonList</a><dt>
+<b>Version:</b>
+<dd>
+1.0f 25 Aug 1995
+<dt>
+<b>Author:</b>
+<dd>
+Georg He&szlig;mann</dl>
+<hr>
+<a name="index"></a>
+<h2>
+<img src="images/variable-index.gif" width=207 height=38 alt="Variable Index">
+</h2>
+<dl>
+<dt>
+<img src="images/blue-ball-small.gif" width=6 height=6 alt=" o ">
+<b>
+<a href="#app">app</a>
+</b>
+<dd>
+Static pointer to the main applet.
+</dl>
+<h2>
+<img src="images/constructor-index.gif" width=275 height=38 alt="Constructor Index">
+</h2>
+<dl>
+<dt>
+<img src="images/yellow-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#Button(int, java.lang.String, int, int, int, int, java.awt.Font)"><b>Button</b></a>(int, String, int, int, int, int, Font)
+<dd>
+Creates a button.
+</dl>
+<h2>
+<img src="images/method-index.gif" width=207 height=38 alt="Method Index">
+</h2>
+<dl>
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#GetNum()"><b>GetNum</b></a>()
+<dd>
+Gets the id-number of this button.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#action()"><b>action</b></a>()
+<dd>
+Main scheduling function.
+<dt>
+<img src="images/green-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#drawAll(java.awt.Graphics)"><b>drawAll</b></a>(Graphics)
+<dd>
+Redraw all buttons.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#drawButton(java.awt.Graphics)"><b>drawButton</b></a>(Graphics)
+<dd>
+
+<dt>
+<img src="images/green-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#drawChanged(java.awt.Graphics)"><b>drawChanged</b></a>(Graphics)
+<dd>
+Redraw only these buttons, which are changed since the last
+redraw.
+<dt>
+<img src="images/green-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#freeAll()"><b>freeAll</b></a>()
+<dd>
+Deletes all buttons.
+<dt>
+<img src="images/green-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#mouseDown(int, int)"><b>mouseDown</b></a>(int, int)
+<dd>
+Handels a mouse click.
+<dt>
+<img src="images/green-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#mouseDrag(int, int)"><b>mouseDrag</b></a>(int, int)
+<dd>
+Handels a mouse drag event.
+<dt>
+<img src="images/green-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#mouseUp(int, int)"><b>mouseUp</b></a>(int, int)
+<dd>
+Handels a mouse up event.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#mouseUpButton(int, int)"><b>mouseUpButton</b></a>(int, int)
+<dd>
+
+</dl>
+<a name="variables"></a>
+<h2>
+<img src="images/variables.gif" width=153 height=38 alt="Variables">
+</h2>
+<a name="app">
+<img src="images/blue-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<b>
+app
+</b>
+<pre>
+  public static <a href="Dance.html#_top_">Dance</a> app
+</pre>
+<dl>
+<dd>
+Static pointer to the main applet. Has to be set before
+the first use of a button.
+</dl>
+<a name="constructors"></a>
+<h2>
+<img src="images/constructors.gif" width=231 height=38 alt="Constructors">
+</h2>
+<a name="Button"></a>
+<a name="Button(int, java.lang.String, int, int, int, int, java.awt.Font)">
+<img src="images/yellow-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<b>
+Button
+</b>
+<pre>
+  public Button(int bnum,
+                <a href="java.lang.String.html#_top_">String</a> l,
+                int x,
+                int y,
+                int w,
+                int h,
+                <a href="java.awt.Font.html#_top_">Font</a> f)
+</pre>
+<dl>
+<dd>
+Creates a button.
+<dl>
+<dt>
+<b>Parameters:</b>
+<dd>
+bnum
+-
+ id-number for the button
+<dd>
+l
+-
+ label
+<dd>
+x
+-
+ x-ccordinate of the button
+<dd>
+y
+-
+ y-coordinate of the button
+<dd>
+w
+-
+ the size().width
+<dd>
+h
+-
+ the size().height
+<dd>
+f
+-
+ the font used for the label
+</dl>
+</dl>
+<p>
+<a name="methods"></a>
+<h2>
+<img src="images/methods.gif" width=151 height=38 alt="Methods">
+</h2>
+<a name="freeAll()">
+<img src="images/green-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="freeAll">
+<b>
+freeAll
+</b>
+</a>
+<pre>
+  public static void freeAll()
+</pre>
+<dl>
+<dd>
+Deletes all buttons.
+</dl>
+<p>
+<a name="drawAll(java.awt.Graphics)">
+<img src="images/green-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="drawAll">
+<b>
+drawAll
+</b>
+</a>
+<pre>
+  public static void drawAll(<a href="java.awt.Graphics.html#_top_">Graphics</a> g)
+</pre>
+<dl>
+<dd>
+Redraw all buttons.
+</dl>
+<p>
+<a name="drawChanged(java.awt.Graphics)">
+<img src="images/green-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="drawChanged">
+<b>
+drawChanged
+</b>
+</a>
+<pre>
+  public static void drawChanged(<a href="java.awt.Graphics.html#_top_">Graphics</a> g)
+</pre>
+<dl>
+<dd>
+Redraw only these buttons, which are changed since the last
+redraw.
+</dl>
+<p>
+<a name="mouseDown(int, int)">
+<img src="images/green-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="mouseDown">
+<b>
+mouseDown
+</b>
+</a>
+<pre>
+  public static boolean mouseDown(int x,
+                                  int y)
+</pre>
+<dl>
+<dd>
+Handels a mouse click. Normaly called from the applet.
+If something has changed, java.applet.Applet.repaint() will be called.
+</dl>
+<p>
+<a name="mouseUp(int, int)">
+<img src="images/green-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="mouseUp">
+<b>
+mouseUp
+</b>
+</a>
+<pre>
+  public static boolean mouseUp(int x,
+                                int y)
+</pre>
+<dl>
+<dd>
+Handels a mouse up event. Normaly called from the applet.
+If something has changed java.applet.Applet.repaint() will be called.
+If the mouse down and the mouse up event was over the
+same button, the action function of this button will be called.
+</dl>
+<p>
+<a name="mouseDrag(int, int)">
+<img src="images/green-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="mouseDrag">
+<b>
+mouseDrag
+</b>
+</a>
+<pre>
+  public static boolean mouseDrag(int x,
+                                  int y)
+</pre>
+<dl>
+<dd>
+Handels a mouse drag event. Normaly called from the applet.
+If something has changed java.applet.Applet.repaint() will be called.
+</dl>
+<p>
+<a name="GetNum()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="GetNum">
+<b>
+GetNum
+</b>
+</a>
+<pre>
+  public int GetNum()
+</pre>
+<dl>
+<dd>
+Gets the id-number of this button.
+<dl>
+<dt>
+<b>Returns:</b>
+<dd>
+id-number of this button.
+</dl>
+</dl>
+<p>
+<a name="drawButton(java.awt.Graphics)">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="drawButton">
+<b>
+drawButton
+</b>
+</a>
+<pre>
+  protected void drawButton(<a href="java.awt.Graphics.html#_top_">Graphics</a> g)
+</pre>
+<a name="mouseUpButton(int, int)">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="mouseUpButton">
+<b>
+mouseUpButton
+</b>
+</a>
+<pre>
+  protected boolean mouseUpButton(int x,
+                                  int y)
+</pre>
+<a name="action()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="action">
+<b>
+action
+</b>
+</a>
+<pre>
+  protected void action()
+</pre>
+<dl>
+<dd>
+Main scheduling function. Will be called if an button
+is correctly pressed (mouse down and up).
+</dl>
+<p>
+</body>
+</html>

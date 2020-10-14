@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML> <HEAD>
+<TITLE>Example 6</TITLE>
+</HEAD>
+
+
+<H1 ALIGN=CENTER>Example 6</H1>
+<H2 ALIGN=CENTER>The 1908 Tunguska Explosion</H2>
+This example has the applet parsing parameters to a program on the server
+and the program returning the data for the applet to plot.<BR>
+The applet has a control panel that allows modification of the output and
+the plot.<P>
+The applet is plotting data sent to it from a program that solves
+the equations describing the passage of an asteroid through an atmosphere.
+In particular this problem is concerned with the explosion over Tunguska,
+Central Siberia, in 1908.<P>
+The program incorporates, asteroid ablation, atmospheric drag, atmospheric
+lift, and most importantly asteroid disruption.
+
+
+The control panel has three columns. The first column allows the selection
+of material type. The second column allows you to modify the initial
+conditions. The third column is the physical quantity to be plotted.
+<hr>
+<CENTER>
+<applet code=g2d6.class width=400 height=400>
+</applet>
+</CENTER>
+<hr>
+The atmosphere entry program solves the Bronshten equations.
+These Ordinary Differential Equations (ODE's) describe the motion
+of a body through
+an atmosphere. Here they are modified to include disruption of the
+bolide. The reference for the equations and the results plotted here is<BR>
+Chyba, C.F., Thomas, P.J., and Zahnle, K.J, <I>The 1908 Tunguska explosion:
+atmospheric disruption of a stony asteroid</I>, Nature <B>361</B>, 40-44.
+<HR>
+The <A HREF="g2d6.java">Java source</A> for this example.<BR>
+The <A HREF="bronshten/driver">Perl CGI script</A> that drives the ODE solver.
+<BR>
+The program that solves the asteroid disruption ODE's,
+<A HREF="bronshten/entry.c">entry.c</A>, <A HREF="bronshten/rk.c">rk.c</A>,
+ <A HREF="bronshten/planet.c">planet.c</A>.
+<HR>
+<!-- hhmts start -->
+Last modified: Fri Oct 27 16:06:45 PDT 1995
+<!-- hhmts end -->
+</BODY> </HTML>
+
+

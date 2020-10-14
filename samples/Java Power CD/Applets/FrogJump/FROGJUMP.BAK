@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>The Jumping Frog</title>
+</head>
+<body>
+<h1 align=center> Can you see the jumping Frog ???</h1>
+<hr>
+<applet codebase="/java" code="Frog.class" width=500 height=300>
+<param name="speed" value="8">
+<param name="Vy" value="-80.5">
+<param name="Vx" value="30.0">
+<param name="delta" value="0.2">
+</applet>
+<hr>
+<b> NB : This applet was written using the Beta 1 API ( 
+<a href="http://home.netscape.com">Netscape 2.0b2</a> compatible ).</b> <p>
+When you're done you can see our other Applet 
+<a href="http://www.franceway.com/java/fractale/mandel_b.htm">the interactive Mandelbrot set</a>, 
+go back to our <a href="http://www.franceway.com/welcome.htm">Home page</a>
+or send us your <a href="http://www.franceway.com/suggest.htm">comments</a>.
+<hr>
+Please report any problem to <address><a href="mailto:webmaster@franceway.com">
+Webmaster@franceway.com</a>.</address>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<HTML>
+<HEAD>
+<TITLE>Glow Text</TITLE>
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+<H1>GlowText</H1>
+<P>The GlowText applet is an applet which allows you to make a particular
+piece of text glow when the mouse pointer is over it:
+here is some text which is
+<APPLET CODE="GlowText" HEIGHT="18" WIDTH="50" ALIGN="absbottom">
+<PARAM NAME="text" VALUE="glowing.">
+<param NAME="fgcolor" VALUE="#0000ff">
+<param NAME="bgcolor" VALUE="#ffffff">
+<param NAME="tocolor" VALUE="#ff0000">
+<param NAME="href" VALUE="http://www.hway.net/edd/">
+<param NAME="font" VALUE="TimesRoman">
+<param NAME="fontsize" VALUE="14">
+<param NAME="fontstyle" VALUE="PLAIN">
+glowing.
+</APPLET></P>
+<P>This piece of text can also act as a hyperlink and take the browser
+to another location when clicked upon.</P>
+<P>The font and colors of the text are completely customizable - it's
+up to you to make sure they look OK! Here's a breakdown of the applet parameters
+and their possible values.</P>
+<P><TABLE BORDER=1>
+<TR>
+<TH>Parameter</TH><TH>Description</TH><TH>Allowed values</TH><TH>Default (value if parameter omitted)</TH>
+</TR>
+<TR>
+<TD>text</TD><TD>The text which will glow</TD><TD>Any string</TD><TD>GlowText</TD>
+</TR>
+<TR>
+<TD>fgcolor</TD><TD>The color of the text</TD><TD>A Netscape style hex color string, e.g. #ff0000 for red</TD><TD>#000000</TD>
+</TR>
+<TR>
+<TD>tocolor</TD><TD>The color the text glows</TD><TD>As for <i>fgcolor</i></TD><TD>#fffffff</TD>
+</TR>
+<TR>
+<TD>bgcolor</TD><td>The background color of the applet</td><TD>As for <i>fgcolor</i></td><TD>transparent</TD>
+</TR>
+<TR>
+<TD>href</TD><TD>A link to jump to when the text is clicked on</TD><TD>A fully qualified proper URL</TD><TD>none</TD>
+</TR>
+<TR>
+<TD>font</TD><TD>The font to use for the text</TD><TD>A Java fontname (TimesRoman, Courier or Helvetica)</TD><TD>the Java default font</TD>
+</TR>
+<TR>
+<TD>fontsize</TD><TD>The point size of the text</TD><TD>A number</TD><TD>If not specified, then the Java default font is again used</TD>
+</TR>
+<TD>fontstyle</TD><TD>The style of the text font</TD><TD>BOLD, ITALIC, BOLDITALIC, PLAIN</TD><TD>PLAIN</TD>
+</TABLE></P>
+<P>Here's the tag used for the applet in the first paragraph of this page:</P>
+<PRE>
+&lt;APPLET CODE="GlowText" HEIGHT="18" WIDTH="50" ALIGN="absbottom"&gt;
+&lt;PARAM NAME="text" VALUE="glowing."&gt;
+&lt;param NAME="fgcolor" VALUE="#0000ff"&gt;
+&lt;param NAME="bgcolor" VALUE="#ffffff"&gt;
+&lt;param NAME="tocolor" VALUE="#ff0000"&gt;
+&lt;param NAME="href" VALUE="http://www.hway.net/edd/"&gt;
+&lt;param NAME="font" VALUE="TimesRoman"&gt;
+&lt;param NAME="fontsize" VALUE="14"&gt;
+&lt;param NAME="fontstyle" VALUE="PLAIN"&gt;
+glowing.
+&lt;/APPLET&gt;
+</PRE>
+<P>
+The best way to make sure the baseline of the text in the applet lines up
+with the text in the page is to use <TT>absbottom</TT> for <TT>ALIGN</TT> and
+adjust the <TT>HEIGHT</TT> of the applet until everything seems OK. This works
+because the text is always printed at the bottom-left of the applet. Be aware
+that it may go horribly wrong on a browser different to yours anyway!    
+</P>
+<H2>Downloading</H2>
+<P>
+If you wish to use this applet, you can either download the
+<A href="GlowText.java">source code</A>, or the 
+<A href="GlowText.class">compiled .class file</A> (shift-click for the
+.class file!). Simply put
+the .class file in the same directory as the HTML file you wish
+to use it with. Enjoy!
+</P>
+<HR NOSHADE>      
+
+</BODY>
+
+</HTML>
+

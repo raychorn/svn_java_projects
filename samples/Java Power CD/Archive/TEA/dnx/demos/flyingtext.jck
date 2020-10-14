@@ -1,0 +1,221 @@
+//JACK V1.00 scene description, by TEA 0.1
+{
+dnx.jack.Scene {  
+  name "FlyingText"
+  position  { x 0 y 0 z 0 }
+  hidden 0
+  loops 0
+  locked 0
+  forcedDur 0
+  comment ""
+  viewCube  {  x 0 y 0 z 0 w 640 h 480 d 0 }
+  forcedSize 1
+  bgColor x000000
+  behaviors 0
+  elements 6  
+    dnx.jack.SceneElement {  
+      tyTiming 0
+      offset 0
+      sequence dnx.jack.ImageSequence {  
+        name "images/x-blu2"
+        position  { x 0 y 0 z 0 }
+        hidden 0
+        loops 0
+        locked 0
+        forcedDur 0
+        comment "null"
+        nFrames 1
+        useURLBase 0
+        seqType 0
+        fps 1
+        base "file:C:/java/dnx/demos/" source "images/x-blu2"
+        extension ".gif"
+        behaviors 2
+          dnx.jack.behaviors.Wander {  
+            name "Wander"
+            active 1
+          bounds  {  x 0 y 0 z 0 w 320 h 259 d -1 }
+          constrain 1
+          period 100          }
+          dnx.jack.behaviors.URLLink {  
+            name "URLLink"
+            active 1
+            linkTo "http://www.dimensionx.com/index.html"
+            linkEvent 501
+            showLinkEvent 504
+            hideLinkEvent 505
+          }
+        }
+    }
+    dnx.jack.SceneElement {  
+      tyTiming 0
+      offset 0
+      sequence dnx.jack.ImageSequence {  
+        name "images/thecompany"
+        position  { x 331 y 42 z 0 }
+        hidden 0
+        loops 0
+        locked 0
+        forcedDur 0
+        comment "null"
+        nFrames 1
+        useURLBase 0
+        seqType 0
+        fps 1
+        base "file:C:/java/dnx/demos/" source "images/thecompany"
+        extension ".gif"
+        behaviors 2
+          dnx.jack.behaviors.Wander {  
+            name "Wander"
+            active 1
+          bounds  {  x 0 y 0 z 0 w 390 h 453 d -1 }
+          constrain 1
+          period 100          }
+          dnx.jack.behaviors.URLLink {  
+            name "URLLink"
+            active 1
+            linkTo "http://www.dimensionx.com/index.html"
+            linkEvent 501
+            showLinkEvent 504
+            hideLinkEvent 505
+          }
+        }
+    }
+    dnx.jack.SceneElement {  
+      tyTiming 0
+      offset 0
+      sequence dnx.jack.ImageSequence {  
+        name "images/theproducts"
+        position  { x 331 y 71 z 0 }
+        hidden 0
+        loops 0
+        locked 0
+        forcedDur 0
+        comment "null"
+        nFrames 1
+        useURLBase 0
+        seqType 0
+        fps 1
+        base "file:C:/java/dnx/demos/" source "images/theproducts"
+        extension ".gif"
+        behaviors 2
+          dnx.jack.behaviors.Wander {  
+            name "Wander"
+            active 1
+          bounds  {  x 0 y 0 z 0 w 390 h 456 d -1 }
+          constrain 1
+          period 100          }
+          dnx.jack.behaviors.URLLink {  
+            name "URLLink"
+            active 1
+            linkTo "http://www.dimensionx.com/products/index.html"
+            linkEvent 501
+            showLinkEvent 504
+            hideLinkEvent 505
+          }
+        }
+    }
+    dnx.jack.SceneElement {  
+      tyTiming 0
+      offset 0
+      sequence dnx.jack.ImageSequence {  
+        name "images/thecore"
+        position  { x 331 y 95 z 0 }
+        hidden 0
+        loops 0
+        locked 0
+        forcedDur 0
+        comment "null"
+        nFrames 1
+        useURLBase 0
+        seqType 0
+        fps 1
+        base "file:C:/java/dnx/demos/" source "images/thecore"
+        extension ".gif"
+        behaviors 2
+          dnx.jack.behaviors.Wander {  
+            name "Wander"
+            active 1
+          bounds  {  x 0 y 0 z 0 w 390 h 455 d -1 }
+          constrain 1
+          period 100          }
+          dnx.jack.behaviors.URLLink {  
+            name "URLLink"
+            active 1
+            linkTo "http://www.dimensionx.com/main.html"
+            linkEvent 501
+            showLinkEvent 504
+            hideLinkEvent 505
+          }
+        }
+    }
+    dnx.jack.SceneElement {  
+      tyTiming 0
+      offset 0
+      sequence dnx.jack.ImageSequence {  
+        name "images/thesites"
+        position  { x 331 y 122 z 0 }
+        hidden 0
+        loops 0
+        locked 0
+        forcedDur 0
+        comment "null"
+        nFrames 1
+        useURLBase 0
+        seqType 0
+        fps 1
+        base "file:C:/java/dnx/demos/" source "images/thesites"
+        extension ".gif"
+        behaviors 2
+          dnx.jack.behaviors.Wander {  
+            name "Wander"
+            active 1
+          bounds  {  x 0 y 0 z 0 w 390 h 455 d -1 }
+          constrain 1
+          period 100          }
+          dnx.jack.behaviors.URLLink {  
+            name "URLLink"
+            active 1
+            linkTo "http://www.dimensionx.com/dnx/clients.html"
+            linkEvent 501
+            showLinkEvent 504
+            hideLinkEvent 505
+          }
+        }
+    }
+    dnx.jack.SceneElement {  
+      tyTiming 0
+      offset 0
+      sequence dnx.jack.ImageSequence {  
+        name "images/whatsnew"
+        position  { x 331 y 150 z 0 }
+        hidden 0
+        loops 0
+        locked 0
+        forcedDur 0
+        comment "null"
+        nFrames 1
+        useURLBase 0
+        seqType 0
+        fps 1
+        base "file:C:/java/dnx/demos/" source "images/whatsnew"
+        extension ".gif"
+        behaviors 2
+          dnx.jack.behaviors.Wander {  
+            name "Wander"
+            active 1
+          bounds  {  x 0 y 0 z 0 w 432 h 452 d -1 }
+          constrain 1
+          period 100          }
+          dnx.jack.behaviors.URLLink {  
+            name "URLLink"
+            active 1
+            linkTo "http://www.dimensionx.com/whatsnew.html"
+            linkEvent 501
+            showLinkEvent 504
+            hideLinkEvent 505
+          }
+        }
+    }
+  }
+}

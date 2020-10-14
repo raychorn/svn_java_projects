@@ -1,0 +1,744 @@
+<html>
+<head>
+<a name="_top_"></a>
+<title>
+Class Floor
+</title>
+</head>
+<body>
+<a name="_top_"></a>
+<h1>
+Class Floor
+</h1>
+<pre>
+<a href="java.lang.Object.html#_top_">java.lang.Object</a>
+   |
+   +----Floor
+</pre>
+<hr>
+<dl>
+<dt>
+class <b>
+Floor</b>
+<dt>
+extends <a href="java.lang.Object.html#_top_">Object</a>
+</dl>
+Floor maintains one dance floor. Normaly two of them are
+needed. One for the lady and one for the gent.
+It stores all informations about the steps which are done
+and draws them.
+<dl>
+<dt>
+<b>Version:</b>
+<dd>
+1.1, 13 Sep 1995
+<dt>
+<b>Author:</b>
+<dd>
+Georg He&szlig;mann</dl>
+<hr>
+<a name="index"></a>
+<h2>
+<img src="images/variable-index.gif" width=207 height=38 alt="Variable Index">
+</h2>
+<dl>
+<dt>
+<img src="images/blue-ball-small.gif" width=6 height=6 alt=" o ">
+<b>
+<a href="#GridXSize">GridXSize</a>
+</b>
+<dd>
+size().width of the floor grid
+<dt>
+<img src="images/blue-ball-small.gif" width=6 height=6 alt=" o ">
+<b>
+<a href="#GridYSize">GridYSize</a>
+</b>
+<dd>
+size().height of the floor grid
+</dl>
+<h2>
+<img src="images/constructor-index.gif" width=275 height=38 alt="Constructor Index">
+</h2>
+<dl>
+<dt>
+<img src="images/yellow-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#Floor(java.lang.String, boolean, int, int, int, int, int, int, int, int, Foot, Dance)"><b>Floor</b></a>(String, boolean, int, int, int, int, int, int, int, int, Foot, Dance)
+<dd>
+Creates a dance floor.
+</dl>
+<h2>
+<img src="images/method-index.gif" width=207 height=38 alt="Method Index">
+</h2>
+<dl>
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#BottomEdge()"><b>BottomEdge</b></a>()
+<dd>
+Returns the bottom border of the floor
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#BottomEdgeParket()"><b>BottomEdgeParket</b></a>()
+<dd>
+Returns the bottom border without the title string of the floor
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#CalcXPos(float)"><b>CalcXPos</b></a>(float)
+<dd>
+Gets a position relative to the grid and returns
+a x-coordinate relative to the applet origin.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#CalcYPos(float)"><b>CalcYPos</b></a>(float)
+<dd>
+Gets a position relative to the grid and returns
+a y-coordinate relative to the applet origin.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#HideComStr()"><b>HideComStr</b></a>()
+<dd>
+Hide the takt/time - heel/toe string (after the next repaint()).
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#IsDame()"><b>IsDame</b></a>()
+<dd>
+Is this the lady floor?
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#LeftEdge()"><b>LeftEdge</b></a>()
+<dd>
+Returns the left border of the floor.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#RedrawFloor()"><b>RedrawFloor</b></a>()
+<dd>
+Next time Floor.paint() will be called, all (floor and steps)
+will be painted new.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#RightEdge()"><b>RightEdge</b></a>()
+<dd>
+Returns the right border of the floor
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#SetComStrPos(float, float)"><b>SetComStrPos</b></a>(float, float)
+<dd>
+Set the position of the comment (takt/time - heel/toe) string.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#SetTRPos(float, float)"><b>SetTRPos</b></a>(float, float)
+<dd>
+Set the position of the dancing direction arrow.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#ShowComStr()"><b>ShowComStr</b></a>()
+<dd>
+Show the takt/time - heel/toe string (after the next repaint()).
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#TopEdge()"><b>TopEdge</b></a>()
+<dd>
+Returns the top border of the floor
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#addToClipRect(int, int, int, int)"><b>addToClipRect</b></a>(int, int, int, int)
+<dd>
+Add the rect (x1, y1) - (x2, y2) to the clip rect of this floor.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#backStep()"><b>backStep</b></a>()
+<dd>
+Take back one step.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#clearSteps()"><b>clearSteps</b></a>()
+<dd>
+Undo all steps on this floor
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#doStep(Step)"><b>doStep</b></a>(Step)
+<dd>
+Do the step s.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#getNumSteps()"><b>getNumSteps</b></a>()
+<dd>
+Returns the number of steps already set on this floor.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#installClipRect(java.awt.Graphics)"><b>installClipRect</b></a>(Graphics)
+<dd>
+Setup the clip rect of this floor onto the graphics context g.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#paint(java.awt.Graphics)"><b>paint</b></a>(Graphics)
+<dd>
+Draw the floor.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#repaintAllSteps()"><b>repaintAllSteps</b></a>()
+<dd>
+Repaint all steps on the next repaint().
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#toString()"><b>toString</b></a>()
+<dd>
+Returns a String object representing.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#useComStrHT()"><b>useComStrHT</b></a>()
+<dd>
+Use the heel/toe string for the comment field
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#useComStrTime()"><b>useComStrTime</b></a>()
+<dd>
+Use the time (quick/slow) string for the comment field
+</dl>
+<a name="variables"></a>
+<h2>
+<img src="images/variables.gif" width=153 height=38 alt="Variables">
+</h2>
+<a name="GridXSize">
+<img src="images/blue-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<b>
+GridXSize
+</b>
+<pre>
+  public final static int GridXSize
+</pre>
+<dl>
+<dd>
+size().width of the floor grid
+</dl>
+<a name="GridYSize">
+<img src="images/blue-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<b>
+GridYSize
+</b>
+<pre>
+  public final static int GridYSize
+</pre>
+<dl>
+<dd>
+size().height of the floor grid
+</dl>
+<a name="constructors"></a>
+<h2>
+<img src="images/constructors.gif" width=231 height=38 alt="Constructors">
+</h2>
+<a name="Floor"></a>
+<a name="Floor(java.lang.String, boolean, int, int, int, int, int, int, int, int, Foot, Dance)">
+<img src="images/yellow-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<b>
+Floor
+</b>
+<pre>
+  public Floor(<a href="java.lang.String.html#_top_">String</a> t,
+               boolean isd,
+               int gxo,
+               int gyo,
+               int xsz,
+               int ysz,
+               int lborder,
+               int rborder,
+               int tborder,
+               int bborder,
+               <a href="Foot.html#_top_">Foot</a> f,
+               <a href="Dance.html#_top_">Dance</a> app)
+</pre>
+<dl>
+<dd>
+Creates a dance floor.
+<dl>
+<dt>
+<b>Parameters:</b>
+<dd>
+t
+-
+ titel (lady/gent)
+<dd>
+isd
+-
+ is this the lady-floor?
+<dd>
+gxo
+-
+ left border of the floor relative to the applet origin
+<dd>
+gyo
+-
+ top border of the floor relative to the applet origin
+<dd>
+xsz
+-
+ x-size of the grid
+<dd>
+ysz
+-
+ y-size of the grid
+<dd>
+lborder
+-
+ left border of the grid
+<dd>
+rborder
+-
+ right border of the grid
+<dd>
+tborder
+-
+ top border of the grid
+<dd>
+bborder
+-
+ bottom border of the grid
+<dd>
+f
+-
+ pointer to the foot object
+<dd>
+app
+-
+ pointer to the main applet
+</dl>
+</dl>
+<p>
+<a name="methods"></a>
+<h2>
+<img src="images/methods.gif" width=151 height=38 alt="Methods">
+</h2>
+<a name="LeftEdge()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="LeftEdge">
+<b>
+LeftEdge
+</b>
+</a>
+<pre>
+  public int LeftEdge()
+</pre>
+<dl>
+<dd>
+Returns the left border of the floor.
+</dl>
+<p>
+<a name="RightEdge()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="RightEdge">
+<b>
+RightEdge
+</b>
+</a>
+<pre>
+  public int RightEdge()
+</pre>
+<dl>
+<dd>
+Returns the right border of the floor
+</dl>
+<p>
+<a name="TopEdge()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="TopEdge">
+<b>
+TopEdge
+</b>
+</a>
+<pre>
+  public int TopEdge()
+</pre>
+<dl>
+<dd>
+Returns the top border of the floor
+</dl>
+<p>
+<a name="BottomEdge()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="BottomEdge">
+<b>
+BottomEdge
+</b>
+</a>
+<pre>
+  public int BottomEdge()
+</pre>
+<dl>
+<dd>
+Returns the bottom border of the floor
+</dl>
+<p>
+<a name="BottomEdgeParket()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="BottomEdgeParket">
+<b>
+BottomEdgeParket
+</b>
+</a>
+<pre>
+  public int BottomEdgeParket()
+</pre>
+<dl>
+<dd>
+Returns the bottom border without the title string of the floor
+</dl>
+<p>
+<a name="CalcXPos(float)">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="CalcXPos">
+<b>
+CalcXPos
+</b>
+</a>
+<pre>
+  public int CalcXPos(float x)
+</pre>
+<dl>
+<dd>
+Gets a position relative to the grid and returns
+a x-coordinate relative to the applet origin.
+</dl>
+<p>
+<a name="CalcYPos(float)">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="CalcYPos">
+<b>
+CalcYPos
+</b>
+</a>
+<pre>
+  public int CalcYPos(float y)
+</pre>
+<dl>
+<dd>
+Gets a position relative to the grid and returns
+a y-coordinate relative to the applet origin.
+</dl>
+<p>
+<a name="IsDame()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="IsDame">
+<b>
+IsDame
+</b>
+</a>
+<pre>
+  public boolean IsDame()
+</pre>
+<dl>
+<dd>
+Is this the lady floor?
+</dl>
+<p>
+<a name="SetTRPos(float, float)">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="SetTRPos">
+<b>
+SetTRPos
+</b>
+</a>
+<pre>
+  public void SetTRPos(float x,
+                       float y)
+</pre>
+<dl>
+<dd>
+Set the position of the dancing direction arrow.
+</dl>
+<p>
+<a name="SetComStrPos(float, float)">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="SetComStrPos">
+<b>
+SetComStrPos
+</b>
+</a>
+<pre>
+  public void SetComStrPos(float x,
+                           float y)
+</pre>
+<dl>
+<dd>
+Set the position of the comment (takt/time - heel/toe) string.
+</dl>
+<p>
+<a name="ShowComStr()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="ShowComStr">
+<b>
+ShowComStr
+</b>
+</a>
+<pre>
+  public void ShowComStr()
+</pre>
+<dl>
+<dd>
+Show the takt/time - heel/toe string (after the next repaint()).
+</dl>
+<p>
+<a name="HideComStr()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="HideComStr">
+<b>
+HideComStr
+</b>
+</a>
+<pre>
+  public void HideComStr()
+</pre>
+<dl>
+<dd>
+Hide the takt/time - heel/toe string (after the next repaint()).
+</dl>
+<p>
+<a name="useComStrHT()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="useComStrHT">
+<b>
+useComStrHT
+</b>
+</a>
+<pre>
+  public void useComStrHT()
+</pre>
+<dl>
+<dd>
+Use the heel/toe string for the comment field
+</dl>
+<p>
+<a name="useComStrTime()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="useComStrTime">
+<b>
+useComStrTime
+</b>
+</a>
+<pre>
+  public void useComStrTime()
+</pre>
+<dl>
+<dd>
+Use the time (quick/slow) string for the comment field
+</dl>
+<p>
+<a name="doStep(Step)">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="doStep">
+<b>
+doStep
+</b>
+</a>
+<pre>
+  public void doStep(<a href="Step.html#_top_">Step</a> s)
+</pre>
+<dl>
+<dd>
+Do the step s.
+</dl>
+<p>
+<a name="backStep()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="backStep">
+<b>
+backStep
+</b>
+</a>
+<pre>
+  public void backStep()
+</pre>
+<dl>
+<dd>
+Take back one step. Adds this step to the clip
+rect of this floor.
+<dl>
+<dt>
+<b>See Also:</b>
+<dd>
+<a href="Foot.html#addToClipRect">addToClipRect</a>
+</dl>
+</dl>
+<p>
+<a name="getNumSteps()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="getNumSteps">
+<b>
+getNumSteps
+</b>
+</a>
+<pre>
+  public int getNumSteps()
+</pre>
+<dl>
+<dd>
+Returns the number of steps already set on this floor.
+</dl>
+<p>
+<a name="clearSteps()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="clearSteps">
+<b>
+clearSteps
+</b>
+</a>
+<pre>
+  public void clearSteps()
+</pre>
+<dl>
+<dd>
+Undo all steps on this floor
+</dl>
+<p>
+<a name="repaintAllSteps()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="repaintAllSteps">
+<b>
+repaintAllSteps
+</b>
+</a>
+<pre>
+  public void repaintAllSteps()
+</pre>
+<dl>
+<dd>
+Repaint all steps on the next repaint().
+</dl>
+<p>
+<a name="addToClipRect(int, int, int, int)">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="addToClipRect">
+<b>
+addToClipRect
+</b>
+</a>
+<pre>
+  public void addToClipRect(int x1,
+                            int y1,
+                            int x2,
+                            int y2)
+</pre>
+<dl>
+<dd>
+Add the rect (x1, y1) - (x2, y2) to the clip rect of this floor.
+Will be called from Foot.addToClipRect() which will be called
+from Floor.takeBack().
+<dl>
+<dt>
+<b>See Also:</b>
+<dd>
+<a href="Foot.html#addToClipRect">addToClipRect</a>,
+<a href="#takeBack">takeBack</a>
+</dl>
+</dl>
+<p>
+<a name="installClipRect(java.awt.Graphics)">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="installClipRect">
+<b>
+installClipRect
+</b>
+</a>
+<pre>
+  public <a href="java.awt.Graphics.html#_top_">Graphics</a> installClipRect(<a href="java.awt.Graphics.html#_top_">Graphics</a> og)
+</pre>
+<dl>
+<dd>
+Setup the clip rect of this floor onto the graphics context g.
+Than initialize the clip rect of this floor.
+</dl>
+<p>
+<a name="paint(java.awt.Graphics)">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="paint">
+<b>
+paint
+</b>
+</a>
+<pre>
+  public void paint(<a href="java.awt.Graphics.html#_top_">Graphics</a> g)
+</pre>
+<dl>
+<dd>
+Draw the floor.
+If Floor.RedrawFloor() was called, all will be painted.
+Else only the changed things.
+<dl>
+<dt>
+<b>See Also:</b>
+<dd>
+<a href="#RedrawFloor">RedrawFloor</a>
+</dl>
+</dl>
+<p>
+<a name="RedrawFloor()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="RedrawFloor">
+<b>
+RedrawFloor
+</b>
+</a>
+<pre>
+  public void RedrawFloor()
+</pre>
+<dl>
+<dd>
+Next time Floor.paint() will be called, all (floor and steps)
+will be painted new.
+<dl>
+<dt>
+<b>See Also:</b>
+<dd>
+<a href="#paint">paint</a>,
+<a href="#repaintAllSteps">repaintAllSteps</a>
+</dl>
+</dl>
+<p>
+<a name="toString()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="toString">
+<b>
+toString
+</b>
+</a>
+<pre>
+  public <a href="java.lang.String.html#_top_">String</a> toString()
+</pre>
+<dl>
+<dd>
+Returns a String object representing.
+<dl>
+<dt>
+<b>Overrides:</b>
+<dd>
+<a href="java.lang.Object.html#toString()">toString</a> in class <a href="java.lang.Object.html#_top_">Object</a></dl>
+</dl>
+<p>
+</body>
+</html>

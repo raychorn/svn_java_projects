@@ -1,0 +1,272 @@
+<html>
+<head>
+<a name="_top_"></a>
+<title>
+Class MEXButton
+</title>
+</head>
+<body>
+<a name="_top_"></a>
+<h1>
+Class MEXButton
+</h1>
+<pre>
+<a href="java.lang.Object.html#_top_">java.lang.Object</a>
+   |
+   +----<a href="Button.html#_top_">Button</a>
+           |
+           +----MEXButton
+</pre>
+<hr>
+<dl>
+<dt>
+class <b>
+MEXButton</b>
+<dt>
+extends <a href="Button.html#_top_">Button</a>
+</dl>
+MEXButton is the class of mutual exclusive buttons.
+<dl>
+<dt>
+<b>See Also:</b>
+<dd>
+<a href="MEXButtonList.html#_top_">MEXButtonList</a><dt>
+<b>Version:</b>
+<dd>
+1.0f 25 Aug 1995
+<dt>
+<b>Author:</b>
+<dd>
+Georg He&szlig;mann</dl>
+<hr>
+<a name="index"></a>
+<h2>
+<img src="images/constructor-index.gif" width=275 height=38 alt="Constructor Index">
+</h2>
+<dl>
+<dt>
+<img src="images/yellow-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#MEXButton(MEXButtonList, MEXButton, int, java.lang.String, int, int, int, int, java.awt.Font, java.awt.Font)"><b>MEXButton</b></a>(MEXButtonList, MEXButton, int, String, int, int, int, int, Font, Font)
+<dd>
+Creates an mutual exclusive button.
+</dl>
+<h2>
+<img src="images/method-index.gif" width=207 height=38 alt="Method Index">
+</h2>
+<dl>
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#ClearChoosed()"><b>ClearChoosed</b></a>()
+<dd>
+Set this MEXButton to an unselected button.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#IsChoosed()"><b>IsChoosed</b></a>()
+<dd>
+Is this button the selected button?
+
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#NextMEX()"><b>NextMEX</b></a>()
+<dd>
+Get the next MEXButton.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#SetChoosed()"><b>SetChoosed</b></a>()
+<dd>
+Set this MEXButton to the selected button.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#drawButton(java.awt.Graphics)"><b>drawButton</b></a>(Graphics)
+<dd>
+
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#mouseUpButton(int, int)"><b>mouseUpButton</b></a>(int, int)
+<dd>
+
+</dl>
+<a name="constructors"></a>
+<h2>
+<img src="images/constructors.gif" width=231 height=38 alt="Constructors">
+</h2>
+<a name="MEXButton"></a>
+<a name="MEXButton(MEXButtonList, MEXButton, int, java.lang.String, int, int, int, int, java.awt.Font, java.awt.Font)">
+<img src="images/yellow-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<b>
+MEXButton
+</b>
+<pre>
+  public MEXButton(<a href="MEXButtonList.html#_top_">MEXButtonList</a> father,
+                   <a href="#_top_">MEXButton</a> brother,
+                   int bnum,
+                   <a href="java.lang.String.html#_top_">String</a> l,
+                   int x,
+                   int y,
+                   int w,
+                   int h,
+                   <a href="java.awt.Font.html#_top_">Font</a> f,
+                   <a href="java.awt.Font.html#_top_">Font</a> cfnt)
+</pre>
+<dl>
+<dd>
+Creates an mutual exclusive button. Will be called only
+from within the MEXButtonList class.
+<dl>
+<dt>
+<b>Parameters:</b>
+<dd>
+father
+-
+ MEXButtonList head
+<dd>
+brother
+-
+ previsious MEXButton
+<dd>
+bnum
+-
+ id-number for the button
+<dd>
+l
+-
+ label
+<dd>
+x
+-
+ x-ccordinate of the button
+<dd>
+y
+-
+ y-coordinate of the button
+<dd>
+w
+-
+ the size().width
+<dd>
+h
+-
+ the size().height
+<dd>
+f
+-
+ the font used for the label
+<dd>
+cfnt
+-
+ the font used for the selected label
+</dl>
+</dl>
+<p>
+<a name="methods"></a>
+<h2>
+<img src="images/methods.gif" width=151 height=38 alt="Methods">
+</h2>
+<a name="SetChoosed()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="SetChoosed">
+<b>
+SetChoosed
+</b>
+</a>
+<pre>
+  public void SetChoosed()
+</pre>
+<dl>
+<dd>
+Set this MEXButton to the selected button.
+Will be called only via class MEXButtonList.
+Don't call this function directly.
+</dl>
+<p>
+<a name="ClearChoosed()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="ClearChoosed">
+<b>
+ClearChoosed
+</b>
+</a>
+<pre>
+  public void ClearChoosed()
+</pre>
+<dl>
+<dd>
+Set this MEXButton to an unselected button.
+Will be called only via class MEXButtonList.
+Don't call this function directly.
+</dl>
+<p>
+<a name="IsChoosed()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="IsChoosed">
+<b>
+IsChoosed
+</b>
+</a>
+<pre>
+  public boolean IsChoosed()
+</pre>
+<dl>
+<dd>
+Is this button the selected button?
+<dl>
+<dt>
+<b>Returns:</b>
+<dd>
+state of this button
+</dl>
+</dl>
+<p>
+<a name="NextMEX()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="NextMEX">
+<b>
+NextMEX
+</b>
+</a>
+<pre>
+  public <a href="#_top_">MEXButton</a> NextMEX()
+</pre>
+<dl>
+<dd>
+Get the next MEXButton.
+Will be called only via class MEXButtonList.
+Don't call this function directly.
+<dl>
+<dt>
+<b>Returns:</b>
+<dd>
+next MEXButton in the internal list.
+</dl>
+</dl>
+<p>
+<a name="drawButton(java.awt.Graphics)">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="drawButton">
+<b>
+drawButton
+</b>
+</a>
+<pre>
+  protected void drawButton(<a href="java.awt.Graphics.html#_top_">Graphics</a> g)
+</pre>
+<a name="mouseUpButton(int, int)">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="mouseUpButton">
+<b>
+mouseUpButton
+</b>
+</a>
+<pre>
+  protected boolean mouseUpButton(int x,
+                                  int y)
+</pre>
+</body>
+</html>

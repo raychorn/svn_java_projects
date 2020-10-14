@@ -1,0 +1,117 @@
+<HTML>
+
+ <HEAD>
+  <TITLE>Kazuma's Personal Page: JAVA</TITLE>
+ </HEAD>
+
+ <BODY BACKGROUND="../images/jback.jpg" BGCOLOR="#FFFFFF"
+       TEXT="#0000C0" LINK="#0000F0"
+       VLINK="#0000F0" ALINK="#0000FF">
+ <UL>
+
+  <H1 ALIGN="center">
+   <IMG SRC="../images/java.gif"
+        WIDTH=64 HEIGHT=64
+        ALIGN="right"
+        HSPACE=29 VSPACE=20
+        ALT="JAVA LOGO">
+   <IMG SRC="../images/java.gif"
+        WIDTH=64 HEIGHT=64
+        ALIGN="left"
+        HSPACE=29 VSPACE=20
+        ALT="JAVA LOGO">
+   KzmMessage<BR>
+   <H4 ALIGN="center">
+    Date: 23.Jun.96 - L.R.: 25.Jun.96
+   </H4>
+  </H1>
+
+  <H2 ALIGN="center">
+    <TABLE BORDER=1>
+   <TD><APPLET CODE="KzmMessage"
+               WIDTH=350 HEIGHT=30>
+        <PARAM NAME="copyright" VALUE="Alex 'Kazuma' Garbagnati, kazuma@energy.it">
+        <PARAM NAME="shift" VALUE=2>
+        <PARAM NAME="delay" VALUE=10>
+        <PARAM NAME="font_size" VALUE="24">
+        <PARAM NAME="font_italic" VALUE="yes">
+        <PARAM NAME="font_bold" VALUE="yes">
+        <PARAM NAME="back_color" VALUE="0 0 0">
+        <PARAM NAME="text_color" VALUE="255 255 255">
+        <PARAM NAME="message_type" VALUE="applet">
+        <PARAM NAME="message_file" VALUE="Welcome to KzmMessage">
+    </APPLET></TD>
+    </TABLE>
+   </H2>
+
+  <HR>
+  I'm proud to say that i've wrote this applet with all the suggestions and comments
+  that i've received by users of my <I>old</I> applets: <A HREF="kzmscroll.html">KzmScroll</A>
+  and <A HREF="kzmfortune.html">KzmFortune</A>.<BR>
+  This applet is a combination of them, with a interesting feature added. In fact you
+  can use this applet with a static message defined in the <TT>&lt;PARAM ...&gt;</TT>
+  tag, or different messages readed by a file. In this case you can choose or to show
+  only one message every time that the page is loaded or every time that the message
+  disappears from the screen it changes. The change can be defined to follow the
+  sequence of messages in the file (first line 1, then line 2, then line 3 and so on)
+  or random readed every time. Click <A HREF="kzmmessageex.html">HERE</A> for
+  some examples.<BR>
+  The file must be present in the same directory that contains the html file that
+  uses the applet!
+  <BR>
+  <H3>
+   PARAMETERS
+  </H3>
+  <DL>
+   <DT><B>Font_Size</B>: (Int, default=12)
+    <DD>The size of the font.
+   <DT><B>Font_Bold</B>: (yes|no, default="no")
+    <DD>If "yes", the font is bold
+   <DT><B>Font_Italic</B>: (yes|no, default="no")
+    <DD>If "yes", the font is italic
+   <DT><B>Shift</B>: (Int, default=5)
+    <DD>Is the shifting of the message.
+   <DT><B>Delay</B>: (Int, default=50)
+    <DD>Is the delay between every shift.
+   <DT><B>Back_Color</B>: (R G B, default=0 0 0)
+    <DD>The color of the scrollable area, the rectangle.
+   <DT><B>Text_Color</B>: (R G B, default=255 255 255)
+    <DD>The color of the message.
+   <DT><B>Message_Type</B>: (applet|file, default="applet")
+    <DD>If the value is "applet", the message is the one that is defined
+    in the "message_file" parameter. If the value is "file" the message
+    is readed from that file.
+   <DT><B>Message_File</B>: (String)
+    <DD>If the "message_type" parameter is "applet" the value of this
+    parameter is the message to show. If the "message_type" parameter
+    is "file" this value must contains the valid filename of the file
+    that contains the messages to show on the screen.
+   <DT><B>Sequence</B>: (order|random|static, default="random")
+    <DD>This parameter is valid ONLY if you're working with a file. The
+    value "order" or "random" means that the message changes every time 
+    that ends to scroll. Tha value "static" means that the message changes
+    only after a reload.<BR>
+    - "order" = messages are readed sequently as are inserted in the file.<BR>
+    - "random" = every message is random readed from the file.
+   <DT><B>Copyright</B>: (String)
+    <DD>Ok, this is a copyright line. Please don't change it. This applet
+    is freeware, so the only cost is to leave this copyright parameter.
+  </DL>
+  <P>
+  DOWNLOAD "<A HREF="down_applets/KzmMessage.zip">KzmMessage.zip</A>"<BR>
+  <BR>
+  <HR>
+  <H4 ALIGN="center">
+   <A HREF="index.html">BACK TO APPLET LIST</A>
+   <IMG SRC="../images/blacdot.gif"
+        WIDTH=10 HEIGHT=10
+        ALIGN="bottom"
+        HSPACE=25
+        ALT=" * ">
+   <A HREF="../index.html">BACK TO MY HOMEPAGE</A>
+  </H4>
+  <HR>
+
+ </UL>
+ </BODY>
+</HTML>

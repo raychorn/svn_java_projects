@@ -1,0 +1,122 @@
+<HTML>
+<HEAD>
+<TITLE> CinnaMoney User's Guide. </TITLE>
+</HEAD>
+<BODY text="#000000" vlink="#AA4000" link="#005AC3" alink="#000000" BGCOLOR="#FFFFFF">
+<TABLE WIDTH=100% BORDER=0>
+<TR>
+<TD ALIGN=LEFT><IMG ALIGN=LEFT HSPACE=5 VSPACE=5 SRC="images/tht200ed.gif">
+<TD ALIGN=CENTER><H2>Welcome to THOUGHT Inc.</H2>
+<TD ALIGN=RIGHT><IMG ALIGN=RIGHT HSPACE=5 VSPACE=5 SRC="images/cin200.gif">
+</TABLE>
+<P>User's Guide and Frequently Asked Questions.
+
+<P> How do I?
+
+<BR><A HREF="#importclass">Import a CinnaMoney class?</A>
+<BR><A HREF="#simpleexamp">Make a simple example of a program using a CinnaMoney class?</A>
+<BR><A HREF="#compile">Compile a Java program/applet including CinnaMoney?</A>
+<BR><A HREF="#run">Execute a Java program/applet which was compiled to include CinnaMoney?</A>
+<BR><A HREF="#convert">How do I convert another datatype to a CinnaMoney Class?</A>
+<BR><A HREF="#setprecision">Set the precision of a CinnaMoney Class?</A>
+<BR><A HREF="#print">Print a CinnaMoney class as a String?</A>
+<BR><A HREF="#printprecision">Print a CinnaMoney class as a String using a specific printing precision?</A>
+<P>
+<HR>
+<P><A NAME=importclass></A><H2>- Import a CinnaMoney class</H2>
+<BR>Importing CinnaMoney class is easily done with a single line of code such as the one following this:
+
+<P>import CinnaMoney;
+<HR>
+<P><A NAME=simpleexamp></A><H2>- Make a simple example of a program using a CinnaMoney class?</H2>
+<P><HR>
+<BR>The following is a simple program which creates a couple of CinnaMoney 
+Objects using String Objects containing numeric values.  It then adds
+those two CinnaMoney Objects together to created a third CinnaMoney value
+containing the results.  It then prints their results.
+<pre>
+
+/**
+ * Copyright (c) 1995, 1996 THOUGHT Inc. All Rights Reserved.<p>
+ *
+ */
+
+import java.util.*;
+import java.lang.*;
+import java.lang.*;
+import CinnaMoney;
+
+public class TestCinnaMoney1 {
+	public static void main(String args[]) {
+	String strn1 = new String("12000.00");
+	CinnaMoney m1 = new CinnaMoney(strn1);
+	strn1 = new String("-1200.00");
+	CinnaMoney m2 = new CinnaMoney(strn2);
+	CinnaMoney m3;
+	m3 = m1.add(m2);
+	System.out.print(m1.toString());
+	System.out.print(" + ");
+	System.out.print(m2.toString());
+	System.out.print(" = ");
+	System.out.println(m3.toString(2));  // this sets print precision to 2
+	}
+}
+
+//=========================
+
+Here's how to compile
+javac TestCinnaMoney1.java
+Java TestCinnaMoney1
+
+This should print:
+12000.00 + -1200.00 = 10800.00
+</pre>
+<HR>
+<P><A NAME=compile></A><H2>- How do I compile a Java program/applet including CinnaMoney</H2>
+<BR>Compiling a program to work with CinnaMoney is the same as for any other Java program.  Just use the javac compiler to compile your source.
+<BR>An example compile for a file called TestCinnaMoney.java would be:
+<BR><BR>javac TestCinnaMoney.java
+<P><HR>
+<P><A NAME=run></A><H2>- How do I execute a program/applet which was compiled to include CinnaMoney</H2>
+<BR>Applet execution is documented in <A HREF="http://www.javasoft.com">Sun's documentation</A> for the Java Developer's Kit.  CinnaMoney is included in the same fashion that any other java class is.  As long as your CLASSPATH variable is set properly to include CinnaMoney, the CinnaMoney class should be found properly.
+<P><HR>
+<P><A NAME=convert></A><H2>- How do I convert another datatype to a CinnaMoney Class?</H2>
+<BR>Money can currently convert the following datatypes (int, long, float and String) to type CinnaMoney.  The constructor is used to convert, and the following
+lines of code demonstrate using each.
+<PRE>
+// Native datatypes
+String st = new String("12.3");
+long lv = 2334433;
+int iv = 123;
+float fv = 123.4;
+// Now convert
+CinnaMoney cm = new CinnaMoney(st);
+CinnaMoney cm2 = new CinnaMoney(lv);
+CinnaMoney cm3 = new CinnaMoney(iv);
+CinnaMoney cm4 = new CinnaMoney(fv);
+</PRE>
+<P><HR>
+<P><A NAME=setprecision></A><H2>- Set the precision of a CinnaMoney Class?</H2>
+<BR>Precision can be set in two ways, one way shifts the decimal (used internally)
+mainly, the other modifies the physical precision - truncating or adding zeros
+if necessary.
+<BR><BR>Shift decimal place to modify precision
+<BR>aCinnaMoney.setPrecision(4);
+<BR><BR>Change precision
+<BR>aCinnaMoney.changePrecision(4);
+<P><HR>
+<P><A NAME=print></A><H2>- Print a CinnaMoney Class as a String?</H2>
+<BR>This is a trivial operation, and will default to the internal precision
+of the Object being printed.
+<BR><BR>aCinnaMoney.toString();
+<P><HR>
+<P><A NAME=printprecision></A><H2>- Print a CinnaMoney class as a String using a specific printing precision?</H2>
+<BR>This is a trivial operation, and will use the integer value passed into 
+toString as the printing precision of the Object being printed.
+<BR><BR>aCinnaMoney.toString(2); // This sets precision to 2 decimal places
+<P>
+<HR>
+<A HREF=index.html BORDER=0><H2>Home Page<H2></A>
+
+</BODY>
+</HTML>

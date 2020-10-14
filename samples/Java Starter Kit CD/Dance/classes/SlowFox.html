@@ -1,0 +1,201 @@
+<html>
+<head>
+<a name="_top_"></a>
+<title>
+Class SlowFox
+</title>
+</head>
+<body>
+<a name="_top_"></a>
+<h1>
+Class SlowFox
+</h1>
+<pre>
+<a href="java.lang.Object.html#_top_">java.lang.Object</a>
+   |
+   +----<a href="Figur.html#_top_">Figur</a>
+           |
+           +----SlowFox
+</pre>
+<hr>
+<dl>
+<dt>
+class <b>
+SlowFox</b>
+<dt>
+extends <a href="Figur.html#_top_">Figur</a>
+</dl>
+Slowfoxtrott: Stores the information of the slowfoxtrott figures.<P>
+To initialize a spezial figur:
+<pre>
+  Figur figur = new SlowFox(app, figNum, tempo, audioURL);
+</pre>
+Whereat app the applet pointer is, figNum the number of the
+slowfoxtrott figur you want, tempo the speed of the sound defined
+by the audioURL.<p>
+To add a new figur:
+<ol>
+ <li>Add the name of the figur into FigNames_{eng,ger}.
+ <li>Add an initialization function (use initFeatherStep as template)
+ <li>Add your initialization function into the switch statement of
+    the constructor.
+</ol>
+If you don't have more than 4 figures, you don't have to change anything
+in class Dance. If you have more figures, you only have to add more space
+for the figur-buttons.
+<dl>
+<dt>
+<b>Version:</b>
+<dd>
+1.0f 25 Aug 1995
+<dt>
+<b>Author:</b>
+<dd>
+Georg He&szlig;mann</dl>
+<hr>
+<a name="index"></a>
+<h2>
+<img src="images/variable-index.gif" width=207 height=38 alt="Variable Index">
+</h2>
+<dl>
+<dt>
+<img src="images/blue-ball-small.gif" width=6 height=6 alt=" o ">
+<b>
+<a href="#FigNames_eng">FigNames_eng</a>
+</b>
+<dd>
+Array of the english names of all implemented figures.
+<dt>
+<img src="images/blue-ball-small.gif" width=6 height=6 alt=" o ">
+<b>
+<a href="#FigNames_ger">FigNames_ger</a>
+</b>
+<dd>
+Array of the german names of all implemented figures.
+<dt>
+<img src="images/blue-ball-small.gif" width=6 height=6 alt=" o ">
+<b>
+<a href="#Name_eng">Name_eng</a>
+</b>
+<dd>
+English name of this dance.
+<dt>
+<img src="images/blue-ball-small.gif" width=6 height=6 alt=" o ">
+<b>
+<a href="#Name_ger">Name_ger</a>
+</b>
+<dd>
+German name of this dance.
+</dl>
+<h2>
+<img src="images/constructor-index.gif" width=275 height=38 alt="Constructor Index">
+</h2>
+<dl>
+<dt>
+<img src="images/yellow-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#SlowFox(Dance, int, int, java.net.URL)"><b>SlowFox</b></a>(Dance, int, int, URL)
+<dd>
+Initialze a dance and select a special figur out of this dance.
+</dl>
+<a name="variables"></a>
+<h2>
+<img src="images/variables.gif" width=153 height=38 alt="Variables">
+</h2>
+<a name="Name_eng">
+<img src="images/blue-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<b>
+Name_eng
+</b>
+<pre>
+  public final static <a href="java.lang.String.html#_top_">String</a> Name_eng
+</pre>
+<dl>
+<dd>
+English name of this dance.
+</dl>
+<a name="Name_ger">
+<img src="images/blue-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<b>
+Name_ger
+</b>
+<pre>
+  public final static <a href="java.lang.String.html#_top_">String</a> Name_ger
+</pre>
+<dl>
+<dd>
+German name of this dance.
+</dl>
+<a name="FigNames_eng">
+<img src="images/blue-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<b>
+FigNames_eng
+</b>
+<pre>
+  public final static <a href="java.lang.String.html#_top_">String</a> FigNames_eng[]
+</pre>
+<dl>
+<dd>
+Array of the english names of all implemented figures.
+</dl>
+<a name="FigNames_ger">
+<img src="images/blue-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<b>
+FigNames_ger
+</b>
+<pre>
+  public final static <a href="java.lang.String.html#_top_">String</a> FigNames_ger[]
+</pre>
+<dl>
+<dd>
+Array of the german names of all implemented figures.
+</dl>
+<a name="constructors"></a>
+<h2>
+<img src="images/constructors.gif" width=231 height=38 alt="Constructors">
+</h2>
+<a name="SlowFox"></a>
+<a name="SlowFox(Dance, int, int, java.net.URL)">
+<img src="images/yellow-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<b>
+SlowFox
+</b>
+<pre>
+  public SlowFox(<a href="Dance.html#_top_">Dance</a> app,
+                 int danceNum,
+                 int temp,
+                 <a href="java.net.URL.html#_top_">URL</a> audioURL)
+</pre>
+<dl>
+<dd>
+Initialze a dance and select a special figur out of this dance.
+<dl>
+<dt>
+<b>Parameters:</b>
+<dd>
+app
+-
+ pointer to the dance applet.
+<dd>
+danceNum
+-
+ number of the choosen figur. The number is defined
+       relative to the names in the FigNames_* array.
+<dd>
+tempo
+-
+ of the given audio file
+<dd>
+audioURL
+-
+ URL description of the given audio file.
+       Might be null if "no music" is selected.
+</dl>
+</dl>
+<p>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!-- LED display -->
+<!-- (c) 1996, Benny Gunawan -->
+<!-- July 7, 1996 -->
+
+<HTML>
+<HEAD>
+<TITLE>Scrolling LED Display Applet</TITLE>
+</HEAD>
+<BODY background="/~hamid/benny/back1.gif" text="#d0d0d0" vlink="20a030"
+link="ffc000">
+<center><img src="/~hamid/benny/led.gif" alt="LED display Applet"><br>
+<font color=00ff00>version 1.01<br></font>
+&copy; 1996, Benny Gunawan<br><br>
+Visited
+<font color=00ff00><b>217</b></font> times since June 28, 1996.<br>
+</center>
+<br>
+<p>LED display applet was based on my senior project when I was in the
+<a href="http://www.utexas.edu">University of Texas</a>.  My senior
+project was to build a micro-controller
+based LED display.  The display can show at least 12 characters at a time
+and can hold up to 64 characters in total. Since Java has become a
+very hot language, I decided to transform my old project to a new and
+interactive applet</p>
+<p>LED display applet can show up to 16 characters at a time and can hold
+data up to 20 messages.  The user can also configure the scrolling
+directions for the messages and colors for each messages. Interested? Want to
+<a href="#install">install</a> this applet into your page? Like to 
+see <a href="/cgi-bin/cgiwrap/~hamid/guestbook.html">what people
+think</a> about this applet?<br></p>
+
+<a name=parameter>
+<p><font size=+2 color=00ff00>Parameters</font></p>
+<p>There are three parameters available for this applet.
+<dl><dt><font color=00ff00>messages</font><dt>
+<dd>This applet can hold up to 20 messages.<br>  <font
+color=00ff00><b>;</b></font> character is used to separate each
+messages.<br>
+<font color=ffff00>&#60;param name="messages" value="Welcome
+to;Benny's
+World"&#62;</font></dd>
+<p><dt><font color=00ff00>msgcolor</font></dt>
+<dd>This patameter is used to control the color of the messages. Total
+number of msgcolor has to be equal to the total number of the
+messages.<br>
+The syntax:<br>
+<font color=ffff00>&#60;param name="msgcolor"
+value="(<font
+color=ff0000>red</font>,<font 
+color=00ff00>green</font>,<font
+color=0000ff>blue</font>),(<font
+color=ff0000>red</font>,<font
+color=00ff00>green</font>,<font
+color=0000ff>blue</font>)"&#62;</font><br>
+Where the value of <font color=ff0000>red</font>, <font
+color=00ff00>green</font>, <font color=0000ff>green</font> is between 
+0 to 255.</dd>
+<p><dt><font color=00ff00>control</font></dt>
+<dd>This parameter is used to control the direction of the scrolling
+messages.  Each message can be controlled twice.<br>
+Follow this syntax:<br>
+<font color=ffff00>&#60;param name="control" value="0,1,2,0,3,4"&#62;
+</font><br><br>
+The controls are:<br>
+0: New message<br>
+1: Scroll the messages from right to left<br>
+2: Clear the display by entering space from the right<br>
+3: Scroll the messages from left to right<br>
+4: Clear the display by entering space from the left<br>
+5: Divide the display into two parts and each part will scroll to
+opposite direction<br>
+6: Clear the display by entering space from the bottom<br>
+7: Clear the display by entering space from the top<br>
+8: Scroll the messages upward<br>
+9: Scroll the messages downward<br><br>
+<font color=00ff00><b>Note</b></font>: Always put 0 for new messages.
+</dd>
+</dl>
+<br>
+<a name=install>
+<font size=+2 color=00ff00>Installation</font>
+<p>To install the LED applet, follow this instructions:
+<ol><li>Download the <a href="/~hamid/benny/displayform.html">LED applet</a>
+now.
+<li>Put the class file into your homepage directory and change its
+permission to world readable<br>
+<font color=ffff00>For instance, in Unix, the command is: chmod 644
+gambar.class</font><br>
+<li>Type in the following tag into your page file<br>
+<font color=ffff00>&#60;applet code = "gambar.class" width=408 height=44&#62;</font><br>
+<li>Type in the <a href=#parameter>parameters</a>.<br>
+<font color=ffff00>&#60;param name="messages" value="Enter your desired
+messages here"&#62;<br>
+&#60;param name="msgcolor" value="Enter your desired messages' colors
+here"&#62;<br>
+&#60;param name="control" value="Enter your desired messages' controls
+here"&#62;<br></font>
+<li>Finally, you need the closing tag<br>
+<font color=ffff00>&#60;/applet&#62;</font><br>
+</ol>
+
+<p><font size=+2 color=00ff00>Special Feature</font></p>
+<p>As a reference, when you click your mouse anywhere in the applet, you
+will go to this homepage.</p>
+<p>See the <a href="/~hamid/benny/ledsample.html">sample</a> page.<br> 
+Please <a href="/~hamid/benny/form.html">sign</a> your name in my
+guestbook.<br> Thank you</p>
+<br>
+<br>
+<center>
+<a href="/cgi-bin/imagemap/~hamid/menu2.map"><img
+src="/~hamid/benny/menu2.gif" ismap
+border=0></a><br>
+[ <a href="/~hamid/benny/intro.html">Home</a> | <a
+href="/~hamid/benny/about.html">About</a> | <a
+href="/~hamid/benny/benny.html">Profile</a> | <a
+href="/~hamid/benny/resume.html">Resume</a> | <a
+href="/cgi-bin/cgiwrap/~hamid/guestbook.html">Guestbook</a> | <a
+href="/~hamid/benny/applet.html">Applet</a> | <a
+href="/cgi-bin/cgiwrap/~hamid/links.html">Links</a> ]
+</center>
+<hr>
+<img src="/~hamid/benny/smallogo.gif" align=right>
+<address>
+Last Updated: July 21, 1996<br>
+&copy; Copyright 1996, <a href= "mailto:gunawan@mail.utexas.edu">Benny Gunawan</a>
+</address>
+</BODY>
+</HTML>

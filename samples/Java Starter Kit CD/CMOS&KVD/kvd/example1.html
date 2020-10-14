@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>KV diagram demonstration - example 1</title>
+</head>
+<body>
+
+
+
+
+<body>
+<p>
+<h1>Java KV diagram demonstration - example 1</h1>
+<hr>
+
+
+<h2>Before minimization</h2>
+
+The following image shows the initial KV diagram and
+the corresponding minterm circuit realization of a selected
+boolean function:
+
+<p>
+<h3>KV diagram before minimization:</h3>
+<img src="f1.gif">
+<p>
+<h3>Initial circuit realization:</h3>
+<img src="f1pla.gif">
+
+<hr>
+<h2>After minimization</h2>
+
+The idea of logic minimization is to find a cheap realization
+for a given logic function.
+With KV diagrams, one searches and marks loops in the diagram.
+Each loop corresponds to a new term that covers some minterms 
+of the function. 
+Note how the resulting PLA is much cheaper than the initial
+minterm realization!
+
+<p>
+<h3>KV diagram with loops:</h3>
+<img src="f1opt.gif">
+<p>
+<h3>Corresponding optimized circuit:</h3>
+<img src="f1optpla.gif">
+
+<hr>
+
+All comments, hints and bug reports are welcome: Please contact
+<a href="mailto:hendrich@informatik.uni-hamburg.de">hendrich@informatik.uni-hamburg.de</a>.
+</body>
+</html>

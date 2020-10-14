@@ -1,0 +1,120 @@
+<HTML>
+
+<HEAD>
+<LINK rev=made href="mailto:hessmann@informatik.uni-hamburg.de">
+<TITLE>Java-Dance README</TITLE>
+</HEAD>
+
+<BODY>
+
+<center><H1>
+<A HREF="http://tech-www.informatik.uni-hamburg.de/dance/dance.html"><IMG SRC="http://tech-www.informatik.uni-hamburg.de/dance/icons/dance-tiny.gif" ALT="Tanz-Piktogramm" border=1 align=middle></A> +
+<img src="http://tech-www.informatik.uni-hamburg.de/Icons/cupHotjava.gif" align=middle> = Java-Dance
+</h1></center>
+
+<p>
+<hr>
+<p>
+
+<h2>Welcome to Java-Dance!</h2>
+
+<ul>
+<li><a href="#intro">Introduction</a>
+<li><a href="#feature">Special features</a>
+<li><a href="#source">The source</a>
+<li><a href="#thanks">Thanks to...</a>
+</ul>
+
+<p>
+<HR>
+<p>
+<a name="intro"><h3>Introduction:</h3></a>
+Long time ago, you have had a dancing course, but because of no practice
+you have forgotten most of the dancing steps?
+<p>
+No problem, if you have an Internet connection and a
+<a href="http://java.sun.com">Java</a> capable browser like 
+<a href="http://java.sun.com">HotJava</a> or
+<a href="http://home.netscape.com">Netscape 2.0</a>.
+<p>
+Load the
+<a href="http://tech-www.informatik.uni-hamburg.de/dance/JDance-e.html">Dance-Applet</a>
+and look at the animation of (currently) nine figures of four different ballroom
+dances. With the single-step feature and the possibility to view the
+figures synchron to nice dance music you should have no problems to refresh
+your dancing skills.
+<p>
+<HR>
+<p>
+<a name="feature"><h3>Special Features:</h3></a>
+Here a short list of the special features of the Dance-Applet:
+<ul>
+<li>Two different languages built-in (german and english).
+<li>Animation of different dance figures synchron to the music.
+<li>Forward-backward stepping through the figures.
+<li>Online help.
+<li>Quick play-test of the different music titles.
+<li>Additional information about every dance (only in german).
+</ul>
+And some special Java-features which are used:
+<ul>
+<li>Use of three concurrent threads to do the animation.
+<li>No flickering through the use of Applet.update and Graphics.clipRect.
+<li>Use of normal WWW-pages for online help.
+<li>Use of derived classes and virtual functions for easy and clean programming.
+</ul>
+
+<p>
+<HR>
+<p>
+<a name="source"><h3>The Source:</h3></a>
+
+<strong>Java-Dance</strong> consists out of the eight source files with about
+3800 lines of code:
+<dl><dd>
+<dl>
+ <dt><strong><a href="http://tech-www.informatik.uni-hamburg.de/dance/classes/Dance.java">Dance.java</a></strong>
+ <dd>This file implements the main applet <a href="http://tech-www.informatik.uni-hamburg.de/dance/classes/Dance.html">class Dance</a>.
+ <dt><strong><a href="http://tech-www.informatik.uni-hamburg.de/dance/classes/Figur.java">Figur.java</a></strong>
+ <dd>In this file the <a href="http://tech-www.informatik.uni-hamburg.de/dance/classes/Figur.html">class Figur</a> and
+     the derived classes <a href="http://tech-www.informatik.uni-hamburg.de/dance/classes/SlowWaltz.html">class SlowWaltz</a>,
+     <a href="http://tech-www.informatik.uni-hamburg.de/dance/classes/Tango.html">class Tango</a>,
+     <a href="http://tech-www.informatik.uni-hamburg.de/dance/classes/SlowFox.html">class SlowFox</a> and
+     <a href="http://tech-www.informatik.uni-hamburg.de/dance/classes/Quickstep.html">class Quickstep</a> are defined.
+     These classes define how to dance, and what figures exist to dance.
+ <dt><strong><a href="http://tech-www.informatik.uni-hamburg.de/dance/classes/Floor.java">Floor.java</a></strong>
+ <dd>Here the <a href="http://tech-www.informatik.uni-hamburg.de/dance/classes/Floor.html">class Floor</a>
+     is defined, which draws the dance floor.
+ <dt><strong><a href="http://tech-www.informatik.uni-hamburg.de/dance/classes/Foot.java">Foot.java</a></strong>
+ <dd>The <a href="http://tech-www.informatik.uni-hamburg.de/dance/classes/Foot.html">class Foot</a> implements
+     the loading and drawing of the feets.
+ <dt><strong><a href="http://tech-www.informatik.uni-hamburg.de/dance/classes/Step.java">Step.java</a></strong>
+ <dd>All information about one step is stored in
+     <a href="http://tech-www.informatik.uni-hamburg.de/dance/classes/Step.html">class Step</a>.
+ <dt><strong><a href="http://tech-www.informatik.uni-hamburg.de/dance/classes/Sound.java">Sound.java</a></strong>
+ <dd>The <a href="http://tech-www.informatik.uni-hamburg.de/dance/classes/Sound.html">class Sound</a> is responsible
+     for playing the sound and displaying the time information.
+ <dt><strong><a href="http://tech-www.informatik.uni-hamburg.de/dance/classes/Button.java">Button.java</a></strong>
+ <dd>This file defines the classes 
+     <a href="http://tech-www.informatik.uni-hamburg.de/dance/classes/Button.html">class Button</a>,
+     <a href="http://tech-www.informatik.uni-hamburg.de/dance/classes/ToggleButton.html">class ToggleButton</a> and
+     <a href="http://tech-www.informatik.uni-hamburg.de/dance/classes/MEXButton.html">class MEXButton</a>.
+ <dt><strong><a href="http://tech-www.informatik.uni-hamburg.de/dance/classes/MEXButtonList.java">MEXButtonList.java</a></strong>
+ <dd>The <a href="http://tech-www.informatik.uni-hamburg.de/dance/classes/MEXButtonList.html">class MEXButtonList</a> defined in
+     this file implements a list head for the mutual exclusive button groups.
+</dl>
+</dl>
+<hr>
+<p>
+<a name="thanks"><h3>Thanks to ...</h3></a>
+<ul>
+<li>Norman Hendrich for introducing HotJava at our department.
+<li>Wolfgang Bartsch for beta-testing and reading.
+</ul>
+<hr>
+<I>(last change 11. Oct 95) </I>
+<ADDRESS><A HREF="http://tech-www.informatik.uni-hamburg.de/Personal/hessmann/">
+Georg He&szlig;mann</A> (hessmann@informatik.uni-hamburg.de)</ADDRESS>
+
+</BODY>
+</HTML>

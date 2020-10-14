@@ -1,0 +1,386 @@
+<html>
+<head>
+<a name="_top_"></a>
+<title>
+Class Sound
+</title>
+</head>
+<body>
+<a name="_top_"></a>
+<h1>
+Class Sound
+</h1>
+<pre>
+<a href="java.lang.Object.html#_top_">java.lang.Object</a>
+   |
+   +----Sound
+</pre>
+<hr>
+<dl>
+<dt>
+class <b>
+Sound</b>
+<dt>
+extends <a href="java.lang.Object.html#_top_">Object</a>
+<dt>
+implements <a href="java.lang.Runnable.html#_top_">Runnable</a>, <a href="java.awt.image.ImageObserver.html#_top_">ImageObserver</a>
+</dl>
+Sound implements the thread, which is playing the sound and
+updating the takt (time) numbers. It also calls every time
+step java.applet.Applet.repaint().
+<dl>
+<dt>
+<b>See Also:</b>
+<dd>
+<a href="Dance.html#_top_">Dance</a><dt>
+<b>Version:</b>
+<dd>
+1.1  13 Sep 1995
+<dt>
+<b>Author:</b>
+<dd>
+Georg He&szlig;mann</dl>
+<hr>
+<a name="index"></a>
+<h2>
+<img src="images/variable-index.gif" width=207 height=38 alt="Variable Index">
+</h2>
+<dl>
+<dt>
+<img src="images/magenta-ball-small.gif" width=6 height=6 alt=" o ">
+<b>
+<a href="#numMaxH">numMaxH</a>
+</b>
+<dd>
+Maximal size().height of the takt numbers.
+<dt>
+<img src="images/magenta-ball-small.gif" width=6 height=6 alt=" o ">
+<b>
+<a href="#numMaxW">numMaxW</a>
+</b>
+<dd>
+Maximal size().width of the takt numbers.
+</dl>
+<h2>
+<img src="images/constructor-index.gif" width=275 height=38 alt="Constructor Index">
+</h2>
+<dl>
+<dt>
+<img src="images/yellow-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#Sound(java.net.URL, Dance)"><b>Sound</b></a>(URL, Dance)
+<dd>
+Creates the sound object.
+</dl>
+<h2>
+<img src="images/method-index.gif" width=207 height=38 alt="Method Index">
+</h2>
+<dl>
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#GetNumImg()"><b>GetNumImg</b></a>()
+<dd>
+Get the number image suitable to the Counter value
+and the number of beats for one takt of the current dance.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#KillSound()"><b>KillSound</b></a>()
+<dd>
+Delete the sound thread.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#SetCounter(int)"><b>SetCounter</b></a>(int)
+<dd>
+Set the takt/time counter to c.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#SoundAlive()"><b>SoundAlive</b></a>()
+<dd>
+Test if the sound thread is still alive.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#StartSound()"><b>StartSound</b></a>()
+<dd>
+Start the sound thread.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#StopSound()"><b>StopSound</b></a>()
+<dd>
+Stop the Sound thread.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#getLastNumImg()"><b>getLastNumImg</b></a>()
+<dd>
+Returns the last drawn image.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#imageUpdate(java.awt.Image, int, int, int, int, int)"><b>imageUpdate</b></a>(Image, int, int, int, int, int)
+<dd>
+Manages infos about the number-images.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#run()"><b>run</b></a>()
+<dd>
+Main function of the sound thread.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#setLastNumImg(java.awt.Image)"><b>setLastNumImg</b></a>(Image)
+<dd>
+Set last painted number.
+</dl>
+<a name="variables"></a>
+<h2>
+<img src="images/variables.gif" width=153 height=38 alt="Variables">
+</h2>
+<a name="numMaxW">
+<img src="images/magenta-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<b>
+numMaxW
+</b>
+<pre>
+  public int numMaxW
+</pre>
+<dl>
+<dd>
+Maximal size().width of the takt numbers.
+</dl>
+<a name="numMaxH">
+<img src="images/magenta-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<b>
+numMaxH
+</b>
+<pre>
+  public int numMaxH
+</pre>
+<dl>
+<dd>
+Maximal size().height of the takt numbers.
+</dl>
+<a name="constructors"></a>
+<h2>
+<img src="images/constructors.gif" width=231 height=38 alt="Constructors">
+</h2>
+<a name="Sound"></a>
+<a name="Sound(java.net.URL, Dance)">
+<img src="images/yellow-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<b>
+Sound
+</b>
+<pre>
+  public Sound(<a href="java.net.URL.html#_top_">URL</a> audioURL,
+               <a href="Dance.html#_top_">Dance</a> app)
+</pre>
+<dl>
+<dd>
+Creates the sound object.
+If Dance.useAudio() is set, it preloads the audio data defined
+by the URL.
+<dl>
+<dt>
+<b>Parameters:</b>
+<dd>
+audioURL
+-
+ pointer to the audio data
+<dd>
+app
+-
+ pointer to the main applet.
+</dl>
+</dl>
+<p>
+<a name="methods"></a>
+<h2>
+<img src="images/methods.gif" width=151 height=38 alt="Methods">
+</h2>
+<a name="StartSound()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="StartSound">
+<b>
+StartSound
+</b>
+</a>
+<pre>
+  public synchronized void StartSound()
+</pre>
+<dl>
+<dd>
+Start the sound thread.
+</dl>
+<p>
+<a name="KillSound()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="KillSound">
+<b>
+KillSound
+</b>
+</a>
+<pre>
+  public synchronized void KillSound()
+</pre>
+<dl>
+<dd>
+Delete the sound thread.
+</dl>
+<p>
+<a name="StopSound()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="StopSound">
+<b>
+StopSound
+</b>
+</a>
+<pre>
+  public void StopSound()
+</pre>
+<dl>
+<dd>
+Stop the Sound thread.
+</dl>
+<p>
+<a name="SoundAlive()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="SoundAlive">
+<b>
+SoundAlive
+</b>
+</a>
+<pre>
+  public boolean SoundAlive()
+</pre>
+<dl>
+<dd>
+Test if the sound thread is still alive.
+</dl>
+<p>
+<a name="run()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="run">
+<b>
+run
+</b>
+</a>
+<pre>
+  public void run()
+</pre>
+<dl>
+<dd>
+Main function of the sound thread.
+Sleeps one timestep, update the takt counter and does a repaint.
+Runs until StopSound() or KillSound() is called.
+</dl>
+<p>
+<a name="SetCounter(int)">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="SetCounter">
+<b>
+SetCounter
+</b>
+</a>
+<pre>
+  public void SetCounter(int c)
+</pre>
+<dl>
+<dd>
+Set the takt/time counter to c.
+Needed for the single step mode.
+</dl>
+<p>
+<a name="GetNumImg()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="GetNumImg">
+<b>
+GetNumImg
+</b>
+</a>
+<pre>
+  public <a href="java.awt.Image.html#_top_">Image</a> GetNumImg()
+</pre>
+<dl>
+<dd>
+Get the number image suitable to the Counter value
+and the number of beats for one takt of the current dance.
+</dl>
+<p>
+<a name="setLastNumImg(java.awt.Image)">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="setLastNumImg">
+<b>
+setLastNumImg
+</b>
+</a>
+<pre>
+  public void setLastNumImg(<a href="java.awt.Image.html#_top_">Image</a> img)
+</pre>
+<dl>
+<dd>
+Set last painted number.
+<dl>
+<dt>
+<b>See Also:</b>
+<dd>
+<a href="Figur.html#drawNum">drawNum</a>
+</dl>
+</dl>
+<p>
+<a name="getLastNumImg()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="getLastNumImg">
+<b>
+getLastNumImg
+</b>
+</a>
+<pre>
+  public <a href="java.awt.Image.html#_top_">Image</a> getLastNumImg()
+</pre>
+<dl>
+<dd>
+Returns the last drawn image.
+<dl>
+<dt>
+<b>See Also:</b>
+<dd>
+<a href="Figur.html#drawNum">drawNum</a>
+</dl>
+</dl>
+<p>
+<a name="imageUpdate(java.awt.Image, int, int, int, int, int)">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="imageUpdate">
+<b>
+imageUpdate
+</b>
+</a>
+<pre>
+  public boolean imageUpdate(<a href="java.awt.Image.html#_top_">Image</a> img,
+                             int infoflags,
+                             int x,
+                             int y,
+                             int width,
+                             int height)
+</pre>
+<dl>
+<dd>
+Manages infos about the number-images.
+<dl>
+<dt>
+<b>See Also:</b>
+<dd>
+<a href="java.awt.image.ImageObserver.html#imageUpdate">imageUpdate</a>
+</dl>
+</dl>
+<p>
+</body>
+</html>

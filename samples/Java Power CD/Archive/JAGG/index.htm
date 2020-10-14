@@ -1,0 +1,90 @@
+<HTML>
+
+<HEAD>
+
+<TITLE>Jagg from BulletProof: Installing</TITLE>
+
+</HEAD>
+
+<BODY BGCOLOR="#000000" TEXT="#FFFFCC" LINK="#FFFF00" VLINK="#FF00FF" ALINK="#0077FF"><CENTER>
+<IMG SRC="images/jagghead.jpg" ALIGN="TOP" ALT="BulletProof Jagg: Installing" BORDER=0>
+<P>
+<IMG SRC="images/hr1.GIF" ALIGN="TOP" BORDER=0>
+</CENTER>
+
+<P>
+<H2>Installing Jagg 1.0</H2>
+
+<UL>
+<LI><B><A HREF="http://www.bulletproof.com/JDesignerPro/">Before you install JAGG</A></B>
+	Check out our website to find out about <B>JDesignerPro</B>. JDesignerPro is the first 4GL for Java 		client/server development. Why go to the trouble of developing Java client applications when we've got 		a 4GL that will do it for you with just a few mouse clicks?  With JDesignerPro you can build any Java based transaction system for the Internet or your corporate Intranet.  Try our dynamic online demo that allows you to build your own interface to our sample database right on the web.
+<P>
+<LI><B><A HREF="Jagg.htm">Jagg Class and Documentation</A></B>
+	<BR>When you use the 1.0 Jagg class, ensure the file <I>Jagg.class</I>
+	is in your java source directory.
+	<BR>Copy \Jagg\Jagg.htm into your Java documentation directory on your web server, else
+	you can view the document by reading it into your browser.  Note that links to java.* classes
+	are relative, anticipating a local set of documentation.  We include the images
+	necessary under \Jagg\images\, so they should load correctly on your local system.
+<P>
+<LI><B>Jagg Server</B>
+	<BR>The Jagg Server, JaggDemo.exe, must be setup in your web server's cgi-bin directory, or
+	the equivalent.  This is all the setup that is needed.  All accesses to the Jagg server will
+	be initiated through the Jagg class, which takes care of all the complexity of sending
+	your queries and reading the results.
+<P>
+<LI><B>ODBC Data Sources</B>
+	<BR>If your ODBC Data Sources are already setup, then you can begin using them right away
+	with Jagg.
+	<BR>If you do not yet have Data Sources, you can install the included ODBC package and
+	setup an example Data Source for the JaggDemo, discussed below.
+<P>
+<LI><B><A HREF="http://www.bulletproof.com/Jagg/Demo/">Jagg Demo on BulletProof's Site</A></B>
+<LI><B><A HREF="Demo/index.htm">Jagg Demo on this local site (if already recompiled)</A></B>
+	<UL>
+	<LI>Source
+		<BR>Edit the source JaggDemo.java and enter the path name to JaggDemo.exe on your server.
+	<LI>Comiling
+		<BR>You can recompile and change the demo to get a feel for the simplicity and power
+		of Jagg.
+		<BR>For example: <I>javac Jagg\Demo\JaggDemo.java</I>
+	<LI>CLASSPATH
+		<BR>Ensure that Jagg.java is in the same directory as the java source, and that your
+		CLASSPATH variable includes <B>.</B> (dot).
+		<BR>For example: <I>set CLASSPATH=<B>.</B>;c\java\lib\classes.zip</I>
+	<LI>Running
+		<BR>The simplest way to run the demo is with the appletviewer.
+		<BR>For example: <I>appletviewer Jagg\Demo\index.htm</I>
+	<LI>Setting up a demo ODBC Data Source
+		<UL>
+		<LI>The JaggDemo uses a simple DBF as an example, you must add this as
+		a Data Source named <I>Jagg Demo 1</I>.
+		<LI>Setup the included ODBC package according to the instructions in that package.
+		<LI>Run Odbcad32.  Select <B>Add</B> and pick a driver for the demo database.  Select <B>OK</B>.
+		<LI>Select <B>Setup...</B>.  Enter <I>Jagg Demo 1</I> as the <I>Data Source Name</I>.
+		<LI>Use <B>Select Directory...</B> to point to Jagg\Demo\.
+		<LI>Use <B>Select Indexes...</B> to choose JAGGDEMO.CDX.
+		<LI>Select <B>OK</B> to close the Setup window, and selct <B>Close</B> to finish the session.
+		<LI>Your demo Data Source should be ready.
+		</UL>
+	</UL>
+<P>
+<LI><B><A HREF="http://www.bulletproof.com/JAGG/">Need the latest JAGG update?</A></B>
+	You can obtain the latest version of JAGG from our web site.
+<P>
+<LI><B><A HREF="http://www.bulletproof.com/Db/Kb/Submit.htm">Having Problems with Jagg?</A></B>
+	If you are experiencing problems with Jagg, or have suggestions for improvements 
+	then submit a report to us. We will try to address your comments as quickly as possible.
+	We look forward to your input.
+</UL>
+
+<CENTER>
+<P>
+<IMG SRC="images/hr1.GIF">
+
+<P>
+</CENTER>
+
+</BODY>
+
+</HTML>

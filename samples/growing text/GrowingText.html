@@ -1,0 +1,73 @@
+<html> <head>
+  <title>Java Growing Text Effect</title>
+</head>
+
+<body>
+<center>
+<h1>Java Growing Text Effect</h1>
+<small>as featured in <em>Teach Yourself JavaScript in a week</em> by Sams.net Publishing</small>
+<hr>
+
+<applet code="GrowingText.class" width=400 height=90>
+  <param name=text value="Jamie's Growing Text">
+  <param name=delay value="500">
+  <param name=fgColor value="random">
+  <param name=bgColor value="000000">
+  <param name=fontItalic value="true">
+  Sorry, you cannot see this applet.  Your browser does not support Java!
+</applet>
+
+<p>
+
+<applet code="GrowingText.class" width=500 height=90>
+  <param name=text value="Jamie's Growing Text">
+  <param name=delay value="700">
+  <param name=fontName value="Courier">
+  <param name=fgColor value="random">
+  <param name=bgColor value="ffffff">
+  <param name=blur value="true">
+  Sorry, you cannot see this applet.  Your browser does not support Java!
+</applet>
+
+<hr>
+
+v1.0 - 01/96 - Original<br>
+v1.1 - 03/96 - Added blur parameter<br>
+v1.2 - 04/96 - Added key control of delay factor<p>
+  
+Jamie M. Hall<br>
+<address>
+<a href="mailto:jamihall@mhv.net">jamihall@mhv.net</a><br>
+<a href="http://www.mhv.net/~jamihall">http://www.mhv.net/~jamihall</a><p>
+</address>
+
+Takes text, delay, fontName, fontBold, fontItalic, bgColor,
+fgColor, and blur as parameters.  The defaults are:<br>
+
+</center>
+
+<pre>
+      text        -   String displayed in applet      -  Growing Text
+      delay       -   Milliseconds between updates    -  500 
+      fontName    -   Font style                      -  TimesRoman
+      fontBold    -   Font boldness                   -  true
+      fontItalic  -   Font italics                    -  false
+      bgColor     -   Background color (hex. number)  -  light Gray
+      fgColor     -   Foreground color (hex. number)  -  black 
+      blur        -   Blurring effect                 -  false
+</pre>
+
+<center>
+
+  'random' can be used as the background or foreground color to
+  generate a random color on each update.  Pressing a mouse button
+  anywhere in the applet will suspend/resume it.  Pressing the UP 
+  arrow or 'u' keys anywhere in the applet will increase the delay, 
+  while the DOWN arrow or 'd' keys will decrease the delay.
+
+
+<p>Download the <a href="GrowingText.class">Compiled program</a>,
+or view <a href="GrowingText.java">the source.</a>
+
+</center>
+</body> </html>

@@ -1,0 +1,49 @@
+<!-- cback.htm : HTML code and document contents copyright 1996 MEDSAMERICA, Inc. -->
+<!-- EDITS: -->
+<!-- BTS: 02-MAY-96 created -->
+
+<HTML>
+
+<HEAD >
+<TITLE>Clickable Image with Help Balloons</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<H1>Image Map with Pop-Up Help Balloons</H1>
+<APPLET CODEBASE=/applets CODE="ClickableImageApplet.class" WIDTH=562 HEIGHT=301>
+<PARAM NAME="image" VALUE="cscript.gif">
+<PARAM NAME="values" VALUE="5">
+<PARAM NAME="hot_1" VALUE="8,120,545,34,drugedt.shtml,Each of this patient's current prescriptions is listed here.  You can immediately print a prescription from this screen, or edit the prescription to change or view its detailed information.  Press your mouse button to go the prescription screen!">
+<PARAM NAME="hot_2" VALUE="12,22,213,42,patedt.shtml,The patient's demographic information appears at the top of the screen for quick reference.  More detailed information is available in the patient's demographic record.  Click your mouse to edit patient data.">
+<PARAM NAME="hot_3" VALUE="13,72,317,13,pharmedt.shtml,The name and phone number of this patient's pharmacy are listed to expedite communication with the pharmacy, while still viewing the current medications.  More detailed pharmacy information is available in the pharmacy record.  Press your mouse button to view the pharmacy screen.">
+<PARAM NAME="hot_4" VALUE="330,13,166,57, ,Patients' allergies are prominently displayed to prevent the prescription of drugs that will cause an allergic reaction.">
+<PARAM NAME="hot_5" VALUE="4,275,556,11, ,All MEDSAMERICA software shows every single-key command in a help bar for easy reference.  In addition, there is comprehensive, contextual, on-line help, as well as printed manuals.">
+<img src="cscript.gif"  align=top border=3 alt="C-Script Demonstration Screen"></center>
+</APPLET>
+<FONT SIZE=3>
+<BR>
+[ Users with Java-enabled browsers may point to items in the C-script screen for more information! ]
+</CENTER>
+</FONT>
+<HR>
+Shown above is an example usage of my ClickableImage class.  ClickableImage 
+allows you to specify a GIF to display and designate rectangles on the image
+that are 'hot'.  When the users's mouse passes over the hot rectangle, its
+help message is displayed in a pop-up balloon.  If the user clicks their mouse
+while in a hot rectangle, the browser will display a specified URL in the
+browser's current frame.  
+<BR><BR>
+ClickableImageApplet uses  my ClickableImage class. ClickableImage
+may appear in an application or an applet, but the URL link
+is disabled in an application (for obvious reasons).  While the ClickableImage is managed by
+a layout manager, its help balloons aren't.  The help balloons are positioned
+absolutely within the image, so that they may pop-up exactly in the position
+that the mouse was in when it entered the hot rectangle.
+<BR><BR>
+<A Href="CIA1_0_2eval.zip">Download eval class and documentation</a>
+<BR>
+
+<A HREF="http://www.gamelan.com">
+<IMG ALIGN=RIGHT SRC="http://www.gamelan.com/stickers/coolbutton.gif"></a>
+<A HREF="http://www.medsamerica.com/users/brian/java/index.html">
+Return to Brian's Java Applets
+</a>

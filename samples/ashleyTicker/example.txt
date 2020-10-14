@@ -1,0 +1,68 @@
+<html>
+<head>
+<title>Ashleyticker.java</title>
+</head>
+<body bgcolor="000000" text="ffffff" link="#eeee00" vlink="#009999">
+<center><h1>Ashleyticker.java</h1>
+<hr>
+
+<applet codebase=classes code="Ashleyticker.class" width=220 height=31>
+<param name=typeface value="Courier">
+<param name=mouseup value="That's much better">
+<param name=mousedown value="Get your hand off me">
+<param name=mouseleft value="Hey, I haven't finished yet!">
+<param name=mouseright value="What's the matter?">
+<param name=mouseoutb value="Please">
+<param name=fontsize value=14>
+<param name=image value="images/panel2.gif">
+<param name=imborder value="images/panelb.gif">
+<param name=style value=0>
+<param name=sensitive value=10>
+<param name=step value=6>
+<param name=offset value=1>
+<param name=text value=255,255,0>
+<param name=shadow value=200,100,20>
+<param name=backgd value=0,0,0>
+<param name=count value=3>
+<param name=repeat value=3>
+<param name=message0 value="Thank you for visiting the Java Boutique.">
+<param name=message1 value="We hope you enjoyed your stay.">
+<param name=message2 value="Come again soon!">
+</applet>
+<hr>
+</center>
+
+<b>Usage:</b>  Place these <a href="classes" target="_top"><b>class files</b></a> (and these <a href="images/" target="_top"><b>image files</a></b>) within your HTML directory.
+<p>
+
+<b>Java Source:  </b>Unavailable<b><p>
+HTML Source:
+<pre>&lt;applet codebase=classes code="Ashleyticker.class" width=220 height=31&gt;
+&lt;param name=typeface value="Courier"&gt;
+&lt;param name=mouseup value="That's much better"&gt;
+&lt;param name=mousedown value="Get your hand off me"&gt;
+&lt;param name=mouseleft value="Hey, I haven't finished yet!"&gt;
+&lt;param name=mouseright value="What's the matter?"&gt;
+&lt;param name=mouseoutb value="Please"&gt;
+&lt;param name=fontsize value=14&gt;
+&lt;param name=image value="images/panel2.gif"&gt;
+&lt;param name=imborder value="images/panelb.gif"&gt;
+&lt;param name=style value=0&gt;
+&lt;param name=sensitive value=10&gt;
+&lt;param name=step value=6&gt;
+&lt;param name=offset value=1&gt;
+&lt;param name=text value=255,255,0&gt;
+&lt;param name=shadow value=200,100,20&gt;
+&lt;param name=backgd value=0,0,0&gt;
+&lt;param name=count value=3&gt;
+&lt;param name=repeat value=3&gt;
+&lt;param name=message0 value="Thank you for visiting the Java Boutique"&gt;
+&lt;param name=message1 value="We hope you enjoyed your stay."&gt;
+&lt;param name=message2 value="Come again soon!"&gt;
+&lt;/applet&gt;</pre>
+
+<hr><a href="../index.html" target="_top"><img src="../images/but1.gif" border=0 align=right width=108 height=67></a>
+<b>Author:  <a href="http://www.iohk.com/UserPages/acheng" target="_new">Ashley Cheng</a><p>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+Compiled from HelloWorld.java
+class HelloWorld extends java.lang.Object {
+    public static void main(java.lang.String []);
+    HelloWorld();
+
+Method void main(java.lang.String [])
+   0 getstatic #6 <Field java.lang.System.out Ljava/io/PrintStream;>
+   3 ldc #1 <String "Hello World!">
+   5 invokevirtual #9 <Method java.io.PrintStream.println(Ljava/lang/String;)V>
+   8 getstatic #6 <Field java.lang.System.out Ljava/io/PrintStream;>
+  11 invokevirtual #8 <Method java.io.PrintStream.flush()V>
+  14 return
+
+Method HelloWorld()
+   0 aload_0
+   1 invokenonvirtual #7 <Method java.lang.Object.<init>()V>
+   4 return
+
+}
+ 

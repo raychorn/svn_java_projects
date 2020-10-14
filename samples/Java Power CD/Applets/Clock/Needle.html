@@ -1,0 +1,183 @@
+<html>
+<head>
+<a name="_top_"></a>
+<title>
+Class Needle
+</title>
+</head>
+<body>
+<a name="_top_"></a>
+<h1>
+Class Needle
+</h1>
+<pre>
+<a href="java.lang.Object.html#_top_">java.lang.Object</a>
+   |
+   +----Needle
+</pre>
+<hr>
+<dl>
+<dt>
+public class <b>
+Needle</b>
+<dt>
+extends <a href="java.lang.Object.html#_top_">Object</a>
+</dl>
+This maintain a Needle (or a hand).
+<dl>
+<dt>
+<b>Version:</b>
+<dd>
+	1.0 29 November 1995
+<dt>
+<b>Author:</b>
+<dd>
+        <A HREF="http://www.edu.isy.liu.se/~d94nilhe/">Nils Hedström</A></dl>
+<hr>
+<a name="index"></a>
+<h2>
+<img src="images/constructor-index.gif" width=275 height=38 alt="Constructor Index">
+</h2>
+<dl>
+<dt>
+<img src="images/yellow-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#Needle(java.awt.Color, java.awt.Color, int, int, int, int, int, int, double)"><b>Needle</b></a>(Color, Color, int, int, int, int, int, int, double)
+<dd>
+Constructs a needle.
+</dl>
+<h2>
+<img src="images/method-index.gif" width=207 height=38 alt="Method Index">
+</h2>
+<dl>
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#drawNeedle(java.awt.Graphics)"><b>drawNeedle</b></a>(Graphics)
+<dd>
+Draws the needle on a graphics object.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#setAngle(double)"><b>setAngle</b></a>(double)
+<dd>
+Sets the angle of the needle.
+</dl>
+<a name="constructors"></a>
+<h2>
+<img src="images/constructors.gif" width=231 height=38 alt="Constructors">
+</h2>
+<a name="Needle"></a>
+<a name="Needle(java.awt.Color, java.awt.Color, int, int, int, int, int, int, double)">
+<img src="images/yellow-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<b>
+Needle
+</b>
+<pre>
+  public Needle(<a href="java.awt.Color.html#_top_">Color</a> in_color,
+                <a href="java.awt.Color.html#_top_">Color</a> in_border,
+                int in_type,
+                int in_width,
+                int in_centerx,
+                int in_centery,
+                int in_lengthx,
+                int in_lengthy,
+                double in_angle)
+</pre>
+<dl>
+<dd>
+Constructs a needle.
+<dl>
+<dt>
+<b>Parameters:</b>
+<dd>
+in_color
+-
+          The color
+<dd>
+in_border
+-
+         The color of the border (the border is 1 pixel wide)
+<dd>
+in_type
+-
+           The type (0=no Needle, 1=Triangle, 2=Rectangle, 3=Romb)
+<dd>
+in_width
+-
+ The witdh
+<dd>
+in_centerx
+-
+ The x-cord of the center
+<dd>
+in_centery
+-
+ The y-cord of the center
+<dd>
+in_lengthx
+-
+ The length in the x-axis
+<dd>
+in_lengthy
+-
+ The lenght in the y-axis
+<dd>
+in_angle
+-
+ The angle (0=To the right, pi=To the left)
+</dl>
+</dl>
+<p>
+<a name="methods"></a>
+<h2>
+<img src="images/methods.gif" width=151 height=38 alt="Methods">
+</h2>
+<a name="setAngle(double)">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="setAngle">
+<b>
+setAngle
+</b>
+</a>
+<pre>
+  public void setAngle(double in_angle)
+</pre>
+<dl>
+<dd>
+Sets the angle of the needle.
+<dl>
+<dt>
+<b>Parameters:</b>
+<dd>
+in_angle
+-
+          The needle's new angle. (0=To the right, pi/2 Up, pi=Left, 3pi/2 Down)
+</dl>
+</dl>
+<p>
+<a name="drawNeedle(java.awt.Graphics)">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="drawNeedle">
+<b>
+drawNeedle
+</b>
+</a>
+<pre>
+  public void drawNeedle(<a href="java.awt.Graphics.html#_top_">Graphics</a> g)
+</pre>
+<dl>
+<dd>
+Draws the needle on a graphics object.
+<dl>
+<dt>
+<b>Parameters:</b>
+<dd>
+g
+-
+         The graphics object which the needle will be drawn upon.
+</dl>
+</dl>
+<p>
+</body>
+</html>

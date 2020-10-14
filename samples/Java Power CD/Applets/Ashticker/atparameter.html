@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML>
+<HEAD>
+<TITLE>Ashley's Ticker Parameter List </TITLE>
+</HEAD>
+<BODY BACKGROUND="http://www.wahyan.edu.hk/images/background.gif">
+
+<H1>Ashley Ticker Parameter List</H1>
+<HR>
+
+
+<H2>The following parameters applied to both scrolling text or image:</H2>    
+<UL>
+<LI>step = integer<BR>
+The speed of the scrolling text/image. Default value is 2. Higher value means faster scrolling.
+<LI>sensitive = integer<BR>
+Defines how sensitive the scrolling text/image is towards a mouse drag. Default value is 5.
+<LI>mousedown = string<BR> 
+The message which will appear in the status bar when you click your mouse on the applet. Default value is "Don't tickle me!".
+<LI>mouseleft  = string<BR>
+The message that will appear in the status bar when you drag your mouse to the left. Default value is "Don't be so impatient".
+<LI>mouseright = string<BR>
+The message that will appear in the status bar when you drag your mouse to the right. Default value is "Let me out!!".
+<LI>mouseoutb  = string<BR>
+The message that will appear in the status bar when your mouse is dragged outside the applet after clicking on it. Default value is "Let go your mouse please".
+<LI>mouseup = string <BR>
+The message that will appear in the status bar when you release your mouse click. Default value is "Thank you".
+
+<LI>random = integer (0,1)<BR>
+Defines whether you want to display the scrolling text/image randomly or not. Default value is 0 (not random). random = 1 means random display.
+<LI>repeat  = integer <BR>
+Number of times a message will repeat itself before displaying the next one. Default value is 1.  No effect when random = 1.
+<LI>position = integer<BR>
+Defines the vertical position of the scrolling text/image. The message/graphics will be shown at the top of the applet if the value is 0, at the centre if the value is 1 or at the bottom if the value is 2.
+<LI>image = URL<BR>
+The URL of the background image to be painted if any. Default = null.
+<LI>imborder = URL<BR>
+The URL of the border image to be painted if any. Default = null.
+</UL>
+
+<H2>The following parameters applied to scrolling text only:</H2>
+<UL>
+<LI>count = integer <BR>
+The total number of message you wish to display. Default = 1.
+<LI>message0 to message#   = string  <BR>
+The messages you wish to display. From message0 to message#, where # equals count (total number of messages) minus 1. Default value is "Applet
+written by Ashley Cheng".
+<LI>typeface = string   <BR>
+The typeface of the scrolling text. Default is "Arial".
+<LI>fontsize = integer<BR>
+The fontsize of the scrolling text. Default value is 24.
+<LI>style = integer (0,1,2) <BR>
+Defines the style of the text. 0 means "normal" text,  1 means "bold" and 2 means "italic". Default value is 0
+<LI>offset = integer    <BR>
+Defines the number of pixels the shadow text will be offset from the normal text. Default value is 0 meaning no shadow.
+<LI>text = (integer,integer,integer)<BR>
+The color of the foreground text in RGB format. Default color is black.
+<LI>shadow  = (integer,integer,integer)<BR>
+The color of the shadow text in RGB format. Default color is white.
+<LI>backgd = (integer,integer,integer)<BR>
+The color of the background in RGB format. Default color is gray.
+</UL>
+<P>
+Note: Image will take precedence over text. When you define a scrolling image, these parameters will lose their effects.
+
+
+
+<H2>The following parameters applied to scrolling image only:</H2>
+
+<UL>
+<LI>icount = integer <BR>
+The total number of images you wish to display. Default = 0.
+<LI>image0 to image#  = URL<BR>
+The URL of the images you wish to display. From image0 to image#, where # equals icount (total number of images) minus 1. Default value is null.
+
+</UL>
+
+          
+        
+</CENTER>
+
+<HR>
+
+Access: <IMG SRC="http://www.iohk.com/cgi-bin/nph-count?link=ashleycheng&width=6"> <P>
+
+<IMG SRC="http://www.iohk.com/UserPages/acheng/cheng3.gif" ALIGN="LEFT" 
+HSPACE=15><BR>
+
+Author: Ashley Cheng (<A HREF="mailto:ackcheng@ha.org.hk">ackcheng@ha.org.hk</A>) March 1996<BR>
+Go back to <A HREF="http://www.wahyan.edu.hk/ashticker25.html">Ashleyticker version 2.5</A>, to<A HREF="http://www.iohk.com/UserPages/acheng"> my home-page</A> or see <A HREF="http://www.iohk.com/UserPages/acheng/javascript.html"> JavaScript(tm) examples written by me</A>. <P>
+
+Get <A HREF="http://www.wahyan.edu.hk/Ashleyticker.zip">the class file
+</A> written by an amateur - me</BODY>
+</HTML>

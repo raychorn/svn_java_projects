@@ -1,0 +1,45 @@
+<html>
+<title>AnimText.java</title>
+<body bgcolor="000000" text="ffffff" link="#eeee00" vlink="#009999">
+<center><h1>AnimText.java</h1>
+<hr>
+<APPLET CODE=AnimText WIDTH=400 HEIGHT=75>
+<PARAM NAME=text VALUE="The Java Boutique">
+<PARAM NAME=type VALUE=wave>
+<PARAM NAME=bgColor VALUE=255:10:30>
+<PARAM NAME=fgColor VALUE=white>
+<PARAM NAME=style VALUE=BOLD>
+<PARAM NAME=min VALUE=14>
+<PARAM NAME=max VALUE=48>
+</APPLET>
+<hr></center>
+<b>Usage:</b>  Place <a href="AnimText.class" target="_top"><b>AnimText.class</b></a> within your HTML directory.
+<p>
+<b>Java Source:  <a href="AnimText.java" target="_top">AnimText.java</a>
+<p>
+HTML Source:
+<pre>&lt;applet code=AnimText.class width=400 height=75&gt;
+&lt;PARAM NAME=text VALUE="The Java Boutique"&gt;
+&lt;PARAM NAME=type VALUE=wave&gt;
+&lt;PARAM NAME=bgColor VALUE=255:10:30&gt;
+&lt;PARAM NAME=fgColor VALUE=white&gt;
+&lt;PARAM NAME=style VALUE=BOLD&gt;
+&lt;PARAM NAME=min VALUE=14&gt;
+&lt;PARAM NAME=max VALUE=48&gt;
+&lt;/applet&gt;</pre>
+<p>Notes:</b><br>text - The string to animate<br>
+type - "wave", "blink" or "random" (default wave)<br>
+bgColor - Background color in r:g:b format or name, e.g., blue<br>
+fgColor - Foreground color (default black)<br>
+font - "Courier", "TimesRoman", "Helvetica" or "Dialog" (default TimesRoman)<br>
+style - PLAIN, BOLD or ITALIC (default PLAIN)<br>
+step - Increments in font size at each iteration (default 2)<br>
+naptime - Time in millisecs between updates (default 100ms)<br>
+min - Smallest font size (default is 8)<br>
+max - Largest font size (default is 28)<br>
+align - "center", "left" or "right"<br>
+<hr><a href="../index.html" target="_top"><img src="../images/but1.gif" border=0 align=right width=108 height=67></a>
+<b>Author:  <a href="http://www.thomtech.com/~suresh" target="_new">Suresh Srinivasan</a>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+Java applets contributors
+-------------------------
+
+Mark Boyns, San Diego State University, San Diego, California - Comando and Star Base applets
+
+Dr. Leigh Brookshaw, Victoria, Australia - 2D plotting applet
+
+Ruault Charles-Edouard, Association Decouvertes, Paris, France - Jumping Frog applet
+
+Christian Dreke, University of Virginia Networks Laboratory, Charlottesville, Virginia - Stock Trace applet
+
+Henrik Eriksson, Ph.D., Linköping University, Sweden  - Chernobyl Reactor applet
+
+Mike Fletcher, Bell South Wireless, Atlanta, Georgia - Server Socket example applet
+
+Nils Hedstrom, Linkoping University, Sweden  - Clock and GoURL applets
+
+Michael Heinrichs, Burnaby, BC, Canada - Curve applet
+
+Georg  Herrmann, University of Hamburg, Germany - Learn to Dance applet
+
+Doug Lea, SUNY at Oswego, Oswego, New York - Collections 
+
+Gene Leybzon, Integris, Clayton, Missouri - J-Tools applet
+
+Dr. Robert Lum, Berkeley, California - Commission Pricer and Option pricer applets
+
+Thomas Wendt, Uinversity of Kessel, Germany - Documentation, Form, Jline, Pointer, Ticker, and WAIS interface applets
+
+
+<end of file>
+

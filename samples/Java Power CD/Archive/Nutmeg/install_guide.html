@@ -1,0 +1,94 @@
+<HTML>
+<HEAD>
+<TITLE> Nutmeg Installation Guide </TITLE>
+</HEAD>
+<BODY text="#000000" vlink="#AA4000" link="#005AC3" alink="#000000" BGCOLOR="#FFFFFF">
+<TABLE WIDTH=100% BORDER=0>
+<TR>
+<TD ALIGN=LEFT><IMG ALIGN=LEFT HSPACE=5 VSPACE=5 SRC="images/tht200ed.gif">
+<TD ALIGN=CENTER><H2>Welcome to THOUGHT Inc.</H2>
+<TD ALIGN=RIGHT><IMG ALIGN=RIGHT HSPACE=5 VSPACE=5 SRC="images/nutmeg2p.gif">
+<!--IMG ALIGN=RIGHT HSPACE=5 VSPACE=5 SRC="images/nutmeg2p.gif"-->
+</TABLE>
+<H3>Nutmeg FCS1.0 for Java FCS1.0 Installation Guide</H3>
+
+<BR>Download files from http site.
+
+<PRE>
+Sun Solaris version:
+ftp://ftp.thoughtinc.com/~nutmeg/nutmeg-fcs1.01.tar.Z
+
+Windows 95 & NT version:
+ftp://ftp.thoughtinc.com/~nutmeg/nutmeg-fcs1.01.zip
+</PRE>
+<HR>
+<BR>Install distribution:
+
+<P>These instructions presume that you have already installed the Java Developer's Kit (Nutmeg
+was built with FCS1.0 of the JDK, if you don't already have it, you should
+download it now.) in some directory that will be referred to through the rest of
+this document as <java home directory>
+
+<PRE>
+Sun Solaris:
+cd &lt;java home directory&gt;
+uncompress -c nutmeg-fcs1.01.tar.Z | tar xpfv -
+</PRE>
+<HR>
+<P>(Warning, dos versions of pkunzip will truncate filenames rendering this package useless - you
+need an upgraded version of unzip which will support long filenames Winzip 6.0 if you don't
+already have it is a great package)
+<PRE>
+Windows:
+
+cd &lt;java home directory&gt;
+pkunzip -d nutmeg-fcs1.01.zip
+</PRE>
+<HR>
+<P>
+Using the package:
+
+<P>A simple Test program is included in this distribution using String Objects just to help you to see
+if you installed the program properly:
+
+<PRE>
+// TestNutmeg.java
+// Test Program to test if Nutmeg Installed
+
+import java.io.*;
+import java.util.*;
+import java.lang.*;
+import java.Nutmeg.*;
+
+public class TestNutmeg {
+	public static void main(String args[]) {
+	Collection cltn = new Collection();
+	String strn = new String("Hello");
+	cltn.add(strn);
+	strn = new String("World");
+	cltn.add(strn);
+	System.out.println(cltn.at(0));
+	System.out.println(cltn.at(1));
+	}
+}
+
+</PRE>
+
+To see if This compiles correctly do the following - it is presumed that your CLASSPATH
+contains a directory reference to "." in it's list of directories.  If this is not the case, then the java
+runtime might have trouble finding this test program when you try to run it with the Java
+package.
+
+<PRE>
+cd <java home directory>/Nutmeg
+javac TestNutmeg.java
+Java TestNutmeg
+
+This should print:
+Hello
+World
+
+You have now successfully installed Nutmeg
+</PRE>
+</BODY>
+</HTML>

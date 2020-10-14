@@ -1,0 +1,79 @@
+<TITLE>Clock 2.1</TITLE>
+<H1>Clock 2.1</H1>
+<HR ALIGN=CENTER WIDTH=75%>
+<applet codebase="beta" code="Clock.class" width=164 height=164>
+<param name=background_type value=2>
+<param name=background_image value="klocka2.gif">
+<param name=hour_border_col value=0,0,0>
+<param name=minute_border_col value=0,0,0>
+<param name=second_border_col value=0,0,0>
+<param name=second_type value=2>
+<param name=minute_type value=2>
+<param name=hour_type value=3>
+<param name=hour_len value=50>
+<param name=num_lines value=12>
+<param name="clock_background_col" value=255,255,128>
+<param name="clock_background_border_col" value=0,0,0>
+<param name="background_border_col" value=0,0,0>
+<param name="background_col" value=255,128,128>
+</applet>
+<H3>Source</H3>
+<DD><A HREF="beta/Clock.java">Clock.java</a> (the main program), <A HREF="beta/Needle.java">Needle.java</A> (the Needle class)
+<H2>Supported actions</H2>
+<DL><DT>mouseEnter
+<DD>The message "Who made this clock?" will appear in the status bar
+<DT>mouseExit
+<DD>The status bar will be blank
+<DT>mouseDown
+<DD>The browser will load this page
+</DL>
+<H2>Supported tags</H2>
+<H3>Tags which affect the whole clock</H3>
+<DT>num_lines
+<DD>Numer of corners in the border around the clock. 
+<DD><B>Min</B>: 3 <B>Default</B>: 12 <B>Max</B>:1000
+<DT>sleep
+<DD>The time (in milliseconds) the applet waits between each update. 
+<DD><B>Min</B>: 5 <B>Default</B>: 1000 <B>Max</B>:20000
+<DT>timezone
+<DD>The GMT timezone that the clock will display (Sweden=1, England=0, Finland=2 etc). 
+<DD><B>Min</B>: -12 <B>Default</B>: your local timezone <B>Max</B>: 12
+<DD>If this tag is omitted the clock will display the local timezone.
+<DT>clock_background_col
+<DD>The color of the clockbackground. 
+<DD><B>Default</B>: 207,207,207 (gray)
+<DT>clock_background_border_col
+<DD>The color of the border of the clockbackground. 
+<DD><B>Default</B>: 207,207,207 (gray)
+<DT>background_col
+<DD>The color of the background. 
+<DD><B>Default</B>: 192,192,192 (lightgray)
+<DT>clock_background_border_col
+<DD>The color of the border of the background. 
+<DD><B>Default</B>: 192,192,192 (lightgray)
+<DT>background_type
+<DD>The type of the background. 0=The standard polygon with num_lines corners.
+<DD>1=An centered image (specified with background_image) (gif or jpeg)
+<DD>2=An centered image on top of a polygon background.
+<DD><B>Min</B>: 0 <B>Default</B>: 0 <B>Max</B>:2
+<DT>background_image
+<DD>The image which will be displayed as background (.gif or .jpg). 
+<DD>The image will only be displayed if background_type=1 or 2!
+<H3>Tags which affect each needle</H3>
+<DT>col
+<DD>The color of the needle. 
+<DD><B>Default</B> hour_col: 255,0,0 (red) minute_col: 0,255,0 (green) second_col: 0,0,255 (blue)
+<DT>border_col
+<DD>The color of the border of the needle. 
+<DD><B>Default</B> hour_border_col: 0,0,0 (black) minute_border_col: 0,0,0 (black) second_border_col: 0,0,0 (black)
+<DT>type
+<DD>The type of the needle. 0=No needle, 1=Triangle, 2=Rectangle, 3=Romb. <DD><B>Default</B> hour_type: 3 minute_type: 3 second_type: 3
+<DT>width
+<DD>The width of the needle. 
+<DD><B>Default</B> hour_width: 7 minute_width: 5 second_width: 3
+<DT>len
+<DD>The length of the needle in % of the clock. 
+<DD><B>Default</B> hour_len: 70 minute_len: 75 second_len: 90
+</DL>
+<HR ALIGN=Center width=75%>
+<CENTER>These applets have been written by <A HREF="http://www-und.ida.liu.se/~d94nilhe/java/">Nizze</A></CENTER>

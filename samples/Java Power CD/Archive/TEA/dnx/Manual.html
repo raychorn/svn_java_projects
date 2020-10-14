@@ -1,0 +1,455 @@
+<html>
+<head>
+   <title></title>
+   </head>
+<body text="#000000" bgcolor="#FFFFFF" link="#0000EE" vlink="#551A8B" alink="#FF0000">
+
+<div align=center><h1><b><font SIZE=+2>Liquid Motion (formerly TEA, The Easy Animator)</font></b></h1></div>
+
+<div align=center><h2><b><font SIZE=+1>User's Guide</font></b></h2></div>
+
+<h2><b><font SIZE=+2>I</font><font SIZE=+1>ntroduction</font></b></h2>
+
+<p><b>Liquid Motion</b> provides tools to integrate animation
+sequences and audio into a Scene, which can be easily embedded as an applet
+into a web browser window. The program will play a single frame sequence
+in a window, but also provides a rich environment for dynamic animation.
+</p>
+
+<p><b>Liquid Motion</b> is based upon a model of <i>objects</i> which can be manipulated
+directly by the artist, in the Scene context. The <b>Liquid Motion</b> program
+allows you to easily create and edit Scenes in one primary window using
+image and audio resources (e.g., .<i>gif, .au </i>files). </p>
+
+<p>This User's Guide is designed to walk you through each of the fun and
+easy-to-use features of <b>Liquid Motion</b>. To view examples of animation
+Scenes and obtain detailed information on the professional version of the
+program, <b>Liquid Motion Pro</b>, click on the links. </p>
+
+<p>It should also be noted that, as an authoring environment, <b>Liquid Motion</b>
+is programmed in the new Java package, <i>JACK</i> which supports sub-classing
+for new types of animation elements, new behaviors, etc. JACK is a <i>scripting
+language</i> and therefore provides an actual editable file for programmers.
+Documentation for this procedure is available from Dimension X.</p>
+
+<h1><b><font SIZE=+3>C</font><font SIZE=+2>reating a New Scene</font></b></h1>
+
+<p>When <b>Liquid Motion</b> initially loads, the <b>Root Scene Properties</b> dialog
+appears, allowing you to name a new Scene. This name will now appear as
+the screen header. If you then use <b>S</b>ave or Save <b>A</b>s to designate
+the directory in which the Scene file is to be saved, upon adding the first
+sequence to the Scene, <b>Liquid Motion</b> will automatically create the subdirectories:
+\<b>images</b> and <b>\audio</b> and will copy each added sequence file
+(image or sound) to the appropriate &quot;project directory&quot;. This
+provides you with a few simplified locations for collecting all the elements
+of your animation project. (Note that in order for <b>Liquid Motion</b> to direct
+media files to these project directories, you must save the Scene to a
+designated directory <i>before</i> adding sequences to the Scene.) For
+more details on saving a Scene, see the end of this documentation.</p>
+
+<p>If you wish to open and edit an existing Scene file, you can simply
+close the <b>Root Scene Properties</b> dialog and access the file by selecting:
+<b>F</b>ile =&gt; <b>O</b>pen.</p>
+
+<ul        type=square>
+<li><b><font SIZE=+2>A</font><font SIZE=+1>dding an Image Sequence</font></b></li>
+</ul>
+
+<ul            type=square>
+<p>When creating a Scene in <b>Liquid Motion</b>, you can add an image sequence such
+as a <i>.gif </i>or .<i>jpeg </i>file which may contain a single image,
+a series of images, or a single image that includes the entire sequence,
+joined vertically into a strip. (You will also be able to use a horizontal
+strip image in an upcoming beta version of <b>Liquid Motion</b>.) </p>
+
+<p><b>Liquid Motion Pro </b>provides a Content Manager screen for managing these
+resource files (including a Search feature with which you can search for
+a file by name or based upon comments assigned to a sequence by an artist).
+The professional version also allows you to add entire Scenes, previously
+constructed in <b>Liquid Motion</b>, to nest within the Scene you are currently creating.
+And you can apply motion and time behaviors to the entire Scene rather
+than just to individual sequences.</p>
+
+<p>If you want the animation sequence(s) to appear on a specified background,
+you must add the background as the <i>first </i>image in the Scene, then
+all additional images added will appear on top of that background. </p>
+
+<h4><b><font SIZE=+1>A</font>dding a Background Image</b></h4>
+
+<ul                   type=square>
+<p><b><i>To add an image</i></b>, select: <b>E</b>dit =&gt; <b>A</b>dd
+Image.</p>
+
+<p>In the <b>Add Image Element</b> dialog, the <b><i>Browse</i></b> button
+allows you to access the <b>Open Image File </b>dialog which displays your
+image files, sorted by name, size, type or date modified. Once you select
+a file, the filename will appear in the Add Image Element dialog in the
+Filename Pattern field. You will note this dialog allows you to designate
+whether the image file should originate from its source URL, or if you
+want it copied to your &quot;project directory&quot; (e.g., <i>\java\pix\images</i>).
+This feature is especially helpful when later exporting the Scene for use
+in a web browser, allowing you to find all sequence files related to the
+Scene conveniently located in one place. </p>
+
+<p>If the selected image is to serve as a background for the Scene, you
+can accept the sequence and frame defaults, and click on <b>OK</b>. The
+image will now appear on the screen, in a selected or &quot;highlighted&quot;
+mode, indicating it is active for editing. To view the image normally,
+click on the background border or press <b>ESC</b>.</p>
+
+<p><i><b>To change the color for highlighted images</b>,</i> select: <b>V</b>iew
+=&gt; <b>H</b>ighlight Color.</p>
+
+<p><b><i>To change the background border color</i></b>, select: <b>V</b>iew
+=&gt; <b>B</b>order Color.</p>
+
+<p>(Adjusting the background border color can be especially helpful when
+considering how the Scene will appear in a web browser.)</p>
+
+<p>It is best to lock the background image into place to avoid moving it
+by accident. To select the image, click on it. Then, select: <b>E</b>dit
+=&gt; <b>P</b>roperties. In the <b>Sequence Properties</b> dialog, select:
+<b>Position Locked</b>. A checkmark will indicate the feature is enabled.
+Then, select <b>OK</b>.</p>
+</ul>
+
+<h4><b><font SIZE=+1>A</font>dding an Image Sequence to be Animated</b></h4>
+
+<ul                   type=square>
+<p>You can select the image file in the same manner as above. Then, in
+the <b>Add Image Element</b> dialog, as appropriate, select <i>Single Image</i>
+or <i>Sequence</i>. If a sequence, enter the number of frames and the fps
+rate. The <b>Images in:</b> field allows you to designate whether the sequence
+is in <i>Separate Files</i>, a <i>Vertical Strip</i>, or <i>Horizontal
+Strip</i>. To accept selections, click on <b>OK</b>. You can reset the
+properties, (e.g., <i>fps rate</i>), at any time by selecting the image,
+then, select: <b>E</b>dit =&gt; <b>P</b>roperties to access the <b>Sequence
+Properties</b> dialog.</p>
+
+<p>The image element will now appear (highlighted) in the upper left corner
+of the Scene. To move the highlighted image to any point within the Scene,
+click-and-drag it. 
+<br>(<i>Note</i>: An element must first be selected (highlighted) in order
+to be moved and/or edited. To deselect an element, click on the background
+border or press <b>ESC</b>.) You can add as many images to the Scene as
+you want. </p>
+</ul>
+
+<li><b><font SIZE=+2>A</font><font SIZE=+1>dding an Audio Sequence</font></b></li>
+
+
+<p>You can add audio sequences to enhance the Scene. In the current version
+of Java, these must be <b>.<i>au</i> </b>files. Adding an audio sequence
+to a Scene functions much the same as with adding an image. Select: <b>E</b>dit
+=&gt; Add <b>A</b>udio to access the <b>Add Audio Element</b> dialog and
+then select your audio sequence. In the current beta version of <b>Liquid Motion</b>,
+audio sequences will be saved in the Scene, but the <i>playback
+</i>is not yet supported. This feature will be provided in an upcoming
+beta version.</p>
+
+<li><b><font SIZE=+2>D</font><font SIZE=+1>eleting an Image</font></b></li>
+
+<p>You can delete an image from the Scene by highlighting it, then select:
+<b>E</b>dit =&gt; <b>D</b>elete. Once you click on the background border,
+the element will disappear from the Scene.</p>
+
+<li><b><font SIZE=+2>P</font><font SIZE=+1>laying an Image or Audio Sequence</font></b></li>
+
+<h4><b><font SIZE=+1>P</font>laying an Image Sequence</b></h4>
+
+<ul                   type=square>
+<p>At the bottom of the <b>Liquid Motion</b>screen, a toolbar of <i>play</i> buttons
+allows you to play the Scene in various modes, such as forward, reverse,
+and frame by frame. The play button options apply to the entire Scene and
+each element sequence will play according to its properties and behaviors.</p>
+
+<h4><b>The Play Button Toolbar</b></h4>
+
+<ul                   type=square>
+<p><img src="pix/startu.gif" alt="Start" hspace=5 vspace=5 border=0  height=20 width =35 align=abscenter >Repositions
+all image elements in the Scene back to the starting point of their animation
+timeline, motion path, etc. </p>
+
+<p><img src="pix/playfwdu.gif" alt=">" hspace=5 vspace=5 border=0  height=20 width =35 align=abscenter >&quot;<b>Play
+Forward</b>&quot;, plays the sequences in the Scene. </p>
+
+<p><img src="pix/playrevu.gif" alt="<" hspace=5 vspace=5 border=0  height=20 width =35 align=abscenter >&quot;<b>Play
+Reverse</b>&quot;.</p>
+
+<p><img src="pix/jogfwdu.gif" alt=">|" hspace=5 vspace=5 border=0  height=20 width =35 align=abscenter >&quot;<b>Jog
+Forward</b>&quot;, plays sequences frame by frame.</p>
+
+<p><img src="pix/jogrevu.gif" alt="|<" hspace=5 vspace=5 border=0  height=20 width =35 align=abscenter >&quot;<b>Jog
+Back</b>&quot;, plays frame by frame in reverse.</p>
+
+<p><img src="pix/jognfwdu.gif" alt=">>|" hspace=5 vspace=5 border=0  height=20 width =35 align=abscenter >&quot;<b>Jog10
+Forward</b>&quot;, steps the sequences forward 10 steps. </p>
+
+<p><img src="pix/jognrevu.gif" alt="|<<" hspace=5 vspace=5 border=0  height=20 width =35 align=abscenter >&quot;<b>Jog10
+Back</b>&quot;, plays sequences 10 steps in reverse. </p>
+
+<p><img src="pix/pauseu.gif" alt="||" hspace=5 vspace=5 border=0  height=20 width =35 align=abscenter >&quot;<b>Pause</b>&quot;.</p>
+
+<p><img src="pix/endu.gif" alt="End" hspace=5 vspace=5 border=0  height=20 width =35 align=abscenter >Repositions
+all image elements in the Scene to the ending point of their animation
+sequence, motion path, etc.</p>
+</ul>
+</ul>
+
+<li><b><font SIZE=+2>O</font><font SIZE=+1>ther Edit Menu Options</font></b></li>
+
+<p>You will note the <b>E</b>dit menu contains several disabled options:
+<i>Add Text</i> and <i>Add Render</i> (Color Blend or Tiled Image). These
+features are provided in the professional version of the program, <b>Liquid Motion Pro</b>, 
+and allow you to further enhance the Scene with additional creative
+elements.</p>
+</ul>
+
+<h1><b><font SIZE=+3>E</font><font SIZE=+2>diting a Scene</font></b></h1>
+
+<p>Once you have added an image or audio element to a Scene in <b>Liquid Motion</b>,
+you can edit its properties and add behaviors such as a Drawn Path motion
+and time-scaling. In the full version of the program, <b>Liquid Motion Pro</b>, you
+can apply more sophisticated attributes such as frame sequencing and numerous
+motion behaviors for moving the sequence within the Scene.</p>
+
+<ul         type=square>
+<li><b><font SIZE=+2>E</font><font SIZE=+1>diting the Properties of an
+Image Sequence</font></b></li>
+</ul>
+
+<ul                   type=square>
+<p>To view or edit the properties of an element, select the image, then
+select: <b>E</b>dit =&gt; <b>P</b>roperties. The <b>Sequence Properties</b>
+dialog will display details such as dimensions, position locking, looping,
+and when the element's sequencing starts relative to other elements in
+the Scene. </p>
+
+<p>If you want an image element to remain in its current position while
+running its animation sequence, and you do not intend to assign a motion
+behavior for it, you should lock the element into place to make sure you
+do not move it (even one pixel!) by accident. Select:<b> Position Locked
+</b>(enabled). </p>
+
+<p>If you want the animation sequence to cycle continuously, select: <b>Looping
+</b>(enabled).</p>
+
+<p>The &quot;<b>Starts</b>&quot; default setting is &quot;<i>When Scene
+Starts</i>&quot; meaning the element's animation sequence will run when
+the Scene opens (and continuously thereon if set to loop), and when you
+click on the Play toolbar buttons. This setting makes the selected element
+run independent of any other elements in the Scene.</p>
+
+<p>Other &quot;<b>Starts</b>&quot; settings: &quot;<i>When Prior Starts</i>&quot;
+and &quot;<i>When Prior Ends</i>&quot;. It is important to note that the
+order in which you add elements to the Scene dictates their order<i> relative
+to each other</i>, and these settings reflect that. For example, if you
+add two image elements to the Scene and want them to run their animation
+sequences consecutively (rather than simultaneously), for the <i>second
+</i>element you must assign, &quot;<i>When Prior Ends</i>&quot;. </p>
+
+<p>Note that when you assign the property &quot;<i>When Prior Ends</i>&quot;,
+the image element will disappear from the Scene until the Scene is played
+and the first element has completed its animation sequence.</p>
+
+<li><b><font SIZE=+1>Motion Behavior - Drawing a Path for an Image Sequence</font></b></li>
+
+<p>For each image element in the Scene, <b>Liquid Motion</b>allows you to add
+and edit a <b>Drawn Path</b><i> </i><b>motion behavior</b>.<b> </b>When
+you play the Scene, the element will run its animation sequence while it
+follows your freeform path. You can edit the Drawn Path and customize the
+motion behavior to pace the animation sequence over the course of the path.
+</p>
+
+<p>In the professional version of the program, <b>Liquid Motion Pro</b>, you can
+produce even more exciting effects with a variety of other motion behaviors
+such as making the sequence <i>wander</i>, <i>bounce</i> or <i>pinball
+</i>around the Scene. You can even add a <i>Pinball Interactive </i>motion
+behavior which makes the sequence respond to mouse movement within the
+Scene, for example, chasing the mouse-cursor or running from it. And <b>Liquid Motion 
+Pro</b>supports splining which provides more flexible editing capabilities.</p>
+
+<h4>Adding a Motion Path Behavior to an Image Sequence</h4>
+
+<ul                   type=square>
+<p>To add a drawnpath motion behavior, highlight the image, then select:
+<b>B</b>ehavior =&gt; Add <b>M</b>otion Behavior =&gt; Drawnpath. The <b>Edit
+New</b> <b>Drawn Path</b> <b>Behavior </b>dialog will appear with instructions
+and setting options. This dialog must remain open in order to create and
+edit the motion path, so simply move it out of the way of your drawing
+area of the Scene.</p>
+
+<p>When an image element is selected, it appears in a highlighted box;
+the Drawn Path motion is relative to the<i> upper left corner</i> of that
+box. Say you want the image to appear as if walking along the Drawn Path,
+meaning the &quot;feet&quot; of the image would trace the path. You can
+draw the path proportionally higher in the Scene to reflect where you want
+the bottom of the image to appear, or you can draw the path and later edit
+the position of the path by moving the image element. </p>
+
+<p><b><i>To draw a path in the Scene</i></b>: Click-and-drag with the <b>left
+</b>mouse button. (To erase points in the drawnpath: click-and-drag with
+the <b>right </b>mouse button.)</p>
+
+<dl                   type=square>
+<ul               type=circle>
+<p><b>Tips!</b>: The speed in which you move the mouse when drawing the
+path determines the number of points in the path (e.g., faster = fewer
+points), and thus, how fast or slow the sequence will cover the path. (You
+can, however, edit the pacing of the motion behavior.)</p>
+
+<p>Also, the length of the Drawn Path relates to the length of the animation
+sequence. For example, if the path is short or has relatively few points,
+but the animation sequence is long, the image element will follow the Drawn
+Path in as many cycles as it takes to complete its animation sequence.
+(You can later adjust for this by reducing the pacing of the motion behavior.)</p>
+
+<p>To make it easier to erase points on the path, you can reset the <b>Eraser
+Size</b> (in pixels) in the Drawn Path Behavior<b> </b>dialog. This enlarges
+the eraser so that it covers more area on the screen when you use the right
+mouse button.</p>
+</ul>
+</dl>
+
+<p>As you draw in the Scene, the path will appear highlighted and blinking.
+Once you have completed drawing, click on the <b>Drawn Path Behavior </b>dialog
+to activate it, then set the <i>Duration</i> (in seconds) or <i>Pacing
+</i>(in points per second) for the motion behavior. This can later be edited,
+but it is best to enter an initial setting before committing the motion
+behavior to the Scene. To save the Drawn Path and all settings, click on
+<b>OK</b>. You can then play the Scene. If you want to play the Scene as
+it would appear in a web browser, click on the background border to deselect
+all elements in the Scene, then click on the Play toolbar buttons. You
+can also play the Scene with an image element and its Drawn Path highlighted
+to see exactly how the image follows the path. This is helpful in determining
+how to edit the Drawn Path if necessary.</p>
+</ul>
+
+<h4>Editing the Drawn Path</h4>
+
+<ul                   type=square>
+<p>Once you have saved the Drawn Path, you can edit its position by moving
+the image element in the Scene. Do <i>not </i>do this when the <b>Drawn
+Path Behavior </b>dialog is open and the highlighted path is on-screen,
+otherwise your mouse action to move the element will actually add to the
+Drawn Path. You must close the dialog, then select the image element and
+move it to the desired position. Note that the <i>entire path </i>will
+move to reflect the new position (not just that one segment of the path
+where you moved the element). You can view the new path position by reopening
+the Drawn Path Behavior dialog which will make the highlighted path appear
+on-screen. </p>
+
+<p>You can add or erase points on either <i>end </i>of the Drawn Path,
+but you cannot do so <i>within </i>the path. If you want to edit the path,
+say, in the middle, you must erase all points in the path up to that point
+and redraw the remainder of the path. (<b>Liquid Motion Pro</b> allows you to edit
+this with greater flexibility.)</p>
+</ul>
+
+<h4>Editing the Motion Behavior</h4>
+
+<ul                   type=square>
+<p>You may want to make adjustments to the <i>duration </i>or <i>pacing</i>
+of the animation sequence so that portions of it match up with certain
+points on the Drawn Path. In the <b>Drawn Path</b> <b>Behavior </b>dialog,
+the <b>Pacing</b> setting allows you to designate a timing of points per
+second for the motion behavior. For example, if the path contains 20 points
+and the pacing is 5 points per second, the sequence should take 4 seconds
+to complete the Drawn Path motion. However, it is important to note that
+if the duration of the element's animation sequence is only 15 seconds,
+the timing will still be off, so you may want to slow down the pacing of
+the motion behavior. </p>
+
+<p>You could also adjust this offset by setting a &quot;forced duration&quot;
+for the image element's sequence to accomodate the pacing you have set
+for the motion behavior. To set a forced duration for the image element,
+select: <b>E</b>dit =&gt; <b>P</b>roperties. In the <b>Sequence Properties</b>
+dialog, in the <b>Forced Duration</b> field, enter the appropriate setting.</p>
+</ul>
+
+<h4><b>Other Motion Behavior Options</b></h4>
+
+<ul                   type=square>
+<p>You will note the <b>M</b>otion Behaviors menu contains a number of
+disabled options including: <b>G</b>ravity, <b>J</b>ump, <b>P</b>inball,
+S<b>h</b>apes, <b>S</b>pline, and <b>W</b>ander. These features are provided
+in the professional version of the program, <b>Liquid Motion Pro</b>, and provide
+exciting flexibility to the motion behaviors you can apply to image elements
+in the Scene or to Scenes nested within other Scenes. </p>
+</ul>
+
+<li><b><font SIZE=+1>Time Behavior - Adding a Scaled Time Factor to a Sequence</font></b></li>
+</ul>
+
+<ul                 type=square>
+<p><b>Liquid Motion </b>also allows you to assign a time behavior to an image element.
+(In an upcoming beta version, you will also be able to apply the time behavior
+to the entire Scene.) Adding a time behavior allows you to adjust the <i>final
+pacing</i> of a sequence, particularly when a motion behavior has also
+been applied. In fact, it is highly recommended you add a motion behavior
+<i>first </i>and adjust the pacing and duration therein. If you then want
+to further speed up the entire sequence with a <b>Scaled Time</b> factor,
+you can add that setting as a time behavior. The time behavior preserves
+the relationship of each frame along the animation timeline, it just speeds
+up the timeline. For example, you can enter a Scaled Time factor of 2.0,
+the sequence will appear as if running twice as fast as normal.</p>
+
+<p>Another useful trick of <b>Liquid Motion</b>'s Scaled Time time behavior feature
+is making the animation sequence run backwards. The element's <b>Sequence
+Properties </b>dialog will not allow you to enter a <i>negative</i> frame
+rate. However, you can add a time behavior with a negative scaled time
+factor (e.g., -1) which will force the sequence to run in reverse.</p>
+
+<p>Generally, for a simple animation sequence with no motion behavior applied,
+it is best to adjust the speed by increasing the image element's <i>frame
+rate</i> in the Sequence Properties dialog, rather than adding a time behavior.</p>
+
+<p><b><i>To add a time behavior to an image element</i></b>: highlight
+the image, then select: <b>B</b>ehavior =&gt; Add <b>T</b>ime Behavior
+=&gt; Scaled Time. The <b>Scaled Time Behavior </b>dialog will appear in
+which you can enter the time factor. </p>
+
+<li><b><font SIZE=+1>Deleting Motion or Time Behaviors</font></b></li>
+
+<p>You can delete a motion or time behavior for a selected image sequence
+by simply highlighting the image element, then select: <b>B</b>ehavior
+=&gt; <b>D</b>elete =&gt; <b>T</b>ime Behavior (or) <b>M</b>otion Behavior.</p>
+</ul>
+
+<h1><b><font SIZE=+3>S</font><font SIZE=+2>aving a Scene</font></b></h1>
+
+<p>You can save the Scene to a file which can later be edited and/or embedded
+as an applet into a web page. Select: <b>F</b>ile =&gt; <b>S</b>ave (or
+Save <b>A</b>s). The<b> Save</b> <b>Scene As </b>dialog allows you to designate
+the filename and source directory. For Scene filenames, <b>Liquid Motion</b>provides
+the suggested file extension .<b><i>jck</i></b>, though <b>Liquid Motion</b>will
+not automically assign the extension for you, nor do you have to use that
+extension. </p>
+
+<p>As mentioned earlier, if you designate the directory for the Scene file
+<i>before </i>adding sequences to the Scene, upon adding the first sequence,
+<b>Liquid Motion</b> will automatically create the subdirectories: \<b>images</b>
+and <b>\audio</b> and will copy each added sequence file (image or sound)
+to the appropriate &quot;project directory&quot;. </p>
+
+<p>Like any other program, you can later edit the Scene and save it with
+the same name, or under a new name using <b>F</b>ile =&gt; Sa<b>v</b>e
+As. Note that if you save to a different directory, Liquid Motion will not </p>
+
+<h1><b><font SIZE=+3>E</font><font SIZE=+2>xporting a Scene as HTML</font></b></h1>
+
+<p>The <b>F</b>ile menu provides an option, <b>Export HTML</b>, which
+will generate an html file with the newly created animation Scene file
+which can be viewed in a Java-enabled browser (e.g., Netscape 2.0). You
+must first save the Scene file, then you can access the <b>E</b>xport HTML
+feature. You can then associate the Scene file with your browser, then
+simply double-click on the html file to open the browser and load the Scene.</p>
+
+<h1><b><font SIZE=+3>P</font><font SIZE=+2>ublishing a Scene in a Web Browser</font></b></h1>
+
+<p>To publish your animation Scene, you must move the <b>html file</b>,
+the <b>.jck file</b>, the <b>classes</b> subdirectory, and the <b>image
+</b>and<b> audio</b> <b>subdirectories </b>to your http tree.</p>
+
+</body>
+</html>

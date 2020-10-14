@@ -1,0 +1,70 @@
+<!- Kenji Kita, 1996 ->
+<!- Faculty of Engineering, Tokushima University, JAPAN ->
+<!- E-mail. kita@is.tokushima-u.ac.jp ->
+
+<HEAD>
+<TITLE>Java Music Box</TITLE>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF">
+
+<HR NOSHADE="NOSHADE">
+<H1 ALIGN=center>
+Java Music Box
+</H1>
+<HR NOSHADE="NOSHADE">
+
+<BLOCKQUOTE>
+<BLOCKQUOTE>
+
+<applet code="ImageSet.class" height=85 width=263>
+<param name="images" value="3">
+<param name="image0" value="img0.gif">
+<param name="image1" value="img1.gif">
+<param name="image2" value="img2.gif">
+</applet>
+
+<P>
+
+<TABLE><TR><TH></TH><TH ALIGN=LEFT VALIGN=MIDDLE>
+<applet code="MusicBox.class" height=32 width=32>
+<param name="appletID" value="1">
+<param name="image_play" value="/Bapp_Java/html/images/BA1.GIF">
+<param name="image_stop" value="/Bapp_Java/html/images/AB1.GIF">
+<param name="audio" value="/audio/spacemusic.au">
+</applet>
+</TH><TD ALIGN=CENTER VALIGN=MIDDLE><FONT SIZE=4 COLOR=#0000FF>
+spacemusic.au
+</FONT></TD></TR></TABLE>
+
+<TABLE><TR><TH></TH><TH ALIGN=LEFT VALIGN=MIDDLE>
+<applet code="MusicBox.class" height=32 width=32>
+<param name="appletID" value="2">
+<param name="image_play" value="/Bapp_Java/html/images/BA1.GIF">
+<param name="image_stop" value="/Bapp_Java/html/images/AB1.GIF">
+<param name="audio" value="/audio/homemus.au">
+</applet>
+</TH><TD ALIGN=CENTER VALIGN=MIDDLE><FONT SIZE=4 COLOR=#0000FF>
+homemus.au
+</FONT></TD></TR></TABLE>
+
+</BLOCKQUOTE>
+</BLOCKQUOTE>
+
+<HR NOSHADE="NOSHADE">
+
+<FONT SIZE=4>
+<UL>
+<LI><a href="MusicBox.txt">Sample HTML Code</a>
+<LI>The Java Source
+	<UL>
+	<LI><a href="MusicBox.java">MusicBox.java</a>
+	<LI><a href="ImageSet.java">ImageSet.java</a>
+	<LI><a href="GlobalValue.java">GlobalValue.java</a>
+	</UL>
+<LI><a href="/member/kita/Nana/SMoon.html">Application Example of Java Music Box</a>
+<LI><a href="mailto:kita@is.tokushima-u.ac.jp">Comments Welcome</a>
+</UL>
+</FONT>
+
+</BODY>

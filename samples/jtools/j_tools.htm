@@ -1,0 +1,165 @@
+<HTML>
+<HEAD>
+
+<TITLE>J-tools</TITLE>
+
+<META NAME="AUTHOR" CONTENT="Evgeny Leybzon">
+</HEAD>
+
+<BODY>
+<body background="img/bg_rain7.gif">
+<CENTER><H1> <I>J</I>-tools </H1></CENTER>
+<H1><A HREF="#rules">Rules</A>, <A HREF="#bulets">Bullets</A> and
+<A HREF="#text">Text Effects</A></H1>
+
+<H4>With J-tools you will be able to create <B><A NAME="bulets">bullets</A></B>
+</H4>
+
+<P>
+like this:
+<applet code="RGBs.class" width=10 height=10>
+</applet>
+
+<H4>like this:</H4>
+<applet code="RGB.class" width=30 height=30>
+<param name = "sequence" value = "RW"> 
+</applet>
+
+<H1>or like this:</H1>
+<applet code="SRGB.class" width=60 height=60>
+<param name = "sequence" value = "ROYGBMKW"> 
+</applet>
+<HR>
+
+<H4>Here are some examples of  <B><A NAME="rules">rules</A></B> :
+</H4>
+<applet code="SRGB.class" width=600 height=50>
+<param name=sequence value="RGRG">
+</applet>
+<applet code="MRGBs.class" width=600 height=10>
+<param name=sequence value="BW">
+</applet>
+<applet code="RGBs.class" width=600 height=3>
+<param name=sequence value="RG">
+</applet>
+
+<P>
+<I>(To preview above  items we recommend that you use <A 
+HREF="http://home.netscape.com/comprod/mirror/index.html">Netscape 2.0</A>
+or later browser with integrated <A HREF="jdisland.htm">Java</A>
+support).</I><HR>
+
+<H4>And these are some of the <A NAME="text">text effects </A>you can 
+create 
+with J-tools</H4> <applet code="RnbText.class" width=300 height=50>
+<param name=text value="---TEXT-EFFECTS------">
+</applet>
+<applet code="RnbText.class" width=300 height=50>
+<param name=text value="---BY-INTEGRIS-------">
+</applet>
+<HR>
+
+<H3><I><FONT SIZE=+3>H</FONT>ow you can do this:</I></H3>
+
+<P>
+<FONT SIZE=+1>
+
+Adding Java rules and bullets to your HTML documents is not a complex
+task:
+<OL>
+<LI><A HREF="lcns.htm">Read this agreement</A>
+<LI><A HREF="downlins.htm">Download J-tools package </A>
+<LI>Unzip it
+<LI>Copy *.class files to a directory accessible from your WWW
+server
+<LI>Add calls to Java applets to your pages
+<LI>(optional) Send E-mail to <A 
+HREF="mailto:integris@crl.com">integris@crl.com</A> with subject line 
+"JT-user" to receive information about J-tools new releases and updates
+
+</OL>
+</FONT>
+<P>
+<HR>
+<H3><I><FONT SIZE=+3>M</FONT>ore <FONT SIZE=+3>E</FONT>xamples:</I></H3>
+<P>
+This is an example of a call to Java program which displays rainbow-like 
+text<P>
+<TT>&lt;applet code=&quot; RnbText.class &quot; width=200 height=50&gt;</TT>
+<TT>&lt;param name=text value=&quot;Integris&quot;&gt;</TT>
+<TT>&lt;/applet&gt;</TT>
+<P>
+<CODE>In this example we assume that applet code (</CODE><TT>RnbText.class
+file) is in the same directory as the HTML document page. We specify
+window size and text to be shown.</TT>
+
+<P>
+<CODE>To <B>customize</B> appearance of Java applets you may want
+to change </CODE>
+<CODE>size or sequence of colors.</CODE>
+<P>
+<CODE><B>Change of the size </B>is trivial: you just change the value 
+of</CODE> <CODE>HEIGHT and WIDTH parameters.<P> For example, </CODE>
+<CODE>&lt;applet code=&quot;SinText.class&quot; width=150 height=40&gt;</CODE>
+<CODE>will display letters in 150x40 size window. </CODE>
+<P>
+<CODE>To <B>change color sequence </B>you will need to change 
+&quot;</CODE><TT>sequence&quot;</TT><CODE> parameter.</CODE>
+<P>
+<CODE><B>Colors</B> are coded as following:</CODE>
+<UL>
+<LI><B>R</B> - red
+<LI><B>O</B> - orange
+<LI><B>Y</B> - yellow
+<LI><B>G</B> - green
+<LI><B>B</B> - blue
+<LI><B>M</B> - magenta
+<LI><B>K</B> - black
+<LI><B>W</B> - white
+</UL>
+
+<P>
+<TT>So for white-black bullet use:</TT>
+<CODE>&lt;param name=sequence value=&quot;KW&quot;&gt;</CODE>
+
+<applet code="RGB.class" width=8 height=8>
+<param name=sequence value="KKWW">
+</applet><P>
+
+<TT>and for traffic light-like bullet use:</TT>
+<CODE>&lt;param name=sequence value=&quot;YRG&quot;&gt;</CODE>
+
+<applet code="RGBs.class" width=6 height=6>
+<param name=sequence value="RRYYGG">
+</applet><P>
+<HR>
+<H3><I><FONT SIZE=+3>M</FONT>ore <FONT SIZE=+3>I</FONT>nformation:</I></H3>
+
+
+<P>You can find more information about individual components of J-tools 
+browsing manual pages:<P> <UL>
+<LI> <A HREF="JT_RGB.htm"> RGB.class</A>
+<LI> <A HREF="JT_RGBs.htm"> RGBs.class</A>
+<LI> <A HREF="JT_MRGB.htm"> MRGB.class</A>
+<LI> <A HREF="JT_MRGBs.htm"> MRGBs.class</A>
+<LI> <A HREF="JT_SRGB.htm"> SRGB.class</A>
+<LI> <A HREF="JT_SINT.htm"> SinText.class</A>
+<LI> <A HREF="JT_RNBT.htm"> RnbText.class</A>
+ 
+</UL>
+And you may want to read list of frequently asked questions about J-tools:
+<A HREF="jt_faq.htm"> <FONT SIZE=+1>
+J-tools FAQ</FONT></A>
+<P>
+
+<HR>
+Copyright &copy 1995, Integris Network Services<HR>
+<A HREF="index.htm"><IMG 
+SRC="img/bn_home.gif" ALIGN="BOTTOM">Integris Home</A>
+<A HREF="contact.htm"><IMG SRC="img/bn_cont.gif" 
+ALIGN="BOTTOM">Feedback</A>
+<A HREF="downlins.htm"><IMG SRC="img/bn_ftp.gif" ALIGN="BOTTOM">Download</A>
+<A HREF="all-idx.htm"><IMG SRC="img/bn_index.gif" ALIGN="BOTTOM">Index</A>
+</BODY>
+
+</HTML>

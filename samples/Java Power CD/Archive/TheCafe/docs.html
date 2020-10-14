@@ -1,0 +1,108 @@
+<html>
+<head>
+<title>Cafe Documentation For Beta Testers</title>
+<!-- Changed by: Tim Macinta, 15-Jan-1996 -->
+<!-- Changed by: Ryan Watkins, 16-Jan-1996 -->
+<!-- Changed by: Karl Jacob, 16-Jan-1996 -->
+<!-- Changed by: Ryan Watkins, 16-Jan-1996 -->
+<!-- Changed by: Tim Macinta, 20-Jan-1996 -->
+<!-- Changed by: Ryan Watkins, 24-Jan-1996 -->
+</head>
+<BODY BGCOLOR="#000000" TEXT="#DDDDDD" LINK="#30CC60" VLINK="#60DD90"
+      ALINK="#FFFFFF">
+
+<h1 ALIGN=CENTER>Cafe Documentation For Beta Testers</h1>
+
+<h2>Licensing Information</h2>
+
+<P><STRONG>The Cafe</STRONG> can currently be 
+<A HREF="download-agree.html">downloaded here</A>, for free use by beta
+testers.  Once downloaded, use <a href="install.html">the installation
+guide</a> to help step you through putting <b>The Cafe</b> on your
+own web site.</P>
+
+<P><STRONG>The Cafe</STRONG> is available to be licensed at $195.00,
+for as many sites as you wish.  For a licensing fee of $295.00 you can
+have a version of the Cafe without the Dimension X logo or with the
+logo of your choice.  Contact Brad Karns 
+<A HREF="mailto:bk@dimensionx.com">&lt;bk@dimensionx.com&gt;</A> at (213)
+957.0300 to purchase a license.
+
+<h2>Putting <b>The Cafe</b> in an web page</h2>
+<h3>Frames</h3>
+<b>The Cafe</b> can be used to send the browser to different URL's.  Whenever
+somebody types in an URL, it is highlighted in the display window and clicking
+on the URL will send the browser to that URL.  There are also some options
+in the control menu that send the browser to a different URL.  The frame
+that is sent to a different URL is currently called "Intro".  This will
+be made configurable in the next release of <b>The Cafe</b>.
+
+<a name=example_html><h3>Putting <b>The Cafe</b> in an HTML File</h3></a>
+<p>To put <b>The Cafe</b> in an html file, use the
+<a href="#params">parameters</a> listed below to configure <b>The Cafe</b>.
+An example of what needs to be inserted into an html file is:
+
+<p>
+<code>
+&lt;applet codebase=. code=Talk.class width=525 height=180&gt;<br>
+&lt;param name=server value=www.dnx.com&gt;<br>
+&lt;param name=channel value=#dnxtalk&gt;<br>
+&lt;param name="enter_sound" value="doorbell.au"&gt;<br>
+&lt;param name="private_sound" value="door.au"&gt;<br>
+<br>
+&lt;STRONG&gt;The Cafe&lt;/STRONG&gt; requires a java enabled browser to run.
+This means that it will &lt;STRONG&gt;not&lt;/STRONG&gt; run on the current
+version of Netscape for Macintosh, Windows 3.1, or the 16 bit Windows
+95 version.  The fact that you can see this message means that you are
+probably not using a browser that can understand the java beta API.<br>
+<br>
+&lt;/applet&gt;<br>
+
+</code>
+
+<a name=params><h2>Applet Parameters</h2></a>
+
+<P>The following parameters can be passed to <STRONG>The Cafe</STRONG>
+using the standard method of passing parameters to applets as
+<a href="#example_html">illustrated above</a>.</P>
+
+<ul>
+
+<li><STRONG>server - </STRONG> Specifies the server to be used as the
+IRC server.  Please note that Netscape's current restrictions on
+sockets dictate that a java applet can only open connections to the
+server they were downloaded from.  Consequently, for <STRONG>The
+Cafe</STRONG> to work with Netscape, you should install your IRC
+server on the same host as your http server, but on port 6667 (the
+standard IRC port).
+
+<li><STRONG>channel - </STRONG> Specifies the IRC channel that
+<STRONG>The Cafe</STRONG> will connect to.
+
+<li><STRONG>chanac - </STRONG> If the IRC server you are running
+requires a password to create channels (as the Prospero server does),
+use the chanac parameter to specify the password.
+
+<li><STRONG>cafe_name - </STRONG> If the user chooses the "Lift Cafe
+Out of Browser" option, <STRONG>The Cafe</STRONG> will be placed in an
+external window and the title of the window is specified by
+<EM>cafe_name</EM>.
+
+<li><STRONG>enter_sound <EM>(optional)</EM> - </STRONG> The sound
+specified will be played every time someone new enters <STRONG>The
+Cafe</STRONG>.  All sounds should be in au format.
+
+<li><STRONG>private_sound <EM>(optional)</EM> - </STRONG> The sound
+specified will be played every time the user receives a private
+message.  All sounds should be in au format.  
+
+</UL>
+
+<HR>
+
+<EM><STRONG>The Cafe</STRONG> was written by Tim Macinta
+(<a href="mailto:twm@dimensionx.com">twm@dimensionx.com</a>) for
+<a href="http://www.dnx.com">Dimension X</a>.  All rights reserved.
+</EM>
+</body>
+</HTML>

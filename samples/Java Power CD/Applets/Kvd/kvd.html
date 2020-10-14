@@ -1,0 +1,169 @@
+<html>
+<head>
+<title>KV diagram and logic minimization demonstration</title>
+</head>
+<body>
+
+
+
+
+<body>
+<a href="http://tech-www.informatik.uni-hamburg.de"><img src="tech-logo.gif"></a>
+<p>
+<h1>Java KV diagram and logic minimization demonstration</h1>
+<hr>
+
+This page demonstrates KV diagrams and logic minimization.
+It is intended for our computer science undergraduate students.
+
+<p>
+<img src="caution.gif"><p>
+<h2>Java Beta-1 version</h2>
+<b>
+The applet uses different colors to draw the KV loops and the
+corresponding PLA gates.
+They will only display correctly on a color display and with
+Netscape 2.0b (Java-enabled).
+<p>
+Due to bugs in Netscape 2.0b this page has redraw problems on Win'95.
+You may try to leave and re-enter the page if this happens.
+<p>
+The applet works fine with the SUN appletviewer.
+</b>
+
+<p>
+All comments, hints and bug reports are welcome: Please contact
+<a href="mailto:hendrich@informatik.uni-hamburg.de">hendrich@informatik.uni-hamburg.de</a>.
+Other Java demonstrations on our 
+<a href="http://tech-www.informatik.uni-hamburg.de/">server</a> can be found
+<a href="http://tech-www.informatik.uni-hamburg.de/applets/index.html">here</a>.
+<p>
+
+<hr>
+<h2>Applet basics:</h2>
+<ul>
+  <li>The applet at the bottom of this page demonstrates KV diagrams
+      and logic minimization.
+      For a detailed explanation of KV (Karnaugh Veitch) diagrams
+      see any standard computer science or electrical engineering textbook.
+      <p>
+  <li>The basic idea of a KV diagram is to represent a given boolean
+      function as a kind of function table.
+      At first, the function is represented using minterms.
+      In order to minimize the function, one has to combine minterms
+      to larger terms.
+      <p>
+      The applet demonstrates this, because the current two-level logic
+      realization of the function is plotted in a seperate window.
+      You can watch how the function schematic gets simpler (and the
+      logic realization gets cheaper) while you minimze the function.
+      <p>
+  <li>The way to minimze a logic function using a KV diagram is to
+      draw loops, in order to combine several minterms to larger terms.
+      Larger terms are cheaper than minterms in the logic realization!
+      <p>
+      Two examples of an initial logiv function KV diagram, its
+      circuit realization and the optimized versions can be found 
+      here:
+      <ul>
+        <li><a href="example1.html">Example 1</a>
+        <li><a href="example2.html">Example 2</a>
+      </ul>
+</ul>
+
+
+
+
+<hr>
+<h2>Applet usage:</h2>
+<ul>
+  <li>The applet consists of the <b>main window</b>, and two
+      seperate <b>PLA windows</b>.
+      The main window contains a row of buttons on top, 
+      the KV diagram frame in the center,
+      and a <b>status line</b> on the bottom.
+      <p>
+      The two seperate PLA windows are used to display the schematic for the
+      current function (that is, a two level AND-OR realization for the
+      function), and the PLA table in the 
+      <a href="pla.txt">standard PLA</a> 
+      <a href="espresso.txt">(Espresso.5)</a>
+      format.
+      <p>
+      The status line displays a kind of 'one line help messages'
+      on what kind of mode the applet is in, and what you can (and should)
+      do with the applet.
+      <p>
+  <li>Click on the <b>New:</b> button to create a random
+      new logic function with 2 to 6 inputs.
+      The corresponding KV diagram without loops is drawn, and the
+      PLA frame window displays the function realized with minterms.
+      <p>
+      If you want to enter your own function, you may have to click
+      a few times on the <b>New:</b> button, until the random function
+      has the correct number of inputs. Afterwards use <b>Edit Mode</b>
+      to enter the desired function.
+      <p>
+  <li>Click on the <b>Edit function</b> button to enter
+      <b>Edit Mode</b>.
+      In this mode, the value of f[i] is toggled between 0 and 1 
+      when you click on the KV diagram field i.
+      <p>
+      This mode also allows you to enter a desired function bit by bit,
+      if you want to use the KV diagram applet for actual logic minimization.
+      <p>
+  <li>Click on the <b>Add Loops</b> button to enter
+      <b>Add Loop Mode</b>.
+      In this mode, you can start a new loop with index i, 
+      when you click on the KV diagram field i.
+      <p>
+      To enlarge the loop, hold down the <b>SHIFT</b> key on your
+      keyboard and click on the field you want to add to the current 
+      loop.
+      The applet will automatically calculate all fields enclosed in
+      the current loop (or warn you, if the clicked field cannot be
+      added to the current loop).
+      <p>
+      Loops are drawn in different colors (which repeat after 8 loops),
+      in order to allow easy recognition of loops.
+      <p>
+      Any time a loop is drawn, the PLA schematic and table are updated.
+      Loops and the correspondings AND-gates are drawn in the same color.
+      <p>
+  <li>If you want to undo a loop, or to delete all loops,
+      click on the <b>Delete Loop</b> button to enter
+      <b>Delete Loop Mode</b>.
+      <p>
+      On each click, this will delete the last loop drawn.
+      Each deleted loops is split into the corresponding minterms,
+      and the PLA schematic and table are updated.
+      <p>
+  <li>Click on the <b>Highlight</b> button to enter
+      <b>Highlight Mode</b>.
+      When you click on a field of the KV diagram in Highlight Mode,
+      the active AND terms for this field (for all loops enclosing this
+      field) are highlighted in the PLA schematic.
+      <p>
+      Also, the numerical index (0 .. 63) of the KV diagram field in
+      displayed in the <b>Status Line</b> on the bottom of the applet.
+      This makes it easy to find a certain index field in the diagram,
+      just by clicking a few times.
+      <p>
+      (Note for Computer Science profs: The layout of the diagrams
+      was deliberately modified somewhat from the standard layout.
+      Using the applet for doing the homework will therefore still
+      need some understanding...)
+</ul>
+
+<hr>
+
+<p>
+<applet code=KVDdialog.class width=440 height=450 Background=white >
+KV diagram diagram applet for JAVA beta-1 (appletviewer, Netscape 2.01b)
+<p>
+</applet>
+
+<p>
+<i>last update: 18.10.95 <a href="mailto:hendrich@informatik.uni-hamburg.de">Norman Hendrich</a></i>
+</body>
+</html>

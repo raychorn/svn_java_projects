@@ -1,0 +1,217 @@
+<html>
+<head>
+<a name="_top_"></a>
+<title>
+Class Foot
+</title>
+</head>
+<body>
+<a name="_top_"></a>
+<h1>
+Class Foot
+</h1>
+<pre>
+<a href="java.lang.Object.html#_top_">java.lang.Object</a>
+   |
+   +----Foot
+</pre>
+<hr>
+<dl>
+<dt>
+class <b>
+Foot</b>
+<dt>
+extends <a href="java.lang.Object.html#_top_">Object</a>
+<dt>
+implements <a href="java.awt.image.ImageObserver.html#_top_">ImageObserver</a>
+</dl>
+Class foot implements the functions for drawing a foot
+and for getting the size of one foot.
+<dl>
+<dt>
+<b>Version:</b>
+<dd>
+1.1, 13 Sep 1995
+<dt>
+<b>Author:</b>
+<dd>
+Georg He&szlig;mann</dl>
+<hr>
+<a name="index"></a>
+<h2>
+<img src="images/constructor-index.gif" width=275 height=38 alt="Constructor Index">
+</h2>
+<dl>
+<dt>
+<img src="images/yellow-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#Foot(Dance)"><b>Foot</b></a>(Dance)
+<dd>
+Creates the object Foot.
+</dl>
+<h2>
+<img src="images/method-index.gif" width=207 height=38 alt="Method Index">
+</h2>
+<dl>
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#addToClipRect(Floor, Step)"><b>addToClipRect</b></a>(Floor, Step)
+<dd>
+Add the step s into the clipping rect for floor f.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#drawFoot(java.awt.Graphics, Floor, Step)"><b>drawFoot</b></a>(Graphics, Floor, Step)
+<dd>
+Draws the foot for step s on floor f within graphics context g.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#imageUpdate(java.awt.Image, int, int, int, int, int)"><b>imageUpdate</b></a>(Image, int, int, int, int, int)
+<dd>
+
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#redrawFoot(java.awt.Graphics, Floor, Step)"><b>redrawFoot</b></a>(Graphics, Floor, Step)
+<dd>
+Redraw the foot for step s on floor f within graphics context g.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#toString()"><b>toString</b></a>()
+<dd>
+Returns a String object representing this Foot's value.
+</dl>
+<a name="constructors"></a>
+<h2>
+<img src="images/constructors.gif" width=231 height=38 alt="Constructors">
+</h2>
+<a name="Foot"></a>
+<a name="Foot(Dance)">
+<img src="images/yellow-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<b>
+Foot
+</b>
+<pre>
+  public Foot(<a href="Dance.html#_top_">Dance</a> a)
+</pre>
+<dl>
+<dd>
+Creates the object Foot. Only one object is needed.
+<dl>
+<dt>
+<b>Parameters:</b>
+<dd>
+a
+-
+ pointer to the main applet.
+</dl>
+</dl>
+<p>
+<a name="methods"></a>
+<h2>
+<img src="images/methods.gif" width=151 height=38 alt="Methods">
+</h2>
+<a name="imageUpdate(java.awt.Image, int, int, int, int, int)">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="imageUpdate">
+<b>
+imageUpdate
+</b>
+</a>
+<pre>
+  public boolean imageUpdate(<a href="java.awt.Image.html#_top_">Image</a> img,
+                             int infoflags,
+                             int x,
+                             int y,
+                             int width,
+                             int height)
+</pre>
+<a name="drawFoot(java.awt.Graphics, Floor, Step)">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="drawFoot">
+<b>
+drawFoot
+</b>
+</a>
+<pre>
+  public boolean drawFoot(<a href="java.awt.Graphics.html#_top_">Graphics</a> g,
+                          <a href="Floor.html#_top_">Floor</a> f,
+                          <a href="Step.html#_top_">Step</a> s)
+</pre>
+<dl>
+<dd>
+Draws the foot for step s on floor f within graphics context g.
+<dl>
+<dt>
+<b>Returns:</b>
+<dd>
+Has some foot-state changed to IMG_DRAWN.
+</dl>
+</dl>
+<p>
+<a name="redrawFoot(java.awt.Graphics, Floor, Step)">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="redrawFoot">
+<b>
+redrawFoot
+</b>
+</a>
+<pre>
+  public boolean redrawFoot(<a href="java.awt.Graphics.html#_top_">Graphics</a> g,
+                            <a href="Floor.html#_top_">Floor</a> f,
+                            <a href="Step.html#_top_">Step</a> s)
+</pre>
+<dl>
+<dd>
+Redraw the foot for step s on floor f within graphics context g.
+Draw the foot only, if the image isn't IMG_OK. If it's IMG_READY,
+set it to IMG_DRAWN.
+</dl>
+<p>
+<a name="addToClipRect(Floor, Step)">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="addToClipRect">
+<b>
+addToClipRect
+</b>
+</a>
+<pre>
+  public void addToClipRect(<a href="Floor.html#_top_">Floor</a> f,
+                            <a href="Step.html#_top_">Step</a> s)
+</pre>
+<dl>
+<dd>
+Add the step s into the clipping rect for floor f.
+<dl>
+<dt>
+<b>See Also:</b>
+<dd>
+<a href="Floor.html#addToClipRect">addToClipRect</a>
+</dl>
+</dl>
+<p>
+<a name="toString()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="toString">
+<b>
+toString
+</b>
+</a>
+<pre>
+  public <a href="java.lang.String.html#_top_">String</a> toString()
+</pre>
+<dl>
+<dd>
+Returns a String object representing this Foot's value.
+<dl>
+<dt>
+<b>Overrides:</b>
+<dd>
+<a href="java.lang.Object.html#toString()">toString</a> in class <a href="java.lang.Object.html#_top_">Object</a></dl>
+</dl>
+<p>
+</body>
+</html>

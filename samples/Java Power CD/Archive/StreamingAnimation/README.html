@@ -1,0 +1,113 @@
+<!doctype html public "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>Streaming Animation Documentation</TITLE>
+<!-- Changed by: Ryan Watkins, 16-Jan-1996 -->
+<!-- Created by: Kurt Jacob, 15-Jan-1996 -->
+<!-- (c) 1995 Dimension X, Inc.
+     kbj@dnx.com -->                
+</HEAD>
+
+<BODY>
+
+<H2>The Streaming Animation Player </H2>
+
+<P>
+<APPLET CODE="dnx.StrAnimItem.class" CODEBASE="./" WIDTH=60 HEIGHT=60>
+<PARAM NAME="stranim" VALUE="my_animation.flc">
+<PARAM NAME="dither" VALUE="better">
+</APPLET>
+<HR>
+
+<H3>What is it?</H3>
+
+<P>
+The Streaming Animation Player from Dimension X is a set of Java(tm)
+classes which enable you to put animations on your web pages.
+These animations display as they download. 
+<H3>What does it play?</H3>
+
+<P>
+Currently the Streaming animation applet supports the FLIC file
+format (both FLI and FLC), and will support a format which allows
+for better compression, and shorter download times.</P>
+
+<P> Right now you can use any standard FLIC encoder
+<A HREF="http://povray.cdrom.com/pov-cdrom/cd/programs/povutil/dfv_dta/index.html">
+Dave's TARGA Animator</A> works well or you can purchase Animator Pro
+from <A HREF="http://www.autodesk.com">Autodesk</A> which will also
+export FLIC files.</P>
+
+<H3>How do I use it?</H3>
+
+<OL>
+<LI>Download either the zip file or tar file from Dimension X.
+<LI>Uncompress the file in a directory of your choice. A good
+choice would be the directory in which you plan to put the page
+containing your animation, though this is not required.
+<LI>The directory in which you uncompressed the file you downloaded
+will now contain a dnx directory which contains the class files
+needed to use the Streaming Animation Player. 
+</OL>
+
+<UL>
+<LI>Now just put the APPLET tag in your document.
+</UL>
+
+<H3>The APPLET Tag and you</H3>
+
+<P>
+This is the tag used to show the animation at the top of the page:
+<!-- if you want to copy the APPLET tag it appears in usable form at the top of this page-->
+
+<PRE>
+&lt;APPLET CODE=&quot;dnx.StrAnimItem.class&quot; CODEBASE=&quot;./&quot; WIDTH=320 HEIGHT=220&gt;
+&lt;PARAM NAME=&quot;stranim&quot; VALUE=&quot;my_animation.flc&quot;&gt;
+&lt;PARAM NAME=&quot;dither&quot; VALUE=&quot;better&quot;&gt;
+&lt;/APPLET&gt;
+</PRE>
+
+<P>
+The HEIGHT and WIDTH arguments to the Streaming Animation Applet
+tell the applet at what size the applet should display your animation.
+However, these values do not have to be the actual dimensions
+of the animation that you are playing. Scaling of the animation
+will not occur, though, if only one of the HEIGHT and WIDTH arguments
+differs from that defined in the animation file itself. The parameters
+that you can pass to the Streaming Animation Player include &quot;stranim&quot;,
+and &quot;dither.&quot; Stranim gives the path to, and name of
+the animation which you wish to play. Dither allows you to select
+the method that will be used to dither the animation. The accepted
+values for dither are &quot;better&quot;(the default) and &quot;faster.&quot;
+Faster dithering is (Surprise!) slightly faster than better dithering.
+However, some animations will not look as good when dithered faster.
+<P>
+For more information about the APPLET tag try the 
+<A HREF="http://www.sandia.gov/sci_compute/elements#APPLET">HTML Reference Manual</A>
+
+<H3>Details</H3>
+
+<P>
+You must access pages containing streaming animtions through a
+Web server. That is, using Open File in your browser to view your
+page will not allow you to view the Streaming animations on your
+page.
+
+<P>
+If there is more than one Streaming Animation on a page they will
+download in sequence.
+
+<H3>The Future</H3>
+
+<P> Better compression and an encoder are on the way. For a licensing
+fee of $195.00(US) you will get updates to the current version of the
+decoder, e-mail support, and the encoder, when it is available.
+Source code licenses are also available - Contact Brad Karns 
+<A HREF="mailto:bk@dimensionx.com">&lt;bk@dimensionx.com&gt;</A> at
+(213)957.0300 for licensing information.</P>
+
+<HR>
+
+</BODY>
+
+</HTML>

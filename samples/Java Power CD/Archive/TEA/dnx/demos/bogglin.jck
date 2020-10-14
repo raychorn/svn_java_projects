@@ -1,0 +1,139 @@
+//JACK V1.00 scene description, by TEA 0.1
+{
+dnx.jack.Scene {  
+  name "Bogglins"
+  position  { x 0 y 0 z 0 }
+  hidden 0
+  loops 1
+  locked 0
+  forcedDur 0
+  comment ""
+  viewCube  {  x 0 y 0 z 0 w 153 h 540 d 1 }
+  bgColor x000000
+  behaviors 0
+  elements 4  
+    dnx.jack.SceneElement {  
+      tyTiming 0
+      offset 0
+      sequence dnx.jack.ImageSequence {  
+        name "images/back"
+        position  { x -1 y -1 z 0 }
+        hidden 0
+        loops 0
+        locked 0
+        forcedDur 0
+        comment "null"
+        nFrames 1
+        useURLBase 0
+        seqType 0
+        fps 1
+        base "file:C:/java/dnx/demos/" source "images/back"
+        extension ".gif"
+        behaviors 0
+        }
+    }
+    dnx.jack.SceneElement {  
+      tyTiming 0
+      offset 0
+      sequence dnx.jack.ImageSequence {  
+        name "images/t1"
+        position  { x -26 y 58 z 0 }
+        hidden 0
+        loops 0
+        locked 0
+        forcedDur 0
+        comment "null"
+        nFrames 1
+        useURLBase 0
+        seqType 0
+        fps 1
+        base "file:C:/java/dnx/demos/" source "images/t1"
+        extension ".gif"
+        behaviors 2
+          dnx.jack.behaviors.ScaledTime {  
+            name "X19"
+            active 1
+            scale 19
+          }
+          dnx.jack.behaviors.DrawnPath {  
+            name "DrawnPath"
+            active 1
+          durBased 0
+          duration 41292
+          period 333
+          positions 124
+           { x -26 y 58 z 0 }    { x -26 y 59 z 0 }    { x -25 y 60 z 0 }    { x -25 y 62 z 0 }    { x -23 y 63 z 0 }   
+           { x -21 y 66 z 0 }    { x -19 y 72 z 0 }    { x -17 y 74 z 0 }    { x -15 y 80 z 0 }    { x -13 y 86 z 0 }   
+           { x -11 y 92 z 0 }    { x -9 y 98 z 0 }    { x -3 y 104 z 0 }    { x -1 y 106 z 0 }    { x 0 y 108 z 0 }   
+           { x 1 y 109 z 0 }    { x 2 y 115 z 0 }    { x 4 y 117 z 0 }    { x 7 y 119 z 0 }    { x 8 y 121 z 0 }   
+           { x 10 y 123 z 0 }    { x 12 y 125 z 0 }    { x 14 y 127 z 0 }    { x 15 y 133 z 0 }    { x 21 y 139 z 0 }   
+           { x 23 y 141 z 0 }    { x 24 y 143 z 0 }    { x 25 y 145 z 0 }    { x 25 y 146 z 0 }    { x 26 y 147 z 0 }   
+           { x 27 y 150 z 0 }    { x 27 y 156 z 0 }    { x 28 y 158 z 0 }    { x 28 y 160 z 0 }    { x 28 y 162 z 0 }   
+           { x 28 y 169 z 0 }    { x 27 y 171 z 0 }    { x 27 y 172 z 0 }    { x 27 y 173 z 0 }    { x 27 y 174 z 0 }   
+           { x 25 y 177 z 0 }    { x 24 y 179 z 0 }    { x 24 y 181 z 0 }    { x 23 y 183 z 0 }    { x 21 y 185 z 0 }   
+           { x 20 y 187 z 0 }    { x 18 y 190 z 0 }    { x 17 y 196 z 0 }    { x 15 y 202 z 0 }    { x 13 y 204 z 0 }   
+           { x 11 y 206 z 0 }    { x 9 y 209 z 0 }    { x 7 y 211 z 0 }    { x 6 y 213 z 0 }    { x 5 y 214 z 0 }   
+           { x 4 y 216 z 0 }    { x 2 y 218 z 0 }    { x -2 y 222 z 0 }    { x -3 y 224 z 0 }    { x -4 y 225 z 0 }   
+           { x -5 y 227 z 0 }    { x -6 y 228 z 0 }    { x -7 y 231 z 0 }    { x -8 y 233 z 0 }    { x -10 y 239 z 0 }   
+           { x -11 y 241 z 0 }    { x -13 y 249 z 0 }    { x -15 y 255 z 0 }    { x -17 y 261 z 0 }    { x -17 y 263 z 0 }   
+           { x -17 y 264 z 0 }    { x -18 y 265 z 0 }    { x -18 y 266 z 0 }    { x -18 y 268 z 0 }    { x -19 y 270 z 0 }   
+           { x -19 y 276 z 0 }    { x -18 y 282 z 0 }    { x -18 y 288 z 0 }    { x -17 y 294 z 0 }    { x -15 y 298 z 0 }   
+           { x -15 y 304 z 0 }    { x -14 y 310 z 0 }    { x -13 y 311 z 0 }    { x -12 y 312 z 0 }    { x -10 y 324 z 0 }   
+           { x -8 y 326 z 0 }    { x -7 y 328 z 0 }    { x -6 y 330 z 0 }    { x -6 y 331 z 0 }    { x -5 y 332 z 0 }   
+           { x -4 y 336 z 0 }    { x -3 y 338 z 0 }    { x -3 y 339 z 0 }    { x -3 y 340 z 0 }    { x -3 y 341 z 0 }   
+           { x -3 y 345 z 0 }    { x -3 y 346 z 0 }    { x -3 y 347 z 0 }    { x -2 y 349 z 0 }    { x -2 y 350 z 0 }   
+           { x -2 y 352 z 0 }    { x -1 y 356 z 0 }    { x -1 y 357 z 0 }    { x -1 y 359 z 0 }    { x -1 y 360 z 0 }   
+           { x -1 y 361 z 0 }    { x -1 y 362 z 0 }    { x -1 y 363 z 0 }    { x -1 y 364 z 0 }    { x -1 y 365 z 0 }   
+           { x -1 y 366 z 0 }    { x -1 y 367 z 0 }    { x -1 y 369 z 0 }    { x -1 y 370 z 0 }    { x -1 y 371 z 0 }   
+           { x 0 y 373 z 0 }    { x 0 y 374 z 0 }    { x 0 y 375 z 0 }    { x 0 y 376 z 0 }    { x 0 y 377 z 0 }   
+           { x 0 y 378 z 0 }    { x 0 y 380 z 0 }    { x 0 y 381 z 0 }    { x 0 y 381 z 0 }   
+          }
+        }
+    }
+    dnx.jack.SceneElement {  
+      tyTiming 2
+      offset 0
+      sequence dnx.jack.ImageSequence {  
+        name "images/t2"
+        position  { x 0 y 392 z 0 }
+        hidden 0
+        loops 1
+        locked 0
+        forcedDur 100
+        comment "null"
+        nFrames 1
+        useURLBase 0
+        seqType 0
+        fps 1
+        base "file:C:/java/dnx/demos/" source "images/t2"
+        extension ".gif"
+        behaviors 0
+        }
+    }
+    dnx.jack.SceneElement {  
+      tyTiming 2
+      offset 0
+      sequence dnx.jack.ImageSequence {  
+        name "images/bogglins/t1"
+        position  { x 0 y 389 z 0 }
+        hidden 0
+        loops 0
+        locked 0
+        forcedDur 0
+        comment "null"
+        nFrames 8
+        useURLBase 0
+        seqType 0
+        fps 1
+        base "file:C:/java/dnx/demos/" source "images/bogglins/t"
+        extension ".gif"
+        behaviors 1
+          dnx.jack.behaviors.ScaledTime {  
+            name "X3"
+            active 1
+            scale 3
+          }
+        }
+    }
+  }
+}

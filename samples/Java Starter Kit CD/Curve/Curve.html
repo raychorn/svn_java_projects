@@ -1,0 +1,66 @@
+<TITLE>Curve Applet</TITLE>
+
+<H1><I>Curve</I></H1>
+
+<P>
+If your browser is not Java-enabled, this page will look <em>very</em>
+boring.  This applet was compiled with the beta 1.0 release of Java, so will not be
+viewable with HotJava.
+
+<H2>Instructions</H2>
+
+<P>
+Use the radio buttons at the bottom of the applet
+to select the curve-point mode.  
+In add mode, clicking on the display will add a curve control point.
+In delete mode, when you click on a control point, it will be removed.
+In move mode, you can click and drag control points.</P>
+<P>When there are enough control
+points (4 or more), they will be used to plot a curve of the selected type.
+Select the curve type from the radio buttons on the top of the applet.  The clear button will remove all the
+control points.  This applet is a port of a MS-Visual Basic application.
+</P>
+<h2><IMG ALIGN=MIDDLE SRC="/cs/people/GradStudents/heinrica/personal/gifs/new.gif" alt="New!">
+Precision Scrollbar</h2>
+<p>
+If any of you looked at my old code, you would have found hooks in the code
+to add the ability to control the precision of the curve.  I finally got
+around to looking at how scrollbars work in Java, and here it is.  The
+most difficult part of adding a scrollbar is knowing that Scrollbar events
+are not ACTION_EVENT's, and cannot be handled from the action() method.  Put
+all the event handlers in the handleEvent() method, and everything works
+great.
+<p>
+
+<hr>
+<p><b>Note:</b>  Since the new Netscape 2.0b2 for Solaris, SunOS, and SGI
+does not correctly display drop-down lists, I have had to change the interface
+to allow curve-type to be selected by radio-button instead of drop-down list.
+</P>
+
+<hr>
+<applet codebase=classes code=Curve.class width=500 height=300>
+</applet>
+<hr>
+
+<p>
+By popular demand, here's the <A HREF="http://fas.sfu.ca/cs/people/GradStudents/heinrica/personal/curve.java">source</A>.  Now I hope none of you graphics
+students out there try to pass this off as a graphics assignment ;-).  (My
+original Visual Basic application was a graphics course assignment)
+</p>
+
+<p>
+Hey, I'm feeling crazy -- if you've got Windows 3.1 or Windows95 and the 
+Visual Basic 3.0 runtime DLL, download the 
+<A HREF="http://fas.sfu.ca/cs/people/GradStudents/heinrica/personal/curve.exe">
+original executable</A>.
+</p>
+
+<P>
+Go <A HREF="http://fas.sfu.ca/cs/people/GradStudents/heinrica/personal">back</A>
+to my home page.
+</P>
+
+<ADDRESS>
+heinrica@cs.sfu.ca
+</ADDRESS> 

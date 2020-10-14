@@ -1,0 +1,373 @@
+<!-- Page de msSequencer_java -->
+
+<!---------------------------------------------------------------------------->
+<!-- EN TETE ----------------------------------------------------------------->
+<!---------------------------------------------------------------------------->
+
+<!-- Titre de la fentre ----------------------------------------------------->
+<HTML>
+<HEAD>
+<TITLE>Grame - msSequencer source</TITLE>
+</HEAD>
+
+<!-- DŽbut de la page: Fond et titre ----------------------------------------->
+<BODY BGCOLOR=ffffff>
+
+<CENTER>
+<TABLE BORDER=2 CELLSPACING=2 CELLPADDING=2>
+<TR><TD><IMG SRC="../Images/MidiShare.gif"></TD>
+<TD ALIGN=CENTER><FONT SIZE=4><B>msSequencer source</B></FONT></TD></TR>
+</TABLE>
+</CENTER>
+
+<PRE>
+
+
+</PRE>
+
+<P><I>Cette page est aussi disponible
+<A HREF="../french/msSequencer_java.html">en fran&ccedil;ais</A>.</I></P>
+
+<!---------------------------------------------------------------------------->
+<!-- CORPS DE LA PAGE -------------------------------------------------------->
+<!---------------------------------------------------------------------------->
+<P> Here is the applet/application <b>msSequencer</b> complete source code. 
+</P>
+
+<PRE>
+/*****************************************************************************/
+/* A simple sequencer to record and playback Midi events
+/*
+/* Look at the MidiFileSequencer.java for a more complete and efficient implementation
+/*
+/* You need to have :
+/* - MidiShare intalled on your machine
+/* - the Midi shared library installed in your Java Folder
+/*
+/* Version: 1.00
+/* Copyright GRAME May 1996
+/*
+/*
+/* MidiShare home page	: http://www.grame.fr/english/MidiShare.html
+/* MidiShare/Java home page	: http://www.grame.fr/english/MidiShare_Java.html
+/*
+/* Bug & comments report 	: msh@rd.grame.fr
+/*
+/*****************************************************************************/
+
+
+import java.awt.Graphics;
+import java.awt.*;
+import java.lang.*;
+import java.util.*;
+
+
+/*---------------------------------------------------------------*/
+/*  Applet/Application
+/*---------------------------------------------------------------*/
+// This class can be used to build an applet or a standalone application
+
+
+public class msSequencer extends java.applet.Applet {
+		Frame window;
+		Button stop;
+		Button record, play;
+		MidiSequencer midiappl = null;
+		
+		public void init(){
+			Panel bottom = new Panel();
+			record = new Button ("Record");
+			stop = new Button ("Stop");
+			play = new Button ("Play");
+
+			setLayout(new GridLayout(2,1,1,1));
+
+       		add(new TitlePanel("JavaSequencer"));
+
+			bottom.setLayout(new GridLayout(1,3,10,10));
+			bottom.add(record);
+			bottom.add(stop);
+			bottom.add(play);
+
+			add(bottom);
+
+
+			}
+
+            /* Draws a box around this panel. */
+			public void paint(Graphics g) {
+				Dimension d = size();
+				g.drawRect(0,0, d.width - 1, d.height - 1);
+			}
+	
+			public Insets insets() {
+				return new Insets(2,2,2,2);
+			 }
+			
+				
+				
+			public boolean action(Event e, Object arg) {
+			  if (e.target instanceof Button) {
+			
+					if (e.target == record)  {
+						play.disable();
+						record.disable();
+						midiappl.Record();
+						return true;
+
+					}else if (e.target == stop) {
+						play.enable();
+						record.enable();
+						midiappl.Stop();
+						return true;
+
+					}else if (e.target == play)  {
+						play.disable();
+						record.disable();
+						midiappl.Play();
+						return true;
+					}
+			  }
+				return true;
+			}
+		
+			public void start() {
+			 	if (midiappl == null){
+					midiappl = new MidiSequencer(this);
+               		try {
+					midiappl.Open ("JavaSequencer");
+				}catch (MidiException e) {
+					System.err.println ("Error opening Midi Sequencer");
+				}
+				midiappl.AcceptType(Midi.typeActiveSens, false);
+				Midi.Connect(midiappl.refnum , 0 ,1);
+				Midi.Connect( 0, midiappl.refnum ,1);
+				
+				}
+			}
+
+			public void stop() {
+				if (midiappl != null) {
+					midiappl.Close();
+					midiappl = null;
+				}
+			}
+			
+				
+   			 public static void main() {
+				SequencerFrame f = new SequencerFrame("Applet/Application");
+				msSequencer sequencer = new msSequencer();
+				f.midiappl = sequencer;
+
+				sequencer.init();
+				sequencer.start();
+
+				f.add("Center", sequencer);
+				f.pack();
+				f.reshape(0,0,250,50);
+				f.show();
+	 		}
+
+
+ }
+
+
+/*---------------------------------------------------------------*/
+/* Frame for standalone application mode
+/*---------------------------------------------------------------*/
+
+class SequencerFrame extends Frame {
+
+	msSequencer midiappl = null;
+	
+	SequencerFrame (String name) {
+		super(name);
+	}
+
+	public boolean handleEvent(Event e) {
+		switch (e.id) {
+		  case Event.WINDOW_DESTROY:
+		  	midiappl.stop();
+		    dispose();
+		    return true;
+		  default:
+		    return false;
+		}
+	 }
+}
+
+
+/*---------------------------------------------------------------*/
+/* MidiFile sequencer class
+/*---------------------------------------------------------------*/
+// Implementation of the sequencer. The MidiFile sequencer class inherit 
+// of the base class MidiAppl and add specific behaviours: 
+// Record, Play, and Stop methods
+
+
+class MidiSequencer extends MidiAppl{
+
+	public static final int idle    	= 0;
+	public static final int playing   	= 1;
+	public static final int recording  	= 2;
+	
+	public msSequencer     	owner;
+	public PlayTask 		playtask = null;
+	
+	int  sequence, offset, state = idle;
+
+
+	public MidiSequencer (msSequencer owner){
+		super();
+		this.owner = owner;
+	}
+
+	public void Open (String name) throws MidiException{
+		super.Open(name);
+		sequence = Midi.NewSeq();
+		if (sequence == 0) throw new MidiException ("No more MidiShare events");
+	}
+
+	public void Close (){
+  		Stop();
+		Midi.FreeSeq(sequence);
+		super.Close();
+	}
+
+	public void ReceiveAlarm(int event) {
+		if (state == recording){
+			Midi.SetDate(event, Midi.GetDate(event) - offset);
+			Midi.AddSeq(sequence, event);
+		}else
+			Midi.FreeEv(event);
+	}
+
+	public void Record(){
+		if (state == idle) {
+			offset = Midi.GetTime();
+			Midi.ClearSeq(sequence);
+			state = recording;
+		}
+	}
+
+	public void Stop(){
+		if (state == playing) playtask.Forget();
+			state = idle;
+	}
+
+	public void Play(){
+		int event = Midi.GetFirstEv (sequence);
+
+		if ((state == idle) && (event != 0)) {
+			playtask = new PlayTask(event);
+			if (ScheduleTask(playtask, Midi.GetTime()) != 0) state = playing;
+		}
+	}
+
+}
+
+/*---------------------------------------------------------------*/
+/* TitlePanel class
+/*---------------------------------------------------------------*/
+
+
+class TitlePanel extends Panel {
+	String title;
+
+	TitlePanel(String myTitle) {
+		 title = myTitle;
+		}
+
+      public void paint(Graphics g) {
+		Dimension d = size();
+		g.setColor (Color.orange);
+		g.drawRect(0,0, d.width - 1, d.height - 1);
+		g.fillRect(1,1, d.width - 1, d.height - 1);
+		g.setColor (Color.black);
+		g.setFont(new Font("Helvetica", Font.BOLD, 12));
+		g.drawString(title, 5, 12);
+	 }
+}
+
+/*---------------------------------------------------------------*/
+/* PlayTask class
+/*---------------------------------------------------------------*/
+// The PlayTask inherit from the base class MidiTask. The method Execute
+// implement playing. 
+
+
+
+class PlayTask extends MidiTask{
+	int event;
+
+	public PlayTask (int event){
+		super();
+		this.event = event;
+	}
+
+	public void Execute(MidiAppl appl, int date){
+		int curdate;
+		
+		MidiSequencer sequencer = (MidiSequencer)appl;
+		curdate = Midi.GetDate(event);
+	
+		while ((event != 0) && (Midi.GetDate(event) == curdate)){
+			sequencer.SendIm(Midi.CopyEv(event));
+			event = Midi.GetLink(event);
+		}
+
+		if (event != 0)
+			sequencer.ScheduleTask(this, date  + Midi.GetDate(event) - curdate);
+		else
+			sequencer.Stop();
+	 }
+}
+</PRE>
+
+
+<PRE>
+
+</PRE>
+
+<HR SIZE=16>
+
+<!---------------------------------------------------------------------------->
+<!-- PIED DE PAGE, AVEC LE TABLEAU DE LIENS ---------------------------------->
+<!---------------------------------------------------------------------------->
+
+<P><A HREF="MidiShare.html"><IMG BORDER=0 ALIGN=CENTER SRC="../Images/Retour1.GIF">
+Back to the page on MidiShare</A></P>
+
+<P><A HREF="Recherche.html"><IMG BORDER=0 ALIGN=CENTER SRC="../Images/Retour2.GIF">
+Back to the page on the research on computer music at Grame</A></P>
+
+<P>Following links allow you to come back to the home page, or to go to the
+first page of one of the great chapters of this server.</P>
+
+<CENTER>
+<P>
+<TABLE BORDER=4>
+<TR><TD><A HREF="Grame.html">HOME PAGE</A></TR></TD>
+</TABLE>
+</P>
+</CENTER>
+
+<P>
+<TABLE BORDER=4 CELLSPACING=2 CELLPADDING=4 WIDTH=100%>
+<TR><TD><A HREF="Presentation.html">Presentation</A><BR></TD>
+<TD><A HREF="Creation.html">Musical Creation</A><BR></TD>
+<TD><A HREF="Diffusion.html">Musical Distribution</A><BR></TR></TD>
+<TR><TD><A HREF="MES.html">Musics on Stage</A><BR></TD>
+<TD><A HREF="EOC.html">Contemporary Orchestral Ensemble</A><BR></TD>
+<TD><A HREF="Saison.html">Season 95/96</A><BR></TR></TD>
+<TR><TD><A HREF="Recherche.html">Research on Computer Music</A><BR></TD>
+<TD><A HREF="Formation.html">Training Actions</A><BR></TD>
+<TD><A HREF="Technique.html">Technical Equipments</A><BR></TR></TD>
+</TABLE>
+</P>
+
+<P>If you have any remark or suggestion, or if you want information, please
+<A HREF="mailto:web@rd.grame.fr">send a mail to web@rd.grame.fr</A>.</P>
+
+</BODY>
+</HTML>

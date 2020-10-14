@@ -1,0 +1,61 @@
+<HTML>
+<HEAD>
+<TITLE>Java E-Mail/Form Classes</TITLE>
+</HEAD>
+<BODY BGCOLOR=FFFFFF>
+<H1 ALIGN=CENTER>Java E-Mail/Form Classes</H1>
+<H2>Sending Mail</H2>
+<P>The class
+<A HREF=java/api/amm.mail.Mailer.html>Mailer</A> <EM>(<A
+HREF=java/source/Mailer.java>source</A>)</EM> actually handles the
+mechanics of connecting to an SMTP server to send e-mail.  It must
+be given an object implementing
+<A HREF=java/api/amm.mail.MailSource.html>MailSource</A> <EM>(<A
+HREF=java/source/MailSource.java>source</A>)</EM> when created.
+When run, Mailer creates the connection, then calls functions from
+it's MailSource which provide necessary Strings: a host to connect
+to, the addresses involved, and so on.  Mailer turns control over
+to the MailSource to actually write the text of the message, and
+then recovers in time to close the connection.  But the MailSource
+has the last laugh, and can respond when the connection is closed
+(by loading a "mail sent successfully" page, for example).</P>
+<P>With these two classes, one can either implement a standard
+e-mail program, or a system that processes forms and sends out the
+result as e-mail.  Since the MailSource is in command for the body
+of the message, it can provide it all from one TextArea, or combine
+the information in any number of lists, switches, text fields, or
+other controls to create the message.</P>
+<P>An example of the first type of program is
+<A HREF=java/source/BasicMail.java>BasicMail</A>, and an example of the
+second is <A HREF=java/source/AIAASurvey.java>AIAASurvey</A>.</P>
+<H2>Receiving Mail</H2>
+<P>The class
+<A HREF=java/api/amm.mail.POPHandler.html>POPHandler</A> <EM>(<A
+HREF=java/source/POPHandler.java>source</A>)</EM> handles the mechanics of
+connecting to a POP3 server to fetch your e-mail.  It must be given an
+object implementing
+<A HREF=java/api/amm.mail.MailSink.html>MailSink</A> <EM>(<A
+HREF=java/source/MailSink.java>source</A>)</EM>when created.</P>
+<P>POPHandler makes a connection, and then handles any pending requests,
+checks for new requests, then closes.  You can tell it to get all mail,
+get new mail, delete messages, etc.  The MailSink (you'll probably want
+to implement it with <EM>synchronized</EM> methods) keeps track of the
+pending requests.  If a new request comes in while the POPHandler is
+talking to the server, it is just stuffed in the queue, and the POPHandler
+handles it when it finishes what it's currently doing.</P>
+<H2>AMMail</H2>
+<P>I've written an e-mail program using these classes.  It's seriously
+multithreaded - every time I turn around I need more threads.
+One to run the main window, one to connect with the POP3 server, one to
+handle the data from the POP3 server and stuff it in the main window,
+others to handle sending mail, etc.  Anyway, if you're interested, you
+can download <A HREF=java/AMMail.zip>AMMail.zip</A> (27k).  I can't
+really give a demo here because an applet can't connect to a POP3 server
+or SMTP server.  But feel free to take it out for a spin, and let me know
+what you think.</P>
+<P ALIGN=CENTER><EM><A HREF=java.html>Aaron's Java Classes</A></EM></P>
+<HR>
+<P><EM>Last modified on August 16, 1996.</EM></P>
+<ADDRESS><A HREF=mailer.html>ammulder@princeton.edu</A></ADDRESS>
+</BODY>
+</HTML>

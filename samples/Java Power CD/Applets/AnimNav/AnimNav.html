@@ -1,0 +1,54 @@
+<HEAD><TITLE>Elijah Dean Meeker's AnimNav.class</TITLE></HEAD>
+<BODY BACKGROUND="plaster.jpg">
+<h2><b>AnimNav.class</b></h2>
+
+This applet loads a series of URLs, their descriptions and a series of images,
+usually an animation. A translation table links the given URLs to frames(or
+sets of frames) of the animation. Clicking on the applet while a given image is
+showing navigates to the URL linked to that image.  Optionally, when the mouse
+is not over the applet an timer will auto advance through the images. It uses
+off-screen buffering to avoid flicker. The full documentation for the APPLET tag is in
+the source code, <A HREF="AnimNav.java">AnimNav.java</A>.<br>
+I would love to see your improvements.<br>
+Elijah.<br>
+<br>
+<A HREF="mailto:elijah@bga.com">elijah@bga.com</A><br>
+<A HREF="http://www.realtime.net/~elijah/">http://www.realtime.net/~elijah/</A>
+<p>
+
+
+
+<center>
+<p>
+<APPLET
+codebase="classes"
+CODE="AnimNav.class" WIDTH=260 HEIGHT=100>	 
+<PARAM NAME="spriteX" VALUE="0">	
+<PARAM NAME="spriteY" VALUE="0">
+<PARAM NAME="sleeptime" VALUE="1000">
+<PARAM NAME="imageCount" VALUE="31">
+<PARAM NAME="prefix" VALUE="images/nav">
+<PARAM NAME="translation" VALUE="0|0|0|0|0|1|1|1|1|2|2|2|3|3|3|3|4|4|4|4|5|5|5|6|6|6|6|7|7|7|7|7">
+<PARAM NAME="URLcount" VALUE="8">
+<PARAM NAME="dest0" VALUE="http://www.realtime.net/~elijah/">
+<PARAM NAME="dest1" VALUE="http://www.mel.dit.csiro.au/~brendan/">
+<PARAM NAME="dest2" VALUE="http://www.realtime.net/~elijah/dadartns.html">
+<PARAM NAME="dest3" VALUE="http://www.realtime.net/~elijah/musns.html">
+<PARAM NAME="dest4" VALUE="http://www.realtime.net/~elijah/skate.html">
+<PARAM NAME="dest5" VALUE="http://www.realtime.net/~elijah/dailyns.html">
+<PARAM NAME="dest6" VALUE="http://lycos.cs.cmu.edu/">
+<PARAM NAME="dest7" VALUE="http://www.realtime.net/~elijah/progns.html">
+<PARAM NAME="desc0" VALUE="Elijah's Meeker's Homepage.">
+<PARAM NAME="desc1" VALUE="The Homepage of Brendan Hills, Australia.">
+<PARAM NAME="desc2" VALUE="A collection of my dad's art.">
+<PARAM NAME="desc3" VALUE="My music and lyrics.">
+<PARAM NAME="desc4" VALUE="My inline skating page.">
+<PARAM NAME="desc5" VALUE="Links that change daily.">
+<PARAM NAME="desc6" VALUE="Lycos search form.">
+<PARAM NAME="desc7" VALUE="Code examples and links.">
+</APPLET>
+
+</center>
+</BODY>
+
+

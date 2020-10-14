@@ -1,0 +1,66 @@
+<html>
+<head>
+<title>KV diagram demonstration - example 2</title>
+</head>
+<body>
+
+
+
+
+<body>
+<p>
+<h1>Java KV diagram demonstration - example 2</h1>
+<hr>
+
+
+<h2>Before minimization</h2>
+
+The following image shows the initial KV diagram and
+the corresponding minterm circuit realization of the second example
+boolean function.
+The initial PLA needs eight AND-gates.
+
+<p>
+<h3>KV diagram before minimization:</h3>
+<img src="f2.gif">
+<p>
+<h3>Initial circuit realization:</h3>
+<img src="f2pla.gif">
+
+<hr>
+<h2>Wrong minimization</h2>
+
+While it is tempting to draw big loops first, this is not a good
+idea for KV diagram minimization.
+This example shows why.
+After drawing the central four-loop first, we need four additional
+one-loops (ok, or two-loops) to cover the other terms.
+The resulting PLA needs five AND-gates.
+<p>
+<h3>KV diagram with loops:</h3>
+<img src="f2bad.gif">
+<p>
+<h3>Corresponding optimized circuit:</h3>
+<img src="f2badpla.gif">
+<p>
+
+<hr>
+<h2>Correct minimization</h2>
+
+If one starts with the smallest loops, 
+the optimal solution is evident.
+This realization of the function only needs four AND-gates!
+<p>
+<h3>KV diagram with loops:</h3>
+<img src="f2opt.gif">
+<p>
+<h3>Optimized circuit:</h3>
+<img src="f2optpla.gif">
+<p>
+
+<hr>
+
+All comments, hints and bug reports are welcome: Please contact
+<a href="mailto:hendrich@informatik.uni-hamburg.de">hendrich@informatik.uni-hamburg.de</a>.
+</body>
+</html>

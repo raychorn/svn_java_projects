@@ -1,0 +1,109 @@
+<HTML>
+
+ <HEAD>
+  <TITLE>Kazuma's Personal Page: JAVA</TITLE>
+ </HEAD>
+
+ <BODY BACKGROUND="../images/jback.jpg" BGCOLOR="#FFFFFF"
+       TEXT="#0000C0" LINK="#0000F0"
+       VLINK="#0000F0" ALINK="#0000FF">
+ <UL>
+
+  <H1 ALIGN="center">
+   <A HREF="http://www.jars.com/">
+    <IMG SRC="../images/rated.gif"
+         WIDTH=115 HEIGHT=95
+         ALIGN="right"
+         HSPACE=5
+         BORDER=0
+         ALT=" JARS RATED ">
+   </A>
+   <IMG SRC="../images/java.gif"
+        WIDTH=64 HEIGHT=64
+        ALIGN="left"
+        HSPACE=29 VSPACE=20
+        ALT="JAVA LOGO">
+   KzmFortune<BR>
+   <H4 ALIGN="center">
+    Date: 30.Nov.95
+   </H4>
+  </H1>
+
+  <H2 ALIGN="center">
+    <TABLE BORDER=1>
+     <TD>
+      <APPLET CODE="KzmFortune"
+              WIDTH=354 HEIGHT=24>
+       <PARAM NAME="copyright" VALUE="Alex 'Kazuma' Garbagnati, kazuma@energy.it">
+       <PARAM NAME="font" VALUE="Arial">
+       <PARAM NAME="fontbold" VALUE=0>
+       <PARAM NAME="fontsize" VALUE=14>
+       <PARAM NAME="shift" VALUE=2>
+       <PARAM NAME="delay" VALUE=50>
+       <PARAM NAME="rectangle" VALUE="4 4 350 20">
+       <PARAM NAME="background" VALUE=1>
+       <PARAM NAME="rect_color" VALUE="0 0 128">
+       <PARAM NAME="text_color" VALUE="0 255 255">
+       <PARAM NAME="filename" VALUE="examples.txt">
+       <PARAM NAME="filelines" VALUE="5">
+      </APPLET>
+     </TD>
+    </TABLE>
+   </H2>
+
+  <HR>
+  <B>KzmFortune</B> is an applet based on my <A HREF="kzmscroll.html">KzmScroll</A> 
+  applet. It put a scrolling message on the screen, just like KzmScroll. The message
+  is randomly readed from a text file that must be present on the same directory 
+  of the host. 
+  <BR>
+  <H3>
+   PARAMETERS
+  </H3>
+  <DL>
+   <DT><B>Font</B>: (String, default=Arial)
+    <DD>This is the name of the font. The only restriction is that it must
+    be written excactly as the system need (normally with the first
+    letter capitalized). NOT WELL TESTED, SORRY !
+   <DT><B>FontSize</B>: (Int, default=12)
+    <DD>The size of the font.
+   <DT><B>FontBold</B>: (0/1, default=1)
+    <DD>If this value is 0, the font is bold, if it is 1 the font is bold.
+   <DT><B>Rectangle</B>: (X Y WIDTH HEIGHT, default=applet dimension)
+    <DD>This is the dimension of the scrollable area.
+   <DT><B>Shift</B>: (Int, default=5)
+    <DD>Is the shifting of the message.
+   <DT><B>Delay</B>: (Int, default=50)
+    <DD>Is the delay between every shift.
+   <DT><B>Rect_Color</B>: (R G B, default=0 0 0)
+    <DD>The color of the scrollable area, the rectangle.
+   <DT><B>Text_Color</B>: (R G B, default=255 255 255)
+    <DD>The color of the message.
+   <DT><B>FileName</B>: (String, default=fortune.txt)
+    <DD>The name of the file containing the fortunes.
+    If the filename is unreadable the applet doesn't work.
+   <DT><B>FileLines</B>: (int)
+    <DD>The number of fortunes into the file. <B>Every fortune must be 1 line</B>.
+    If the number of line is wrong, the message will be "NO FORTUNE".
+   <DT><B>Copyright</B>: (String)
+    <DD>Ok, this is a copyright line. Please don't change it. This applet
+    is freeware, so the only cost is to leave this copyright parameter.
+  </DL>
+  <P>
+  DOWNLOAD "<A HREF="down_applets/KzmFortune.zip">KzmFortune.zip</A>"<BR>
+  <BR>
+  <HR>
+  <H4 ALIGN="center">
+   <A HREF="index.html">BACK TO APPLET LIST</A>
+   <IMG SRC="../images/blacdot.gif"
+        WIDTH=10 HEIGHT=10
+        ALIGN="bottom"
+        HSPACE=25
+        ALT=" * ">
+   <A HREF="../index.html">BACK TO MY HOMEPAGE</A>
+  </H4>
+  <HR>
+
+ </UL>
+ </BODY>
+</HTML>

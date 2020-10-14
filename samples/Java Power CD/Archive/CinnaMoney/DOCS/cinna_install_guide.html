@@ -1,0 +1,120 @@
+<HTML>
+<HEAD>
+<TITLE> CinnaMoney Installation Guide </TITLE>
+</HEAD>
+<BODY text="#000000" vlink="#AA4000" link="#005AC3" alink="#000000" BGCOLOR="#FFFFFF">
+<TABLE WIDTH=100% BORDER=0>
+<TR>
+<TD ALIGN=LEFT><IMG ALIGN=LEFT HSPACE=5 VSPACE=5 SRC="images/tht200ed.gif">
+<TD ALIGN=CENTER><H2>Welcome to THOUGHT Inc.</H2>
+<TD ALIGN=RIGHT><IMG ALIGN=RIGHT HSPACE=5 VSPACE=5 SRC="images/cin200.gif">
+</TABLE>
+<H3>CinnaMoney FCS 1.0 for Java FCS1.0 Installation Guide</H3>
+
+<BR>Download files from http site.
+
+<PRE>
+Sun Solaris version:
+cinnamoney-fcs1.tar.Z      (http://www.thoughtinc.com/cinnamoney/download_cinnamoney.html)
+
+Windows 95 & NT version (or any environment with long filename ZIP software, i.e. Mac,OS2):
+cinnamoney-fcs1.zip      (http://www.thoughtinc.com/cinnamoney/download_cinnamoney.html)
+</PRE>
+<HR>
+<BR>Install distribution:
+
+<P>These instructions presume that you have already installed the Java Developer's Kit (CinnaMoney
+was built with FCS1.0 of the JDK, if you don't already have it, you should
+download it now.) in some directory that will be referred to through the rest of
+this document as <java home directory>
+
+<PRE>
+Sun Solaris:
+cd &lt;java home directory&gt;
+uncompress -c cinnamoney-fcs1.tar.Z | tar xpfv -
+</PRE>
+<HR>
+<P>(Warning, dos versions of pkunzip will truncate filenames rendering this package useless - you
+need an upgraded version of unzip which will support long filenames Winzip 6.0 if you don't
+already have it is a great package)
+<PRE>
+Windows:
+
+cd &lt;java home directory&gt;
+pkunzip -d cinnamoney-fcs1.zip
+</PRE>
+<HR>
+<P>
+Using the package:
+
+<P>A simple Test program is included in this distribution using String Objects just to help you to see
+if you installed the program properly:
+
+<PRE>
+// TestCinnaMoney.java
+// Test Program to test if CinnaMoney Installed
+
+
+import java.util.*;
+import java.lang.*;
+import java.lang.*;
+import CinnaMoney;
+
+public class TestCinnaMoney {
+	public static void main(String args[]) {
+	String strn1 = new String("12000.00");
+	CinnaMoney m1 = new CinnaMoney(strn1);
+	String strn2 = new String("-1200.00");
+	CinnaMoney m2 = new CinnaMoney(strn2);
+	CinnaMoney m3;
+	m3 = m1.add(m2);
+	System.out.print(m1.toString());
+	System.out.print(" + ");
+	System.out.print(m2.toString());
+	System.out.print(" = ");
+	System.out.println(m3.toString());
+	m3 = m1.subtract(m2);
+	System.out.print(m1.toString());
+	System.out.print(" - ");
+	System.out.print(m2.toString());
+	System.out.print(" = ");
+	System.out.println(m3.toString());
+	m3 = m1.divide(m2);
+	System.out.print(m1.toString());
+	System.out.print(" / ");
+	System.out.print(m2.toString());
+	System.out.print(" = ");
+	System.out.println(m3.toString());
+	m3 = m1.multiply(m2);
+	System.out.print(m1.toString());
+	System.out.print(" * ");
+	System.out.print(m2.toString());
+	System.out.print(" = ");
+	System.out.println(m3.toString());
+	System.out.println(m3.toString(2));
+	}
+}
+
+</PRE>
+
+To see if This compiles correctly do the following - it is presumed that your CLASSPATH
+contains a directory reference to "." in it's list of directories.  If this is not the case, then the java
+runtime might have trouble finding this test program when you try to run it with the Java
+package.
+
+<PRE>
+javac TestCinnaMoney.java
+Java TestCinnaMoney
+
+This should print:
+12000.00 + -1200.00 = 10800.00
+12000.00 - -1200.00 = 13200.00
+quotient = 1000
+12000.00 / -1200.00 = -10.00
+12000.00 * -1200.00 = -14400000.0000
+-14400000.00
+
+You have now successfully installed CinnaMoney
+</PRE>
+</BODY>
+</HTML>

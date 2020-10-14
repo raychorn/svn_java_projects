@@ -1,0 +1,357 @@
+<title>CrazyText</title>
+<!-- Changed by: Patrick Taylor, 22-Dec-1995 -->
+
+<center>
+<applet code="CrazyText.class" width=220 height=55>
+<!param name=text value="CrazyText">
+<!param name=delay value="100">
+<!param name=delta value="5">
+<param name=hgap value="5">
+<param name=clear value="true">
+<param name=cycle value="char">
+<!param name=fontName value="Helvetica">
+<!param name=fontSize value="24">
+<!param name=fontBold value="false">
+<!param name=fontItalic value="false">
+<h1>CrazyText</h1>
+This page won't be of much value without a Java-enabled browser.
+</applet>
+</center>
+
+<h2>Description</h2>
+This is a Java&reg applet based on Daniel Wyszynski's NervousText applet,
+which was included as a demo in release 1.0 beta1 of the Java Developers Kit.
+<p>
+Differences between CrazyText and NervousText:
+<ul>
+<li> CrazyText is very customizable.  See the <a href="#Parameters">Parameters</a> and
+  <a href="#Examples">Examples</a> tables below.
+<li> The real guts of CrazyText have been split out into a separate class
+  called CrazyLabel, which can be used as a component in any container.
+<li> NervousText isn't smart about its use of a proportional font.  It spaces
+  all of the characters evenly.  To demonstrate, try giving it a string
+  like "lllllllllllllllllllmmmmmmmmmmmmmmmmmmmm".  The m's get scrunched
+  together, the l's are too far apart.  CrazyText fixes this.
+</ul>
+Also note:
+<ul>
+<li> The applet is resized to fit the text.  Unfortunately, this has no effect
+  in Netscape 2.0 beta2, or in the JDK 1.0 beta1 appletviewer.  However, you
+  can click on the applet to see its desired size on the status line, and set
+  the WIDTH and HEIGHT attributes of the APPLET tag accordingly.
+<li> The text is centered horizontally and vertically.
+</ul>
+
+<h2>Version</h2>
+
+This is version 2.0 of CrazyText.<br>
+It was developed with version 1.0 beta2 of the JDK.<br>
+It was tested with version 2.0 beta4 of the Netscape Navigator&reg;.<br>
+
+<a name="Parameters"></a>
+<h2>Parameters</h2>
+<table border cellpadding=5>
+<tr>
+   <th>Name</th>
+   <th>Type</th>
+   <th>Description</th>
+   <th>Default</th>
+</tr>
+<tr>
+   <td>text</td>
+   <td>string</td>
+   <td>text to be displayed</td>
+   <td>CrazyText</td>
+</tr>
+<tr>
+   <td>delay</td>
+   <td>int</td>
+   <td>milliseconds between updates</td>
+   <td>100</td>
+</tr>
+<tr>
+   <td>delta</td>
+   <td>int</td>
+   <td>craziness factor; max pixel offset</td>
+   <td>5</td>
+</tr>
+<tr>
+   <td>hgap</td>
+   <td>int</td>
+   <td>horizontal spacing between chars</td>
+   <td>0</td>
+</tr>
+<tr>
+   <td>hspace</td>
+   <td>int</td>
+   <td>extra spacing on left and right</td>
+   <td>0</td>
+</tr>
+<tr>
+   <td>vspace</td>
+   <td>int</td>
+   <td>extra spacing on top and bottom</td>
+   <td>0</td>
+</tr>
+<tr>
+   <td>clear</td>
+   <td>boolean</td>
+   <td>clear background on update</td>
+   <td>false</td>
+</tr>
+<tr>
+   <td>cycle</td>
+   <td>string</td>
+   <td>color changes: whole|char|none</td>
+   <td>whole</td>
+</tr>
+<tr>
+   <td>fontName</td>
+   <td>string</td>
+   <td>font name</td>
+   <td>TimesRoman</td>
+</tr>
+<tr>
+   <td>fontSize</td>
+   <td>int</td>
+   <td>font size</td>
+   <td>36</td>
+</tr>
+<tr>
+   <td>fontBold</td>
+   <td>boolean</td>
+   <td>font should be bold</td>
+   <td>true</td>
+</tr>
+<tr>
+   <td>fontItalic</td>
+   <td>boolean</td>
+   <td>font should be italic</td>
+   <td>false</td>
+</tr>
+</table>
+
+<a name="Examples"></a>
+<h2>Examples</h2>
+<table border cellpadding=5>
+<tr>
+   <th>To get this...</th>
+   <th>Cut &amp; Paste this...</th>
+</tr>
+<tr>
+   <td align=center>
+      <applet code="CrazyText.class" width=136 height=37>
+      <param name=text value="CrazyText">
+      <param name=delay value="100">
+      <param name=delta value="5">
+      <param name=hgap value="5">
+      <param name=clear value="true">
+      <param name=cycle value="char">
+      <param name=fontName value="Helvetica">
+      <param name=fontSize value="18">
+      <param name=fontBold value="false">
+      <param name=fontItalic value="false">
+      </applet>
+   </td>
+   <td><pre>
+&lt;applet code="CrazyText.class" width=136 height=37&gt;
+&lt;param name=text value="CrazyText"&gt;
+&lt;param name=delay value="100"&gt;
+&lt;param name=delta value="5"&gt;
+&lt;param name=hgap value="5"&gt;
+&lt;param name=clear value="true"&gt;
+&lt;param name=cycle value="char"&gt;
+&lt;param name=fontName value="Helvetica"&gt;
+&lt;param name=fontSize value="18"&gt;
+&lt;param name=fontBold value="false"&gt;
+&lt;param name=fontItalic value="false"&gt;
+&lt;/applet&gt;</pre>
+   </td>
+</tr>
+<tr>
+   <td align=center>
+      <applet code="CrazyText.class" width=136 height=36>
+      <param name=text value="CrazyText">
+      <param name=delay value="100">
+      <param name=delta value="5">
+      <param name=hgap value="5">
+      <param name=clear value="true">
+      <param name=cycle value="whole">
+      <param name=fontName value="TimesRoman">
+      <param name=fontSize value="18">
+      <param name=fontBold value="false">
+      <param name=fontItalic value="true">
+      </applet>
+   </td>
+   <td><pre>
+&lt;applet code="CrazyText.class" width=136 height=36&gt;
+&lt;param name=text value="CrazyText"&gt;
+&lt;param name=delay value="100"&gt;
+&lt;param name=delta value="5"&gt;
+&lt;param name=hgap value="5"&gt;
+&lt;param name=clear value="true"&gt;
+&lt;param name=cycle value="whole"&gt;
+&lt;param name=fontName value="TimesRoman"&gt;
+&lt;param name=fontSize value="18"&gt;
+&lt;param name=fontBold value="false"&gt;
+&lt;param name=fontItalic value="true"&gt;
+&lt;/applet&gt;</pre>
+   </td>
+</tr>
+<tr>
+   <td align=center>
+      <applet code="CrazyText.class" width=136 height=36>
+      <param name=text value="CrazyText">
+      <param name=delay value="100">
+      <param name=delta value="5">
+      <param name=hgap value="5">
+      <param name=clear value="true">
+      <param name=cycle value="none">
+      <param name=fontName value="TimesRoman">
+      <param name=fontSize value="18">
+      <param name=fontBold value="true">
+      <param name=fontItalic value="false">
+      </applet>
+   </td>
+   <td><pre>
+&lt;applet code="CrazyText.class" width=136 height=36&gt;
+&lt;param name=text value="CrazyText"&gt;
+&lt;param name=delay value="100"&gt;
+&lt;param name=delta value="5"&gt;
+&lt;param name=hgap value="5"&gt;
+&lt;param name=clear value="true"&gt;
+&lt;param name=cycle value="none"&gt;
+&lt;param name=fontName value="TimesRoman"&gt;
+&lt;param name=fontSize value="18"&gt;
+&lt;param name=fontBold value="true"&gt;
+&lt;param name=fontItalic value="false"&gt;
+&lt;/applet&gt;</pre>
+   </td>
+</tr>
+<tr>
+   <td align=center>
+      <applet code="CrazyText.class" width=97 height=32>
+      <param name=text value="CrazyText">
+      <param name=delay value="500">
+      <param name=delta value="2">
+      <param name=hgap value="0">
+      <param name=clear value="false">
+      <param name=cycle value="whole">
+      <param name=fontName value="Helvetica">
+      <param name=fontSize value="18">
+      <param name=fontBold value="true">
+      <param name=fontItalic value="false">
+      </applet>
+   </td>
+   <td><pre>
+&lt;applet code="CrazyText.class" width=97 height=32&gt;
+&lt;param name=text value="CrazyText"&gt;
+&lt;param name=delay value="500"&gt;
+&lt;param name=delta value="2"&gt;
+&lt;param name=hgap value="0"&gt;
+&lt;param name=clear value="false"&gt;
+&lt;param name=cycle value="whole"&gt;
+&lt;param name=fontName value="Helvetica"&gt;
+&lt;param name=fontSize value="18"&gt;
+&lt;param name=fontBold value="true"&gt;
+&lt;param name=fontItalic value="false"&gt;
+&lt;/applet&gt;</pre>
+   </td>
+</tr>
+<tr>
+   <td align=center>
+      <applet code="CrazyText.class" width=87 height=28>
+      <param name=text value="CrazyText">
+      <param name=delay value="500">
+      <param name=delta value="0">
+      <param name=hgap value="0">
+      <param name=clear value="false">
+      <param name=cycle value="whole">
+      <param name=fontName value="Helvetica">
+      <param name=fontSize value="18">
+      <param name=fontBold value="false">
+      <param name=fontItalic value="false">
+      </applet>
+   </td>
+   <td><pre>
+&lt;applet code="CrazyText.class" width=87 height=28&gt;
+&lt;param name=text value="CrazyText"&gt;
+&lt;param name=delay value="500"&gt;
+&lt;param name=delta value="0"&gt;
+&lt;param name=hgap value="0"&gt;
+&lt;param name=clear value="false"&gt;
+&lt;param name=cycle value="whole"&gt;
+&lt;param name=fontName value="Helvetica"&gt;
+&lt;param name=fontSize value="18"&gt;
+&lt;param name=fontBold value="false"&gt;
+&lt;param name=fontItalic value="false"&gt;
+&lt;/applet&gt;</pre>
+   </td>
+</tr>
+</table>
+
+<h2>Example of using CrazyLabel in a container</h2>
+<center>
+<applet code="CrazyLabelExample.class" width=300 height=100>
+</applet>
+</center>
+
+<h2>Code</h2>
+You are welcome to copy this code for free and modify it any way you like.
+If you use it in a web page, credit and/or a link to this page would be
+appreciated.  Pleask ask permission if you want to publish the source for
+commercial purposes.
+<p>
+Shift-click the links in the table below to download.
+<p>
+
+<table border cellpadding=5>
+<tr>
+   <th>Filename</th>
+   <th>Bytes</th>
+   <th>Requires</th>
+</tr>
+<tr>
+   <td><a href="CrazyText.java">CrazyText.java</a></td>
+   <td>2976</td>
+   <td>CrazyLabel.java</td>
+</tr>
+<tr>
+   <td><a href="CrazyLabel.java">CrazyLabel.java</a></td>
+   <td>4692</td>
+   <td></td>
+</tr>
+<tr>
+   <td><a href="CrazyLabelExample.java">CrazyLabelExample.java</a></td>
+   <td>684</td>
+   <td>CrazyLabel.java</td>
+</tr>
+<tr>
+   <td><a href="CrazyText.class">CrazyText.class</a></td>
+   <td>3425</td>
+   <td>CrazyLabel.class</td>
+</tr>
+<tr>
+   <td><a href="CrazyLabel.class">CrazyLabel.class</a></td>
+   <td>4410</td>
+   <td></td>
+</tr>
+<tr>
+   <td><a href="CrazyLabelExample.class">CrazyLabelExample.class</a></td>
+   <td>1121</td>
+   <td>CrazyLabel.class</td>
+</tr>
+<tr>
+   <td><a href="Crazy20.zip">Crazy20.zip</a> <small>(above + this doc)</small></td>
+   <td>11K</td>
+   <td></td>
+</tr>
+</table>
+
+<h2>Author</h2>
+Patrick Taylor<br>
+104 N Trenton St #2, Arlington, VA 22203<br>
+<a href="mailto:taylor@us.net">taylor@us.net</a> or
+<a href="mailto:taylor@template.com">taylor@template.com</a><br>
+<p>
+Questions, comments, suggestions, bug reports and job offers are welcome.

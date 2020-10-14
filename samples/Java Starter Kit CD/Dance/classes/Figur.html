@@ -1,0 +1,784 @@
+<html>
+<head>
+<a name="_top_"></a>
+<title>
+Class Figur
+</title>
+</head>
+<body>
+<a name="_top_"></a>
+<h1>
+Class Figur
+</h1>
+<pre>
+<a href="java.lang.Object.html#_top_">java.lang.Object</a>
+   |
+   +----Figur
+</pre>
+<hr>
+<dl>
+<dt>
+class <b>
+Figur</b>
+<dt>
+extends <a href="java.lang.Object.html#_top_">Object</a>
+<dt>
+implements <a href="java.lang.Runnable.html#_top_">Runnable</a>
+</dl>
+Figur is the main class for storing/displaying the dance figures.
+It is (should be) an abstract class. Don't create an instance of
+it. Create only objects of the classes SlowWaltz, Tango, SlowFox
+and Quickstep.
+<dl>
+<dt>
+<b>See Also:</b>
+<dd>
+<a href="SlowWaltz.html#_top_">SlowWaltz</a>,
+<a href="Tango.html#_top_">Tango</a>,
+<a href="SlowFox.html#_top_">SlowFox</a>,
+<a href="Quickstep.html#_top_">Quickstep</a><dt>
+<b>Version:</b>
+<dd>
+1.1, 13 Sep 1995
+<dt>
+<b>Author:</b>
+<dd>
+Georg He&szlig;mann</dl>
+<hr>
+<a name="index"></a>
+<h2>
+<img src="images/variable-index.gif" width=207 height=38 alt="Variable Index">
+</h2>
+<dl>
+<dt>
+<img src="images/magenta-ball-small.gif" width=6 height=6 alt=" o ">
+<b>
+<a href="#BPM">BPM</a>
+</b>
+<dd>
+beats per minute == Takte * Tempo
+
+<dt>
+<img src="images/magenta-ball-small.gif" width=6 height=6 alt=" o ">
+<b>
+<a href="#Takte">Takte</a>
+</b>
+<dd>
+Is this dance a 3/4 dance (e.g.
+</dl>
+<h2>
+<img src="images/constructor-index.gif" width=275 height=38 alt="Constructor Index">
+</h2>
+<dl>
+<dt>
+<img src="images/yellow-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#Figur(Dance)"><b>Figur</b></a>(Dance)
+<dd>
+Constructor initialize some always needed variables.
+</dl>
+<h2>
+<img src="images/method-index.gif" width=207 height=38 alt="Method Index">
+</h2>
+<dl>
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#BottomEdge()"><b>BottomEdge</b></a>()
+<dd>
+Return the bottom edge of the floors.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#CalcWTime(float)"><b>CalcWTime</b></a>(float)
+<dd>
+Calculate waiting time.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#Dance()"><b>Dance</b></a>()
+<dd>
+Start the animation.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#DoDStep()"><b>DoDStep</b></a>()
+<dd>
+Does one step on the female (Lady) floor.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#DoHStep()"><b>DoHStep</b></a>()
+<dd>
+Does one step on the male (Gent) floor.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#HideComStr()"><b>HideComStr</b></a>()
+<dd>
+Hide the takt/time string (slow/quick or heel/toe) on both floors.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#LeftEdge()"><b>LeftEdge</b></a>()
+<dd>
+Return the left edge of the male floor
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#NextNNTime()"><b>NextNNTime</b></a>()
+<dd>
+Next non zero (german: Null) time.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#PrevNNTime()"><b>PrevNNTime</b></a>()
+<dd>
+Previsious non zero (german: Null) waiting time.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#RightEdge()"><b>RightEdge</b></a>()
+<dd>
+Return the right edge of the female floor (plus some additional space
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#SetCounter(int)"><b>SetCounter</b></a>(int)
+<dd>
+Set the time counter value.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#ShowComStr()"><b>ShowComStr</b></a>()
+<dd>
+Show the takt/time string (slow/quick or heel/toe) on both floors.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#StopDance()"><b>StopDance</b></a>()
+<dd>
+Stop the animation.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#ThreadsAlive()"><b>ThreadsAlive</b></a>()
+<dd>
+Is at least one of the dancing threads (male/female) alive?
+
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#clearSteps()"><b>clearSteps</b></a>()
+<dd>
+Clear all done steps.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#drawNum(java.awt.Graphics, boolean)"><b>drawNum</b></a>(Graphics, boolean)
+<dd>
+Draw the time/takt number.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#drawTitel(java.awt.Graphics)"><b>drawTitel</b></a>(Graphics)
+<dd>
+Draw the dance and figur name on the top of the applet.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#inSingleStep()"><b>inSingleStep</b></a>()
+<dd>
+Are we in single step mode?
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#leaveSingleStep()"><b>leaveSingleStep</b></a>()
+<dd>
+Leave the single step mode.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#run()"><b>run</b></a>()
+<dd>
+Main function for the animation feature.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#stepBackw()"><b>stepBackw</b></a>()
+<dd>
+Take one step backward (in single step mode).
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#stepForw()"><b>stepForw</b></a>()
+<dd>
+Does on step forward (in single step mode)
+
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#toString()"><b>toString</b></a>()
+<dd>
+Returns a String object representing.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#useComStrHT()"><b>useComStrHT</b></a>()
+<dd>
+Use the heel/toe string for the comment field.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#useComStrTime()"><b>useComStrTime</b></a>()
+<dd>
+Use the time (slow/quick) string for the comment field.
+</dl>
+<a name="variables"></a>
+<h2>
+<img src="images/variables.gif" width=153 height=38 alt="Variables">
+</h2>
+<a name="Takte">
+<img src="images/magenta-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<b>
+Takte
+</b>
+<pre>
+  public int Takte
+</pre>
+<dl>
+<dd>
+Is this dance a 3/4 dance (e.g. slow waltz) (=> Takte = 3)
+or a 4/4 dance (e.g. quickstep) (=> Takte = 4)
+</dl>
+<a name="BPM">
+<img src="images/magenta-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<b>
+BPM
+</b>
+<pre>
+  public int BPM
+</pre>
+<dl>
+<dd>
+beats per minute == Takte * Tempo
+</dl>
+<a name="constructors"></a>
+<h2>
+<img src="images/constructors.gif" width=231 height=38 alt="Constructors">
+</h2>
+<a name="Figur"></a>
+<a name="Figur(Dance)">
+<img src="images/yellow-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<b>
+Figur
+</b>
+<pre>
+  protected Figur(<a href="Dance.html#_top_">Dance</a> app)
+</pre>
+<dl>
+<dd>
+Constructor initialize some always needed variables.
+<dl>
+<dt>
+<b>Parameters:</b>
+<dd>
+app
+-
+ pointer to the main dance applet (e.g. needed
+           for Dance.engl
+</dl>
+</dl>
+<p>
+<a name="methods"></a>
+<h2>
+<img src="images/methods.gif" width=151 height=38 alt="Methods">
+</h2>
+<a name="CalcWTime(float)">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="CalcWTime">
+<b>
+CalcWTime
+</b>
+</a>
+<pre>
+  public long CalcWTime(float time)
+</pre>
+<dl>
+<dd>
+Calculate waiting time.
+Gets a float time number relative to the dance tact and
+returns the waiting time in milli secs.
+<dl>
+<dt>
+<b>Parameters:</b>
+<dd>
+time
+-
+ time relative to the dance tact
+<dt>
+<b>Returns:</b>
+<dd>
+waiting time in milli secs.
+</dl>
+</dl>
+<p>
+<a name="NextNNTime()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="NextNNTime">
+<b>
+NextNNTime
+</b>
+</a>
+<pre>
+  public float NextNNTime()
+</pre>
+<dl>
+<dd>
+Next non zero (german: Null) time.
+Looks from the current step forward for the next step with
+waiting time greater zero.
+<dl>
+<dt>
+<b>Returns:</b>
+<dd>
+next non zero waiting time. If no such time exists,
+ return one.
+</dl>
+</dl>
+<p>
+<a name="PrevNNTime()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="PrevNNTime">
+<b>
+PrevNNTime
+</b>
+</a>
+<pre>
+  public float PrevNNTime()
+</pre>
+<dl>
+<dd>
+Previsious non zero (german: Null) waiting time.
+Looks from the current step backward to find the next (smalles)
+waiting time greater zero.
+<dl>
+<dt>
+<b>Returns:</b>
+<dd>
+previsious waiting time greater zero. Returns zero, if no such
+ time exists.
+</dl>
+</dl>
+<p>
+<a name="DoHStep()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="DoHStep">
+<b>
+DoHStep
+</b>
+</a>
+<pre>
+  public float DoHStep()
+</pre>
+<dl>
+<dd>
+Does one step on the male (Gent) floor.
+<dl>
+<dt>
+<b>Returns:</b>
+<dd>
+the waiting time until the next male step is to do
+ or -1 if there was no step to do. (The last step has a waiting
+ time > 0 too, so -1 comes, if there was already no step to do.)
+</dl>
+</dl>
+<p>
+<a name="DoDStep()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="DoDStep">
+<b>
+DoDStep
+</b>
+</a>
+<pre>
+  public float DoDStep()
+</pre>
+<dl>
+<dd>
+Does one step on the female (Lady) floor.
+<dl>
+<dt>
+<b>Returns:</b>
+<dd>
+the waiting time until the next female step is to do
+ or -1 if there was no step to do. (The last step has a waiting
+ time > 0 too, so -1 comes, if there was already no step to do.)
+</dl>
+</dl>
+<p>
+<a name="stepForw()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="stepForw">
+<b>
+stepForw
+</b>
+</a>
+<pre>
+  public void stepForw()
+</pre>
+<dl>
+<dd>
+Does on step forward (in single step mode)
+</dl>
+<p>
+<a name="stepBackw()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="stepBackw">
+<b>
+stepBackw
+</b>
+</a>
+<pre>
+  public void stepBackw()
+</pre>
+<dl>
+<dd>
+Take one step backward (in single step mode).
+If not in single step mode, do all steps and go into single step mode.
+</dl>
+<p>
+<a name="inSingleStep()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="inSingleStep">
+<b>
+inSingleStep
+</b>
+</a>
+<pre>
+  public boolean inSingleStep()
+</pre>
+<dl>
+<dd>
+Are we in single step mode?
+</dl>
+<p>
+<a name="leaveSingleStep()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="leaveSingleStep">
+<b>
+leaveSingleStep
+</b>
+</a>
+<pre>
+  public void leaveSingleStep()
+</pre>
+<dl>
+<dd>
+Leave the single step mode. Needed initializations does the Dance class
+</dl>
+<p>
+<a name="clearSteps()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="clearSteps">
+<b>
+clearSteps
+</b>
+</a>
+<pre>
+  public void clearSteps()
+</pre>
+<dl>
+<dd>
+Clear all done steps. After the next repaint(), no feeds are on the floors.
+</dl>
+<p>
+<a name="ShowComStr()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="ShowComStr">
+<b>
+ShowComStr
+</b>
+</a>
+<pre>
+  public void ShowComStr()
+</pre>
+<dl>
+<dd>
+Show the takt/time string (slow/quick or heel/toe) on both floors.
+<dl>
+<dt>
+<b>See Also:</b>
+<dd>
+<a href="Floor.html#ShowComStr">ShowComStr</a>
+</dl>
+</dl>
+<p>
+<a name="HideComStr()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="HideComStr">
+<b>
+HideComStr
+</b>
+</a>
+<pre>
+  public void HideComStr()
+</pre>
+<dl>
+<dd>
+Hide the takt/time string (slow/quick or heel/toe) on both floors.
+<dl>
+<dt>
+<b>See Also:</b>
+<dd>
+<a href="Floor.html#HideComStr">HideComStr</a>
+</dl>
+</dl>
+<p>
+<a name="useComStrHT()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="useComStrHT">
+<b>
+useComStrHT
+</b>
+</a>
+<pre>
+  public void useComStrHT()
+</pre>
+<dl>
+<dd>
+Use the heel/toe string for the comment field.
+<dl>
+<dt>
+<b>See Also:</b>
+<dd>
+<a href="Floor.html#useComStrHT">useComStrHT</a>
+</dl>
+</dl>
+<p>
+<a name="useComStrTime()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="useComStrTime">
+<b>
+useComStrTime
+</b>
+</a>
+<pre>
+  public void useComStrTime()
+</pre>
+<dl>
+<dd>
+Use the time (slow/quick) string for the comment field.
+<dl>
+<dt>
+<b>See Also:</b>
+<dd>
+<a href="Floor.html#useComStrTime">useComStrTime</a>
+</dl>
+</dl>
+<p>
+<a name="run()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="run">
+<b>
+run
+</b>
+</a>
+<pre>
+  public void run()
+</pre>
+<dl>
+<dd>
+Main function for the animation feature.
+This function will be started twice. As well for the male
+thread (thread name "Herr") an for the female thread (thread name "Dame").
+It does step by step and sleep() between the steps. repaint() is
+only needed, if the waiting time is an fraction of the takt because
+the sound thread already does a repaint every takt beat.
+If all steps are set, the threads does kill themself and, if it was the
+last thread, the sound thread will also be killed.
+</dl>
+<p>
+<a name="Dance()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="Dance">
+<b>
+Dance
+</b>
+</a>
+<pre>
+  public synchronized void Dance()
+</pre>
+<dl>
+<dd>
+Start the animation.
+Set the tempo/BPM, starts the male/female threads and
+than start the sound thread.
+</dl>
+<p>
+<a name="StopDance()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="StopDance">
+<b>
+StopDance
+</b>
+</a>
+<pre>
+  public synchronized void StopDance()
+</pre>
+<dl>
+<dd>
+Stop the animation. E.g. if the "play" button is hit while
+an animation still runs, the animation will be aborted.
+Than all missing steps are done quickly.
+</dl>
+<p>
+<a name="ThreadsAlive()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="ThreadsAlive">
+<b>
+ThreadsAlive
+</b>
+</a>
+<pre>
+  public boolean ThreadsAlive()
+</pre>
+<dl>
+<dd>
+Is at least one of the dancing threads (male/female) alive?
+</dl>
+<p>
+<a name="SetCounter(int)">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="SetCounter">
+<b>
+SetCounter
+</b>
+</a>
+<pre>
+  public void SetCounter(int c)
+</pre>
+<dl>
+<dd>
+Set the time counter value. Needed in single step mode.
+Counter value -1 means, hide the counter window.
+</dl>
+<p>
+<a name="drawTitel(java.awt.Graphics)">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="drawTitel">
+<b>
+drawTitel
+</b>
+</a>
+<pre>
+  public void drawTitel(<a href="java.awt.Graphics.html#_top_">Graphics</a> g)
+</pre>
+<dl>
+<dd>
+Draw the dance and figur name on the top of the applet.
+</dl>
+<p>
+<a name="drawNum(java.awt.Graphics, boolean)">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="drawNum">
+<b>
+drawNum
+</b>
+</a>
+<pre>
+  public void drawNum(<a href="java.awt.Graphics.html#_top_">Graphics</a> g,
+                      boolean update)
+</pre>
+<dl>
+<dd>
+Draw the time/takt number. The value of this counter is
+maintained from the sound class.
+<dl>
+<dt>
+<b>Parameters:</b>
+<dd>
+g
+-
+ actual graphics context
+<dd>
+update
+-
+ only an update or an whole repaint
+<dt>
+<b>See Also:</b>
+<dd>
+<a href="Sound.html#_top_">Sound</a>,
+<a href="Sound.html#GetNumImg">GetNumImg</a>
+</dl>
+</dl>
+<p>
+<a name="LeftEdge()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="LeftEdge">
+<b>
+LeftEdge
+</b>
+</a>
+<pre>
+  public int LeftEdge()
+</pre>
+<dl>
+<dd>
+Return the left edge of the male floor
+</dl>
+<p>
+<a name="RightEdge()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="RightEdge">
+<b>
+RightEdge
+</b>
+</a>
+<pre>
+  public int RightEdge()
+</pre>
+<dl>
+<dd>
+Return the right edge of the female floor (plus some additional space
+</dl>
+<p>
+<a name="BottomEdge()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="BottomEdge">
+<b>
+BottomEdge
+</b>
+</a>
+<pre>
+  public int BottomEdge()
+</pre>
+<dl>
+<dd>
+Return the bottom edge of the floors.
+</dl>
+<p>
+<a name="toString()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="toString">
+<b>
+toString
+</b>
+</a>
+<pre>
+  public <a href="java.lang.String.html#_top_">String</a> toString()
+</pre>
+<dl>
+<dd>
+Returns a String object representing.
+<dl>
+<dt>
+<b>Overrides:</b>
+<dd>
+<a href="java.lang.Object.html#toString()">toString</a> in class <a href="java.lang.Object.html#_top_">Object</a></dl>
+</dl>
+<p>
+</body>
+</html>

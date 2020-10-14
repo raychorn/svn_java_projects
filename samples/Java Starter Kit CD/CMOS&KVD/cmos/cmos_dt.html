@@ -1,0 +1,582 @@
+<html>
+<head>
+<title>CMOS Gatter Demo</title>
+</head>
+
+<body>
+<a href="http://tech-www.informatik.uni-hamburg.de/"><img src="tech-logo.gif">
+</a>
+
+<p>
+<h1>Java CMOS Gatter Demonstration</h1>
+<hr>
+
+Diese Seite demonstriert N-MOS und P-MOS Transistoren und 
+statische CMOS Gatter.
+Die Applets dienen als Test und 'working demonstration'
+f&uuml;r die M&ouml;glichkeiten der Sprache 
+<a href="http://java.sun.com">Java/Hotjava</a>. 
+
+<p>
+<img src="caution.gif">
+<h2>Java Beta-1 Version</h2>
+<b>
+Die Applets benutzen verschiedene Farben, um die Spannungen an den einzelnen
+Transistoren anzuzeigen.
+Sie funktionieren daher nur auf einem Farbdisplay und mit dem Netscape 2.0b
+(Java-enabled Version) Browser richtig.
+Die Applets ohne erkl&auml;renden Text k&ouml;nnen auch mit SUNs
+appletviewer angezeigt werden.
+</b>
+<p>
+<p>
+Alle Kommentare, Hinweise und Fehlermeldungen sind willkommen:
+Bitte eine e-mail an 
+<a href="mailto:hendrich@informatik.uni-hamburg.de">hendrich@informatik.uni-hamburg.de</a> schicken.
+Weitere Hotjava Animationen auf unserem WWW-Server
+gibt es 
+<a href="http://tech-www.informatik.uni-hamburg.de/applets/">hier</a>.
+<p>
+<p>
+
+
+<hr>
+<h2>Grundlagen der CMOS Technologie</h2>
+
+In CMOS (<em>Complementary Metal-Oxide Semiconductor</em>) Technologie
+werden sowohl N- als auch P-Kanal Transistoren benutzt, 
+um logische Funktionen zu realisieren.
+Heute ist CMOS Technologie die dominante Halbleitertechnologie
+f&uuml;r Mikroprozessoren, Speicher (SRAM und DRAM) und 
+anwenderspezifische integrierte Schaltungen (ASICs).
+Hauptvorteil von CMOS gegen&uuml;ber NMOS oder bipolarer Technologie
+ist der viel kleinere Energieverbrauch - statische CMOS Gatter
+haben (fast) keinen statischen Energieverbrauch.
+Die Gatter verbrauchen nur Strom, wenn die Gatter wirklich umschalten.
+Dadurch lassen sich wesentlich mehr CMOS Gatter auf einem IC 
+integrieren, als in NMOS oder bipolarer Technologie.
+<p>
+Die folgenden Java Applets demonstrieren die Funktionsweise von N-Kanal 
+und P-Kanal Transistoren und danach einigen einfachen CMOS Gattern.
+<p>
+Das erste Applet zeigt einen N-Kanal und einen P-Kanal Transistor
+(als <em>Switch-Level Modell</em>).
+Durch Anklicken mit der Maus k&ouml;nnen die Spannungen am
+Gate- und Source-Anschlu&szlig; der Transistoren ge&auml;ndert werden.
+Die resultierende Spannung am Drain-Anschlu&szlig; wird dann
+angezeigt.
+Das Applet benutzt Farben, um die verschiedenen Spannungspegel
+anzuzeigen:
+<ul>
+ <li>Eine logische '1' (entsprechend der positiven Versorgungsspannung VCC,
+     typischerweise +5V oder +3.3V) wird in rot angezeigt,
+ <li>eine logische '0' (entsprechend 0V oder GND) wird in blau
+     wiedergegeben,
+ <li>ein undefiniertes Signal (weder mit VCC noch GND verbunden) wird 
+     orange gezeichnet, 
+ <li>ein Kurzschlu&szlig; wird gr&uuml;n dargestellt.
+</ul>
+<p>
+<applet code=CMOS_tran.class width=500 height=350>
+</applet>
+<p>
+<dl>
+<dt><strong>Erkl&auml;rung:</strong>
+<dd>
+     Jeder Transistor ist mit dem &uuml;blichen Schaltsymbol dargestellt,
+     zus&auml;tzlich wird er durch einen dunkleren Hintergrund 
+     hervorgehoben.
+     <p>
+     Wie bei der Darstellung von CMOS Gattern &uuml;blich, wird beim
+     N-Kanal Transistor der Source-Anschlu&szlig; nach unten gelegt,
+     beim P-Kanal Transistor nach oben.
+     <p>
+     Das Applet stellt den Kanal eines <em>sperrenden</em>
+     Transistors durch ein schwarzes, nicht gef&uuml;lltes Rechteck dar.
+     Beim <em>leitenden</em> Transistor wird der Kanal mit der Farbe 
+     gef&uuml;llt, die der Source-Spannung entspricht.
+     <p>
+<dt><strong>N-Kanal Transistor:</strong>
+<dd>
+     Offenbar leitet der N-Kanal Transistor, wenn am Gate ein '1' Pegel 
+     anliegt. Er sperrt, wenn am Gate eine '0' anliegt.
+     Eine Spannung dazwischen f&uuml;hrt zu einem undefinierten Verhalten
+     ('etwas leitend') und darf in digitalen Schaltungen
+     nicht vorkommen. 
+
+     Das Applet markiert daher Kanal und Drain
+     als Kurzschlu&szlig;, wenn die Gatespannung undefiniert ('Z') ist.
+     <p>
+<dt><strong>P-Kanal Transistor:</strong>
+<dd>
+     Der P-Kanal Transistor verh&auml;t sich genau <em>komplement&auml;r</em>
+     zum N-Kanal Transistor.  Er leitet, wenn an seinem Gate ein '0' Pegel
+     anliegt und sperrt bei einer '1' am Gate.
+     <p>
+     Eine undefinierte Spannung am Gate f&uuml;hrt auch beim P-Kanal
+     Transistor zu undefiniertem Verhalten. Dies wird wieder als
+     Kurzschlu&szlig; markiert.
+     <p>
+</dl>
+
+<hr>
+<h2>Der CMOS Inverter</h2>
+Das wichtigste und einfachste statische CMOS Gatter ist der Inverter.
+Der Inverter besteht aus je einem P-Kanal (oben)
+und einem N-Kanal Transistor (unten), die von einem gemeinsamen
+Eingangssignal 'A' gesteuert werden.
+Das Applet demonstriert, wie der Inverter funktioniert.
+<p>
+
+Die Spannungspegel sind wieder in Farben dargestellt: Eine logische '1'
+in rot, die '0' in blau, undefinierte Pegel ('Z') in orange und
+Kurzschl&uuml;sse in gr&uuml;n.
+<p>
+
+Das Applet zeigt, warum ein undefinierter Pegel am Eingang 'A' ein
+ernstes Problem darstellt:
+Eine offene Leitung kann irgendeinen Pegel annehmen, 
+und im schlimmsten Fall eine Spannung nahe VCC/2. In diesem Fall
+sind bei heutigen Technologien beide Transistoren leitend.
+Das bedeutet, da&szlig; es einen direkten leitenden Pfad  von VCC nach GND
+gibt - einen Kurzschlu&szlig;.
+Diese Bedingung darf nur beim Umschalten des Eingangs von '1' nach '0'
+(und umgekehrt) ganz kurzfristig vorkommen, weil sonst der Stromverbrauch
+sehr stark ansteigt und die Transistoren durch Erw&auml;rmung
+zerst&ouml;rt werden k&ouml;nnen.
+<p>
+Beim Anklicken des Applets wird die Eingangsspannung des Inverters
+von GND nach VCC nach Z (undefiniert) nach GND usw. ge&auml;ndert 
+und der Ausgabewert
+des Inverters dargestellt.
+<p>
+<applet code=CMOS_inv.class width=500 height=400>
+</applet>
+<p>
+<dl>
+<dt><strong>Funktion des CMOS Inverters:</strong>
+<dd>
+    F&uuml;r eine Eingangsspannung von '1' (VCC) sperrt der P-Kanal Transistor,
+    aber der N-Kanal Transistor leitet, und es gibt eine Verbindung von
+    GND zum Ausgang Y. Die Spannung am Ausgang ist also auch 0V,
+    entsprechend dem Wert '0'.
+    <p>
+<dd>Bei einer '0' am Eingang (GND) leitet der P-Kanal Transistor
+    und der N-Kanal Transistor sperrt. Der Ausgang Y wird also &uuml;ber
+    den P-Kanal Transistor mit VCC verbunden, der Ausgangspegel ist '1'.
+    <p>
+<dd>Bei undefiniertem Eingang ('Z') k&ouml;nnen im schlimmsten Fall beide
+    Transistoren leiten und einen Kurzschlu&szlig; verursachen.
+</dl>
+
+<hr>
+<h2>Stromverbrauch des CMOS Inverters</h2>
+
+Der CMOS Inverter zeigt, warum CMOS Schaltungen (fast) keinen
+statischen Stromverbrauch haben: Wenn die Eingangsspannung einen
+festen Wert '1 oder '0' hat, ist einer der beiden Transistoren
+gesperrt, und es flie&szlig;t kein Strom.
+Deshalb flie&szlig;t nur beim Umschalten des Gatters ganz kurz 
+ein Strom, der sich aus zwei Beitr&auml;gen zusammensetzt:
+<ul>
+<li>Die Gate-Elektroden der Transistoren und die Leitungen selbst bilden
+    einen Kondensator, der beim Umschalten entweder aufgeladen oder
+    entladen wird. Ein Zyklus Aufladen/Entladen entspricht also einem
+    kleinen Stromflu&szlig. Ein Beispiel:
+    <p>
+    Ein typischer Wert f&uuml;r die Gate-Kapazit&auml;t 
+    ist etwa <i>Cg</i> = 10 fF.
+    Wenn der Eingang des Inverters zur Zeit <i>t1</i> auf VCC gelegt wird,
+    wird diese Kapazit&auml;t aufgeladen (Ladung <i>Q = Cg * VCC</i>).
+    Wenn der Eingang sp&auml;ter zur Zeit <i>t2</i> auf GND gelegt wird,
+    wird der Kondensator entladen.
+    Dies entspricht einem Strom von
+    <i>I = dQ/dt = (Cg * VCC)/(t2-t1)</i>.
+    <p>
+<li>W&auml;hrend des Umschaltens ist die Spannung am Eingang in der
+    N&auml;he von VCC/2, so da&szlig; beide Transistoren leiten.
+    Dabei flie&szlig;t ganz kurz der Kurzschlu&szlig;strom
+    (typische Umschaltzeiten sind etwa 1ns bis 5ns).
+</ul>
+<p>
+Trotzdem kann die Gesamtstromaufnahme von gro&szlig;en CMOS Chips
+betr&auml;chtlich sein:
+<ul>
+ <li>Moderne Mikroprozessoren k&ouml;nnen bis zu etwa 5 Millionen
+     Transistoren - also vielleicht 1 Million Gatter - enthalten.
+     Typischerweise schalten vielleicht 1% bis 10% dieser Gatter 
+     pro Taktzyklus.
+ <li>Dabei werden Taktfrequenzen von 200 MHz (Zykluszeit 5ns)
+     erreicht. Die Betriebsspannung betr&auml;gt dabei 3.3V.
+ <li>Auf VLSI Chips haben die Verbindungsdr&auml;hte eine wesentlich
+     gr&ouml;&szlig;ere Kapazit&auml;t als die eigentlichen
+     Transistor-Gates <i>Cg</i>.
+     Das Umschalten eines Eingangs bedeutet dann das Umladen 
+     der Gesamtkapazit&auml;t <i>Ctot = Cg + Cw</i>.
+     <br>
+     Typische Kapazit&auml;ten sind dann <i>Ctot = 1pF</i>.
+ <li>Im Beispiel ergibt sich schon aus dem Umladen der Kapazit&auml;ten
+     ein Gesamtstrom von<br> 
+     <i>I = #gates * (Ctot * VCC) / dt
+        = (1% * 1.000.000) * (1pF * 3.3V) / 5ns
+        = 6.6A</i>
+</ul>
+Die Ruhestromaufnahme von CMOS Schaltungen ist aber sehr gering.
+Als Beispiel verbraucht ein statisches CMOS SRAM von 2K*8 Bit nur
+etwa <i>I ~ 1 uA</i>.
+
+<p>
+<p>
+<applet code=CMOS_cur.class width=500 height=400>
+</applet>
+
+<p>
+Die anderen statischen CMOS Gatter (NAND, NOR, etc.) sind ebenfalls so
+aufgebaut, da&szlig; kein Ruhestrom flie&szlig;t.
+
+Der Stromverbrauch dieser CMOS Gatter ist deshalb
+direkt proportional zur Schaltfrequenz.
+
+
+
+
+
+<hr>
+<h2>NAND und NOR Gatter</h2>
+Die folgenden drei Applets zeigen die einfachen NAND und NOR
+Gatter mit zwei Eing&auml;ngen sowie ein NAND Gatter mit 3 Eing&auml;ngen.
+Ein Mausklick nahe einem Eing&auml;ng invertiert die jeweilige
+Eingangsspannung, und die resultierende Ausgangsspannung wird
+dargestellt.
+<p>
+<ul>
+<li>Die entsprechende Kombination der Eingangssignale (A,B) mit zugeh&ouml;rigem
+    Ausgangssignal (Y) wird in der Funktionstabelle auf der rechten
+    Seite der Applets hervorgehoben.
+<li>Anklicken eines Eintrags in der Funktionstabelle setzt die Eing&auml;nge
+    auf die entsprechenden Werte.
+<li>Anklicken der Titelzeile der Funktionstabelle setzt die Eing&auml;nge
+    auf den nachfolgenden Eintrag.
+</ul>
+<p>
+Die Applets zeigen die Spannungen wieder in den oben verwendeten
+Farben an.
+<p>
+Um die Applets zu vereinfachen, werden nur '1' und '0' als Eingangsspannungen
+zugelassen.
+Nat&uuml;rlich kann es wieder zu Kurzschl&uuml;ssen kommen, wenn
+Eing&auml;nge undefiniert sind (und Werte nahe VCC/2 erreichen).
+<p>
+
+<h3>Das NOR Gatter mit zwei Eing&auml;ngen:</h3> 
+Das NOR Gatter mit zwei Eing&auml;ngen ist das einfachste CMOS
+Gatter, das den Namen <em>complementary</em> MOS rechtfertigt:
+In CMOS werden nicht nur komplement&auml;re N-Kanal und P-Kanal
+Transistoren verwendet, sondern auch die Anordnung (Topologie)
+der Transistoren ist komplement&auml;r:
+Im NOR Gatter sind die P-Kanal Transistoren in Reihe zwischen VCC und
+den Ausgang geschaltet, w&auml;hrend die N-Kanal Transistoren 
+zwischen GND und dem Ausgang parallel geschaltet sind.
+<p>
+<applet code=CMOS_nor2.class width=600 height=450>
+</applet>
+<p>
+Nur wenn beide Eing&auml;nge '0' sind, gibt es eine leitende Verbindung
+von VCC zum Ausgang (die Ausgangsspannung ist dann '1'), w&auml;hrend beide
+N-Kanal Transistoren sperren.
+Wenn A oder B oder beide '1' sind, ist der Pfad von VCC zum Ausgang 
+gesperrt, aber einer oder beide N-Kanal Transistoren leiten, und
+der Ausgang Y ist mit GND verbunden (Ausgangspegel also '0').
+<p>
+Man beachte die Leitung zwischen den beiden P-Kanal Transistoren.
+Wenn beide gesperrt sind, ist die Leitung undefiniert (floating).
+Das ist aber kein Problem, da dieses Leitungsst&uuml;ck ja nicht an
+Eing&auml;nge irgendwelcher Transistoren angeschlossen ist.
+<p>
+
+<h3>Das NAND Gatter mit zwei Eing&auml;ngen</h3>
+Im NAND Gatter sind die P-Kanal Transistoren zwischen VCC und dem
+Ausgang Y parallel geschaltet, w&auml;hrend die N-Kanal Transistoren
+zwischen GND und Ausgang in Reihe geschaltet sind.
+<p>
+<applet code=CMOS_nand2.class width=600 height=450>
+</applet>
+<p>
+Beim NAND Gatter ist f&uuml;r die Eingangsbelegung A='1' und B='1' 
+die Verbindung der beiden N-Kanal Transistoren offen, und der entsprechende
+Spannungspegel nicht definiert. 
+<p>
+
+
+
+<h3>Das NAND Gatter mit drei Eing&auml;ngen:</h3>
+Die Verallgemeinerung der NOR und NAND Gatter mit zwei Eing&auml;ngen
+ist jetzt offensichtlich.
+Als Beispiel zeigt das n&auml;chste Applet ein NAND Gatter mit drei
+Eing&auml;ngen.
+
+Wie beim NAND Gatter mit 2 Eing&auml;ngen sind alle (drei) P-Kanal
+Transistoren parallel zwischen VCC und Ausgang Y geschaltet, und
+die N-Kanal Transistoren sind alle (drei) in Reihe geschaltet.
+Wieder treten undefinierte Leitungen zwischen den in 
+Reihe geschalteten Transistoren auf, wenn diese gesperrt sind.
+Auch hier ist das kein Problem, da diese Spannungen nicht an Gate-Eing&auml;nge 
+von anderen Transistoren angeschlossen sind.
+<p>
+<applet code=CMOS_nand3.class width=640 height=480>
+</applet>
+<p>
+
+NOR Gatter mit drei und mehr Eing&auml;ngen werden entsprechend
+aufgebaut - alle P-Kanal Transistoren sind zwischen VCC und Y in Reihe 
+geschaltet,
+und die N-Kanal Transistoren sind zwischen GND und Y parallel geschaltet.
+<p>
+Allerdings bedeutet die Reihenschaltung von Transistoren l&auml;ngere
+Schaltzeiten (besonders f&uuml;r P-Kanal Transistoren) und einen
+Spannungsabfall &uuml;ber die Transistoren.
+Deshalb sind NAND Gatter f&uuml;r aktuelle Zellbibliotheken meistens
+auf 4 Eing&auml;nge beschr&auml;nkt (d.h. 4 N-Kanal Transistoren in
+Reihe geschaltet), und NOR Gatter werden sogar auf
+3 Eing&auml;nge begrenzt (3 P-Kanal Transistoren in Reihe).
+<p>
+Gatter mit mehr Eing&auml;ngen m&uuml;ssen dann aus mehreren 
+einfacheren Gattern aufgebaut werden.
+
+
+
+
+<hr>
+<h2>Komplexgatter</h2>
+
+Wie in NMOS Technologie gibt es in CMOS bestimmte logische
+Funktionen, die sich sehr effizient durch Gatter realisieren lassen.
+Diese Gatter werden <em>Komplexgatter</em> genannt, weil sie eine
+komplexe logische Funktion realisieren - obwohl der Aufbau der 
+Gatter in CMOS Technologie sehr einfach ist.
+<p>
+Typische Beispiele f&uuml;r Komplexgatter die in fast allen 
+Zellbibliotheken vorhanden sind,  sind Kombinationen von AND-OR-INVERT
+und OR-AND-INVERT.
+Als Beispiel zeigt das n&auml;chste Applet das CMOS Komplexgatter
+f&uuml;r die Funktion Y = !((A ^ B) v (C ^ D ^ E)), 
+also die Negation des OR zweier AND Verkn&uuml;pfungen.
+Das Gatter hei&szlig;t daher AOI32.
+<p>
+
+Um das Schaltbild f&uuml;r das Gatter zu vereinfachen, sind die
+Eingangsleitungen nicht komplett dargestellt.
+Statt dessen sind f&uuml;r jeden Eingang (A bis E) nur zwei kurze
+Leitungsst&uuml;cke an den Gattern der entsprechenden Transistoren
+gezeigt.
+Um etwa die Spannung des Eingangs A umzuschalten, 
+erlaubt das Applet deshalb einen
+Mausklick entweder nahe am Gate des N-Kanal Transistors oder nahe am
+Gate des P-Kanal Transistors f&uuml;r Eingang A.
+<p>
+Wieder ist die Anordnung der N-Kanal und P-Kanal Transistoren 
+komplement&auml;r.
+P-Kanal Transistoren in Reihe entsprechen parallel geschalteten
+N-Kanal Transistoren, und umgekehrt.
+<p>
+
+<applet code=CMOS_aoi32.class width=640 height=550>
+</applet>
+<p>
+
+Die Verallgemeinerung auf andere Komplexgatter ist offensichtlich.
+Dabei sind Reihenschaltungen von mehr als drei Transistoren wieder
+problematisch. Typische Zellbibliotheken enthalten deshalb 
+die Gatter AOI21 bis AOI33 und OAI21 bis OAI33.
+&Uuml;bungsaufgabe: Eines dieser Gatter (auf Papier) entwerfen und
+die Funktion verstehen!
+<p>
+
+
+
+
+<hr>
+<p>
+<h2>Das CMOS Transmission-gate</h2>
+
+Eine genauere Analyse des Verhaltens von MOS Transistoren zeigt,
+da&szlig; der Kanal im gesperrten Zustand zwar tats&auml;chlich 
+einen sehr hohen Widerstand aufweist.
+Dagegen ist ein 'leitender' Transistor nicht wirklich ideal leitend -
+der Kanal beh&auml;lt statt dessen einen gewissen Bahnwiderstand,
+der zus&auml;tzlich von den Spannungen am Gate, Source und Drain abh&auml;ngt.
+<p>
+Ein betr&auml;chtlicher Spannungsabfall &uuml;ber den Transistor
+tritt insbesondere f&uuml;r N-Kanal Transistoren auf, wenn die Spannung
+am Source-Anschlu&szlig; nahe VCC liegt;
+entsprechend f&uuml;r P-Kanal Trnasistoren, wenn die Source Spannung
+nahe GND liegt.
+Dies ist kein Problem in den oben skizzierten statischen CMOS-Gattern,
+wo ja alle Source Anschl&uuml;sse von N-Kanal Transistoren nahe GND,
+und alle Source Ansclh&uuml;sse von P-Kanal Transistoren nahe VCC liegen.
+<p>
+
+Aber dieser Spannungsabfall verhindert die Reihenschaltung von mehreren
+Transistoren als Schalter, die sonst zur effizienten Realisierung
+bestimmter Logikgatter genutzt werden k&ouml;nnte.
+<p>
+Eine trickreiche Kombination eines N-Kanal und eines P-Kanal Transistors
+erlaubt aber trotzdem, einen sehr kompakten Schalter in CMOS 
+Technologie zu realisieren: das sogenannte <b>Transmission-Gate</b>.
+Es wird im folgenden Applet demonstriert:
+
+<ul>
+<li>Anklicken der Gate-Anschl&uuml;sse des N-Kanal oder des P-Kanal
+    Transistors invertiert (beide) Spannungen.
+    Ein T-Gate erfordert, da&szlig; die Gate-Spannungen des N-Kanal
+    und des P-Kanal Transistors zueinander invers sind.
+    (Dadurch sind entweder beide Transistoren leitend, oder beide
+    Transistoren sperren.)
+    <p>
+    Zur Ansteuerung eines T-Gate wird daher zus&auml;tzlich ein externer
+    Inverter ben&ouml;tigt.
+    <p>
+<li>Anklicken der 'L' (Source) oder 'R' (drain) Kontakt schaltet die
+    jeweilige Spannung zwischen GND, VCC und Z um.
+    <p>
+    Um das Verhalten des T-Gate als Schalter zu demonstrieren,
+    gewinnt dabei eine neu ausgew&auml;hlte Spannung &uuml;ber 
+    der vorherigen Wert.
+    <p>
+</ul>
+<applet code=CMOS_tgate.class width=500 height=350>
+</applet>
+
+
+
+<h3>Funktion des T-Gate:</h3>
+Die Gate-Spannungen der beiden Transistoren sind immer zueinander invers.
+Wenn die Spannung am Gate des N-Kanal Transistors '1' ist, hat der
+P-Kanal Transistor am Gate also eine '0': Beide Transistoren sperren;
+und die Source und Drain Anschl&uuml;sse sind gegeneinander isoliert.
+<p>
+Wenn die Spannung am Gate des N-Kanal Transistors aber '0' ist, hat
+der P-Kanal Transistor eine '1', und beide Transistoren leiten.
+Wenn dann am Source der beiden Transistoren ein VCC Pegel anliegt,
+gibt es einen Spannungsabfall &uuml;ber den N-Kanal Transistor,
+aber (fast) keinen Spannungsabfall &uuml;ber den P-Kanal Transistor.
+Falls dagegen am Source ein GND Pegel anliegt, ist der P-Kanal
+Transistor nicht perfekt leitend, aber &uuml;ber den N-Kanal Transistor
+gibt es fast keinen Spannungsabfall.
+In beiden F&auml;llen wird die Spannung vom Source ohne Verluste
+zum Drain durchgeschaltet. Wegen der Symmetrie der Transistoren
+kann das T-Gate in beide Richtungen benutzt werden (also auch vom
+Drain zum Source). Deshalb werden die Anschl&uuml;sse des T-Gate
+auch nicht mit Source und Drain bezeichnet, sondern einfach mit 'L'
+(links) und 'R' (rechts).
+<p>
+Das T-Gate wirkt also wie ein (fast) verlustloser Schaltern.
+
+
+<p>
+<hr>
+<p>
+<h2>Das CMOS D-Latch mit T-Gates</h2>
+
+Das oben demonstrierte T-Gate erlaubt in CMOS Technologie
+sehr effiziente Realisierungen f&uuml;r wichtige Funktionen.
+Das vielleicht wichtigste Beispiel wird im n&auml;chsten Applet
+vorgef&uuml;hrt.
+<p>
+Ein normales pegelgesteuertes D-Latch kann - wie in der B Vorlesung
+gezeigt - aus vier NAND-Gattern mit jeweils 2 Eing&auml;gen 
+realisiert werden. Wie oben demonstriert, werden f&uuml;r jedes NAND Gatter
+mit 2 Eing&auml;gen vier Transistoren ben&ouml;tigt - insgesamt
+also 16 Transistoren f&uuml;r das D-Latch.
+(Hinweis: Man versuche, diese Schaltung auf Papier zu skizzieren.
+Der Aufbau des pegelgesteuerten D-Flipflops ist eine
+sehr beliebte Pr&uuml;fungsfrage!)
+<p>
+Das n&auml;chste Applet zeigt, wie ein D-Latch mit nur 8 Transistoren
+(zwei T-Gates und zwei Inverter)
+aufgebaut werden kann, wenn T-Gates verwendet werden und sowohl
+das normale Taktsignal als auch das invertierte Taktsignal bereits
+zur Verf&uuml;gung stehen (dies ist in gro&szlig;en VLSI Schaltungen
+h&auml;ufig der Fall).
+Gegen&uuml;ber der normalen Realisierung aus NAND Gattern spart diese
+L&oum;sung 50% der Transistoren und damit der Chipfl&auml;che ein.
+Wenn nur das einfache Taktsignal zur Verf&uuml;gung steht, wird ein
+zus&auml;tzlicher Inverter ben&ouml;tigt, um das inverse Taktsignal
+zu erzeugen. Trotzdem braucht das T-Gate D-Latch dann immer noch
+nur 10 Transistoren statt 16.
+<p>
+<ul>
+<li>Anklicken des D-Eingangs (Dateneingang) invertiert dessen Wert.
+    <p>
+<li>Anklicken von C (clock) oder NC (not clock, invertierte clock)
+    invertiert den Wert der Takteing&auml;nge.
+    <p>
+    Um die Zeichnung des Flipflops zu vereinfachen, sind nicht alle
+    C und NC Anschl&uuml;sse mit Linien verbunden, sondern nur
+    mit den entsprechenden Namen versehen. (In der wirklichen Schaltung
+    m&uuml;ssen nat&uuml;rlich alle C Eing&auml;nge und alle NC Eing&auml;nge
+    mit Leitungen verbunden werden).
+    <p>
+    Das linke T-Gate wird direkt mit dem Taktsignal (C) angesteuert,
+    das rechte dageben mit dem invertierten (NC).
+    <p>
+<li>Die aktuellen Werte f&uuml;r Dateneingang D, Takteingang C und
+    den Ausgang Q werden zus&auml;tzlich als 'Waveforms' dargestellt
+    (Darstellung der Signale als Funktion der Zeit).
+    Dies erleichtert das Verst&auml;ndnis des Zeitverhaltens des Flipflops.
+    <p>
+<li>Anklicken des Applets au&szlig;erhalb der Daten- oder Takteing&auml;nge
+    l&auml;&szlig;t den Wert von D und C unver&auml;ndert, allerdings
+    wird die Simulationszeit inkrementiert und die Waveforms werden
+    aktualisiert.
+    <p> 
+</ul>
+
+<<applet code=CMOS_dff.class width=600 height=500 background=white>
+</applet>
+<p>
+
+Die Funktion des T-Gate Flipflops ist offensichtlich ganz einfach.
+Wenn der Takteingang C auf '1' liegt, ist das linke T-Gate leitend,
+und der Wert der Dateneingangs wird zum ersten Inverter durchgeschaltet.
+Dieser erzeugt den Wert NOT(D) und steuert den zweiten Inverter,
+der Q = NOT(NOT(D)) = D als Ausgangswert liefert.
+In diesem Zustand mit C = '1' ist das Latch also <i>transparent</i>.
+<p>
+Wenn dagegen der C Eingang auf '0' umgeschaltet wird, sperrt das linke
+T-Gate, aber das R&uuml;ckkopplungs-T-Gate wird leitend. Dessen
+R-Eingang liegt ja aber noch auf Q. Der erste Inverter wird daher mit
+dem Wert Q angesteuert und erzeugt daraus NOT(Q). Der zweite Inverter
+erzeugt daraus NOT(NOT(Q)) = Q und treibt damit wiederum den ersten Inverter.
+Der aktuelle Wert von Q wird stabil gespeichert,
+bis der Takteingang C wieder auf '1' geschaltet wird.
+
+
+
+<hr>
+<h3>Dynamische CMOS Gatter</h3>
+Diese Eintr&auml;ge sind leider noch nicht fertig.
+<p>
+
+<hr>
+
+
+<h3>Verwandte Themen auf unserem Server:</h3>
+<ul>
+ <li><a href="http://tech-www.informatik.uni-hamburg.de/Dokumentation/DokuHomePage.html">Online-Dokumentation</a>
+      (Einf&uuml;hrungen zu Cadence, Synopsys, Maxplus2 auf deutsch!)
+ <li><a href="http://tech-www.informatik.uni-hamburg.de/vhdl/vhdl.html">Hamburger VHDL Server</a> 
+     (VHDL Tools und Modelle)
+ <li><a href="http://tech-www.informatik.uni-hamburg.de/ChipGalerie/galerie.html">Chip-Galerie</a> (unsere EUROCHIP ICs)
+ <li><a href="http://tech-www.informatik.uni-hamburg.de/techhome.html">TECH Homepage</a>
+</ul>
+
+
+
+<hr>
+<i>letzte &Auml;nderung: 06.09.95, 
+<a href="http://tech-www.informatik.uni-hamburg.de/Personal/hendrich/Hendrich.html">Norman Hendrich</a>
+</i>
+
+</body>
+</html>

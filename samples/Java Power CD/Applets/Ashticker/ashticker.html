@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML>
+<HEAD>
+<TITLE>Ashley's Ticker version 2.5 </TITLE>
+</HEAD>
+<BODY BACKGROUND="http://www.wahyan.edu.hk/images/background.gif">
+
+<H1>Ashley Ticker version 2.5</H1>
+<HR>       
+
+A <A HREF="atparameter.html">highly configurable</A> ticker tape with which you could scroll multiple messages or images.
+<P>
+Almost everything is adjustable. You could change the typeface, fontsize, fontstyle, speed 
+of scrolling, as well as the colors of the ticker tape messages. You could also add a
+drop down shadow to the scrolling text with an offset of your choice as well as
+painting a background image and or border which will automatically scale to the size of the
+applet. The vertical position of the scrolling text or graphics relative to the applet is 
+also adjustable. More than one message or image, displaying for a specified number of times or randomly, could
+be defined.                                                                               
+<P>
+One interesting feature of this ticker tape is that it responds to mouse clicking and 
+dragging while displaying some funny messages in the status bar of your browser window. Of course,
+these messages could also be customized.
+<P>
+Take a look at the two examples below. The first one shows a scrolling image, which will change
+randomly whenever you reload or resize the page, on top of my photograph. The second one scrolls several messages
+one after the other. Are you surprise to learn that they are actually one and the same applet?
+
+
+
+<CENTER>
+<P>
+          
+        <applet codebase="http://www.wahyan.edu.hk/java/ticker" code="Ashleyticker.class" width=196 height=220>
+        <param name=image value="images/chengj.gif">
+        <param name=imborder value="images/chborder.gif"> 
+        <param name=random value=1>
+        <param name=repeat value=1>
+        <param name=icount value=9> 
+        <param name=image0 value="http://www.wahyan.edu.hk/images/ticker.gif">
+        <param name=image1 value="http://www.wahyan.edu.hk/images/ticker2.gif">
+        <param name=image2 value="http://www.wahyan.edu.hk/images/ticker3.gif"> 
+        <param name=image3 value="http://www.wahyan.edu.hk/images/car.gif">
+		<param name=image4 value="http://www.wahyan.edu.hk/images/ha.gif">
+		<param name=image5 value="http://www.wahyan.edu.hk/images/walk.gif">
+		<param name=image6 value="http://www.wahyan.edu.hk/images/flyman.gif">
+		<param name=image7 value="http://www.wahyan.edu.hk/images/tug.gif">
+		<param name=image8 value="http://www.wahyan.edu.hk/images/victory.gif">
+        <param name=position value=2>
+        <param name=sensitive value=15>
+        <param name=step value=7>
+        </applet>
+                  
+<BR>
+        <applet  codebase="http://www.wahyan.edu.hk/java/ticker" code="Ashleyticker.class" width=220 height=31>
+        <param name=typeface value="Courier">
+        <param name=mouseup value="That's much better">
+        <param name=mousedown value="Get your hand off me">
+        <param name=mouseleft value="Hey, I haven't finished yet!">
+        <param name=mouseright value="What's the matter?">
+        <param name=mouseoutb value="Please">
+        <param name=fontsize value=14>
+        <param name=image value="images/panel2.gif">
+        <param name=imborder value="images/panelb.gif">
+        <param name=style value=0>
+        <param name=sensitive value=10>
+        <param name=step value=6>
+        <param name=offset value=1>
+        <param name=text value=255,255,0>
+        <param name=shadow value=200,100,20>
+        <param name=backgd value=0,0,0>
+        <param name=count value=3>
+        <param name=repeat value=3>
+        <param name=message0 value="This is the FIRST message. I will appear thrice before the next message appear">
+        <param name=message1 value="So this one is the SECOND message">
+        <param name=message2 value="and this is the LAST message. What do your think?">
+        </applet>
+
+
+</CENTER>
+
+<HR>
+
+Access: <IMG SRC="http://www.iohk.com/cgi-bin/nph-count?link=ashleycheng&width=6"> <P>
+Author: Ashley Cheng (<A HREF="mailto:ackcheng@ha.org.hk">ackcheng@ha.org.hk</A>) March 1996<BR>
+Go back to <A HREF="http://www.iohk.com/UserPages/acheng">my Home-Page</A> or see <A HREF="http://www.iohk.com/UserPages/acheng/javascript.html"> JavaScript(tm) examples written by me</A>. <P>
+See <A HREF="atparameter.html"> the list of parameters</A> <BR>
+Get <A HREF="http://www.wahyan.edu.hk/Ashleyticker.zip">the class file
+</A> written by an amateur - me</BODY>
+</HTML>

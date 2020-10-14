@@ -1,0 +1,61 @@
+=============================================================
+* Copyright (c) 1996 Dimension X, Inc. All Rights Reserved.
+*
+* Dimension X MAKES NO REPRESENTATIONS OR WARRANTIES ABOUT
+* THE SUITABILITY OF THE SOFTWARE, EITHER EXPRESS OR IMPLIED,
+* INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF
+* MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE,
+* OR NON-INFRINGEMENT.
+* Dimension X SHALL NOT BE LIABLE FOR ANY DAMAGES SUFFERED BY
+* LICENSEE AS A RESULT OF USING, MODIFYING OR DISTRIBUTING
+* THIS SOFTWARE OR ITS DERIVATIVES.
+=============================================================
+
+
+These are the last minute release notes for Liquid Motion
+(formerly title TEA or JACK).
+
+Please read the readme.txt and the enclosed user documentation
+(provided as an HTML document).
+
+Two things to remember if you encounter problems with
+Liquid Motion:
+
+1)  This is a special version of the editor and the player.
+    We will make this version a very usable tool, but all
+    significant enhancements will be in the pro versions.
+
+2)  This is a BETA version.
+    We are continuing to work on certain areas, and are
+    releasing this to make the tool available, and to 
+    get feedback from you.
+
+We very much value your feedback.
+
+Please mail your comments to tea@dimensionx.com.
+
+==========================
+KNOWN BUGS/ Problem areas
+
+The PlayerApplet currently loads all media before it
+begins to play, instead of streaming. This will be addressed 
+in a later version.
+
+The UI (menus, etc.) is currently optimized for 
+the Windows environment.  On other platforms you will,
+e.g. see the little ampersands cluttering up the menu names.
+
+The HTML help doc is incomplete - it is currently in rework.
+
+In the Liquid Motion Editor, the player buttons and the scene 
+player window may occasionally be drawn incorrectly (they may 
+be shifted, or may not be visible).  This is due to certain
+bugs in the standard 1.0 Java distribution from Sun.
+
+We have addressed these problems in the professional versions 
+of Liquid Motion, but we cannot legally include the modified 
+Java libraries. We expect that Sun will address these issues
+soon as well.
+
+Note that the problems we describe do not affect applet 
+playback of Liquid Motion Scenes.

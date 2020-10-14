@@ -1,0 +1,12 @@
+CinnaMoney is Trademarked and Copyrighted by THOUGHT Inc. and as so is
+protected by those laws.  This software is licensed for non-commercial
+use only. Please use a web browser to refer to the license agreement 
+in the file docs/license.html
+
+The following files/directories are relevant.
+CinnaMoney.class         CinnaMoney compiled class
+TestCinnaMoney.java      Test program java source code
+TestCinnaMoney.class     Test program compiled
+
+Directories:
+docs                     Documentation subdirectory, also contains readme.txt

@@ -1,0 +1,453 @@
+<HTML>
+<HEAD>
+<TITLE> Java User's Guide. </TITLE>
+</HEAD>
+<BODY text="#000000" vlink="#AA4000" link="#005AC3" alink="#000000" BGCOLOR="#FFFFFF">
+<TABLE WIDTH=100% BORDER=0>
+<TR>
+<TD ALIGN=LEFT><IMG ALIGN=LEFT HSPACE=5 VSPACE=5 SRC="images/tht200ed.gif">
+<TD ALIGN=CENTER><H2>Welcome to THOUGHT Inc.</H2>
+<TD ALIGN=RIGHT><IMG ALIGN=RIGHT HSPACE=5 VSPACE=5 SRC="images/nutmeg2p.gif">
+<!--IMG ALIGN=RIGHT HSPACE=5 VSPACE=5 SRC="images/nutmeg2p.gif"-->
+</TABLE>
+<P>User's Guide and Frequently Asked Questions.
+
+<P> How do I?
+
+<P><A HREF="#importall">Import Nutmeg Classes into my application?</A>
+<BR><A HREF="#importclass">Import a single nutmeg class?</A>
+<BR><A HREF="#simpleexamp">Make a simple example of a program using a nutmeg class?</A>
+<BR><A HREF="#compile">Compile a Java program/applet including Nutmeg?</A>
+<BR><A HREF="#run">Execute a Java program/applet which was compiled to include Nutmeg?</A>
+<BR><A HREF="#enumerate">Enumerate through a Collection, especially Bags?</A>
+<BR><A HREF="#sort">Use the SortedCollection?</A>
+<BR><A HREF="#sortblock">Use a SortBlock to override Sorting?</A>
+<BR><A HREF="#doblock">Use a DoBlock, what is a DoBlock anyway?</A>
+<BR><A HREF="#exceptionblock">Use a DoBlock as an ExceptionBlock?</A>
+<BR><A HREF="#javaexcept">Use Smalltalk style Exception Management instead of Java Exceptions?</A>
+<BR><A HREF="#fixnocol">Fix compile error message: Class &lt;classname&gt; not found in new?</A>
+<BR><A HREF="#fixnotimp">Fix runtime error message: java.Nutmeg.NotImplementedInThisClass: Method Not Valid for Class &lt;classname&gt;?</A>
+<BR><A HREF="#deepcopy">DeepCopy a Collection and all of it's contained Objects?</A>
+<BR><A HREF="#pickclass">Pick Which Collection Class I should use?</A>
+<P>
+<HR>
+<P><A NAME=importall></A><H2>- Import Nutmeg Classes into my application</H2>
+<BR>Importing all of Nutmeg into into my application is an easy operation.  Java allows for the wildcard import of all members of a package by simply using the wildcard asterisk after the package name.  A single line of code in the beginning of your code such as the example here is sufficient to import the Nutmeg package and all of its classes.
+
+<P>import java.Nutmeg.*;
+<P>
+<HR>
+<P><A NAME=importclass></A><H2>- Import a single nutmeg class</H2>
+<BR>Importing a specific class, lets say the class OrderedCollection for example is easily done with a single line of code such as the one following this:
+
+<P>import java.Nutmeg.OrderedCollection;
+<P><HR>
+<P><A NAME=simpleexamp></A><H2>- Simple example of a program using a nutmeg class</H2>
+<BR>The following is a simple program which creates an instance of the Collection class, adds two newly created String Class instances, and then uses the collection class methods to retrieve the objects, and print their results.
+<pre>
+
+/**
+ * Copyright (c) 1995, 1996 THOUGHT Inc. All Rights Reserved.<p>
+ *
+ */
+import java.io.*;
+import java.util.*;
+import java.lang.*;
+import java.Nutmeg.*;
+
+public class TestNutmeg 
+{
+    public static void main(String args[]) 
+    {
+	// Instantiate a new Collection Class
+	Collection cltn = new Collection();
+	// Instantiate new String Class instances and add each to the instantiated Collection
+	String strn = new String("Hello");
+	cltn.add(strn);
+	strn = new String("World");
+	cltn.add(strn);
+	// Print the results of the first two Instances contained in Collection.
+	System.out.println(cltn.at(0));
+	System.out.println(cltn.at(1));
+    }
+}
+
+</pre>
+<HR>
+<P><A NAME=compile></A><H2>- How do I compile a Java program/applet including Nutmeg</H2>
+<BR>Compiling a program to work with Nutmeg is the same as for any other Java program.  Just use the javac compiler to compile your source.
+<BR>An example compile for a file called TestNutmeg.java would be:
+<BR><BR>javac TestNutmeg.java
+<P><HR>
+<P><A NAME=run></A><H2>- How do I execute a program/applet which was compiled to include Nutmeg</H2>
+<BR>Applet execution is documented in <A HREF="http://www.javasoft.com">Sun's documentation</A> for the Java Developer's Kit.  Nutmeg is included in the same fashion that any other java library is.  As long as your CLASSPATH variable is set properly to include Nutmeg, the Nutmeg classes should be found properly.
+<P><HR>
+<P><A NAME=enumerate></A><H2>- Enumerate through a Collection, especially Bags?</H2>
+<BR>The Collections classes have no concept of Enumerating (Stepping through) members of the collection - this task is delegated to the CollectionEnumerator Class.  We can use this class to step through the elements of a collection, return their values one at a time - even if a class doesn't have location specific addressing (such as Bag).  This class also acts as a sort of "pointer" (multiple instances of enumerators can all be pointing to different places within a collection), allowing it's values to be examined one at a time.
+<BR>Here's an example of how we can iterate through a Bag using a CollectionEnumerator Class:
+<BR><PRE>
+<H3>TestEnum.java</H3>
+/**
+ * Copyright (c) 1995, 1996 THOUGHT Inc. All Rights Reserved.<p>
+ *
+ */
+import java.io.*;
+import java.util.*;
+import java.lang.*;
+import java.Nutmeg.*;
+
+public class TestEnum {
+    public static void main(String args[]) 
+    {
+        Bag cltn = new Bag();
+        String strn = new String("Hello");
+        cltn.add(strn);
+        strn = new String("World");
+        cltn.add(strn);
+        strn = new String("ABC");
+        cltn.add(strn);
+        CollectionEnumerator cltne1 = new CollectionEnumerator((Collection)cltn);
+        CollectionEnumerator cltne2 = new CollectionEnumerator((Collection)cltn);
+        cltne2.last();
+        System.out.println("Records in Collection Printed front to back");
+        while(cltne1.hasMoreObjects())
+        {
+            System.out.println(cltne1.nextObject());
+        }
+        System.out.println("Records in Collection Printed back to front");
+        while(cltne2.hasPreviousObjects())
+        {
+            System.out.println(cltne2.prevObject());
+        }
+    }
+}
+
+<H3>Build Instructions</H3>
+javac TestEnum.java
+java TestEnum
+
+<H3>Output should be:</H3>
+Records in Collection Printed front to back
+ABC
+Hello
+World
+Records in Collection Printed back to front
+ABC
+World
+Hello
+
+</PRE>
+<P><HR>
+<P><A NAME=sort></A><H2>- Use the SortedCollection Class</H2>
+<BR>The SortedCollection class requires for any objects which it 'sorts' to implement the interface defined by either Sortable or CSortable (which is Cloneable and Sortable).  This interface adds the 'compare' method, which determines whether it is less than, equal to or greater than the class it's being compared to.
+<BR>Here's an example of how one might use a SortedCollection to collect an Object which contains a String Object as a 'key' datamember.
+<BR><PRE>
+<A NAME="testsortclass"></A><H3>TestSortClass.java</H3>
+/*
+ * Copyright (c) 1995, 1996 THOUGHT Inc. All Rights Reserved.
+ *
+ */
+
+import java.util.*;
+import java.Nutmeg.*;
+
+public
+class TestSortClass implements CSortable 
+{
+
+    protected String localString;
+    /**
+     * Constructor for this class.
+     */
+    TestSortClass(String strn) 
+    {
+	localString = strn;
+    }
+
+    /**
+     * Set String pointer.
+     * @param strn A handle to the string to manage
+     */
+    public void setString(String strn)
+    {
+	localString = strn;
+    }
+
+    /**
+     * Get String pointer.
+     * @return String A handle to the string being manage
+     */
+    public String getString()
+    {
+	return localString;
+    }
+
+    /**
+     * <B>NOTE: This method is required to comply with the CSortable interface</B>
+     * Compare two Objects based on the algorithm in this block.
+     * @param anObject1 First Object to compare
+     * @param anObject2 Second Object to compare
+     * @return int Return of compare, 0 is equal, 1 is greater than -1 is
+     * less than.
+     */
+    public int compare(Object anObject) 
+    {
+	return localString.compareTo(((TestSortClass)anObject).getString());
+    }
+
+    /**
+     * <B>NOTE: This method is required to comply with the CSortable interface</B>
+     * Clone this collection. The objects are not cloned.
+     * @return a new Object identical to the current one.
+     */
+    public synchronized Object clone() 
+    {
+        try {
+	    TestSortClass tsc = (TestSortClass)super.clone();
+	    String strn = new String(localString);
+	    tsc.setString(strn);
+	    return tsc;
+        } catch (CloneNotSupportedException e) {
+            // this shouldn't happen, since we are Cloneable
+            throw new InternalError();
+        }
+    }
+
+}
+
+
+<H3>TestSort1.java</H3>
+/**
+ * Copyright (c) 1995, 1996 THOUGHT Inc. All Rights Reserved.<p>
+ *
+ */
+import java.io.*;
+import java.util.*;
+import java.lang.*;
+import java.Nutmeg.*;
+import TestSortClass;
+
+public class TestSort1
+{
+    public static void main(String args[]) 
+    {
+	SortedCollection cltn = new SortedCollection();
+	String strn = new String("Hello");
+	TestSortClass tsc = new TestSortClass(strn);
+	cltn.add(tsc);
+	strn = new String("World");
+	tsc = new TestSortClass(strn);
+	cltn.add(tsc);
+	strn = new String("ABC");
+	tsc = new TestSortClass(strn);
+	cltn.add(tsc);
+	System.out.println(((TestSortClass)cltn.at(0)).getString());
+	System.out.println(((TestSortClass)cltn.at(1)).getString());
+	System.out.println(((TestSortClass)cltn.at(2)).getString());
+    }
+}
+
+<H3>Build Instructions</H3>
+javac TestSortClass.java
+javac TestSort1.java
+java TestSort1
+
+<H3>Output should be:</H3>
+ABC
+Hello
+World
+</PRE>
+<BR>One of the most powerful additional features of the SortedCollection is realized when 
+it is used in conjunction with a <A HREF="#sortblock">SortBlock</A> to override it's 
+sorting method.
+<P><HR>
+<P><A NAME=sortblock></A><H2>- Use a SortBlock to override Sorting?</H2>
+<BR>The SortBlock is an incredibly powerful feature when used in conjunction with a SortedCollection.  This allows for a programmer to override the default sorting algorithm of the Object being collected by the SortedCollection.
+<BR>Using the class <A HREF="#testsortclass">TestSortClass</A> defined elsewhere in our documentation, we can demonstrate the use of a SortBlock to override default behavior.  Here's an example of how we can reverse the default sort order of our Object's compare
+method, and produce a different ordering in the SortedCollection itself.
+<BR><PRE>
+<H3>TestSortBlock.java</H3>
+/*
+ * Copyright (c) 1995, 1996 THOUGHT Inc. All Rights Reserved.
+ *
+ */
+
+import java.util.*;
+import java.Nutmeg.*;
+import TestSortClass;
+
+/**
+ * Copyright (c) 1995, 1996 THOUGHT Inc. All Rights Reserved.<p>
+ *
+ * TestSortedBlock class (a class that determines sort order of TestSort objects).<p>
+ *
+ */
+public
+class TestSortBlock extends SortBlock 
+{
+
+    /**
+     * Constructor for this class.
+     */
+    public TestSortBlock() 
+    {
+        super();
+    } 
+
+    /**
+     * Compare two Objects based on the algorithm in this block.
+     * @param anObject1 First Object to compare
+     * @param anObject2 Second Object to compare
+     * @return int Return of compare, 0 is equal, 1 is greater than -1 is
+     * less than.
+     */
+    public int compare(Object anObject1, Object anObject2) 
+    {
+	// By subtracting from 0, we return the inverse of the compare
+	return 0 - ((TestSortClass)anObject1).compare(anObject2);
+    }
+
+}
+
+
+<H3>TestSort2.java</H3>
+/**
+ * Copyright (c) 1995, 1996 THOUGHT Inc. All Rights Reserved.<p>
+ *
+ */
+import java.io.*;
+import java.util.*;
+import java.lang.*;
+import java.Nutmeg.*;
+import TestSortClass;
+import TestSortBlock;
+
+public class TestSort2 
+{
+    public static void main(String args[]) 
+    {
+	SortedCollection cltn = new SortedCollection();
+	String strn = new String("Hello");
+	TestSortClass tsc = new TestSortClass(strn);
+	cltn.add(tsc);
+	strn = new String("World");
+	tsc = new TestSortClass(strn);
+	cltn.add(tsc);
+	strn = new String("ABC");
+	tsc = new TestSortClass(strn);
+	cltn.add(tsc);
+	System.out.println(((TestSortClass)cltn.at(0)).getString());
+	System.out.println(((TestSortClass)cltn.at(1)).getString());
+	System.out.println(((TestSortClass)cltn.at(2)).getString());
+        System.out.println("========");
+	TestSortBlock aSortBlock = new TestSortBlock();
+	cltn.sortBlock(aSortBlock); // Set aSortBlock as the default sortBlock
+	cltn.useSortBlock();        // Tell the SortedCollection to use our SortBlock
+	cltn.reSort();              // Resort the elements in the Collection using the SortBlock
+	System.out.println(cltn.size());
+	System.out.println(((TestSortClass)cltn.at(0)).getString());
+	System.out.println(((TestSortClass)cltn.at(1)).getString());
+	System.out.println(((TestSortClass)cltn.at(2)).getString());
+    }
+}
+
+<H3>Build Instructions</H3>
+javac TestSortClass.java
+javac TestSortBlock.java
+javac TestSort2.java
+java TestSort2
+
+<H3>Output should be:</H3>
+ABC
+Hello
+World
+========
+World
+Hello
+ABC
+</PRE>
+<P><HR>
+<P><A NAME=doblock></A><H2>- Use a DoBlock, what is a DoBlock anyway?</H2>
+<BR>A DoBlock is a very powerful Smalltalk language feature which we implemented as a Class in Nutmeg for Java (due to it not existing in the Java language).  A DoBlock in Smalltalk is an arbitrary block of code which can be passed as a parameter to a method.  This can be emulated in Java by passing in a Class with a well defined API instead.
+<P><H3>DoBlock API and usage.</H3>
+<pre>
+// Executes with no parameters (usually used as what Smalltalk calls a Separator Block)
+public boolean DoBlock();
+// Usually called with each object in a Collection - example use might be to find those objects which
+// match some search criteria programmed into the DoBlock.
+public boolean DoBlock(Object anObject);
+// Usually called between two members of a Collection as the Collection is iterated down.
+public boolean DoBlock(Object anObject1, Object anObject2);
+// Results of DoBlock not only might execute some logic, but also create a new Object as it's result.
+public boolean DoBlockNew();
+</pre>
+
+<P>DoBlocks are useful for operations such as iterating through a Collection, and returning a new Collection with those items which match some criteria established in the DoBlock.  To create a new DoBlock, subclass the DoBlock class, and create a new one which has the newly required behavior.
+<P><HR>
+<P><A NAME=exceptionblock></A><H2>- Use a DoBlock as an ExceptionBlock?</H2>
+<BR>An ExceptionBlock comes from Smalltalk, and can be used to do some programmer controllable error handling.  We implement ExceptionBlocks using the <A HREF="java.Nutmeg.DoBlock.html">DoBlock</A> Class for this operation, generally calling the DoBlock() method to handle
+errors when necessary.  Any methods which utilize DoBlocks should 
+<P><HR>
+<P><A NAME=javaexcept></A><H2>- Use Smalltalk style Exception Management instead of Java Exceptions?</H2>
+<BR>Nutmeg defaults to Java style exceptions (which means that we throw exceptions which must be trapped by the programmer, or which will terminate the applet/application when an error/exception occurs).  To change a Collection's behavior to use the Smalltalk Style Exception Handling (Which uses the Exception Class, instead of throwing Java Exceptions), you must call the setSmalltalkExceptionHandling method on it.  Here's an example of how to accomplish this.
+<pre>
+
+// Instantiate a new Collection Class
+Collection cltn = new Collection();
+// Set Class's Exception Handling to use Smalltalk Style
+cltn.useSmalltalkExceptionHandling();
+
+</pre>
+<P>To restore Exception Handling to a Java Style here's another code fragment example:
+<pre>
+
+// Instantiate a new Collection Class
+Collection cltn = new Collection();
+// Set Class's Exception Handling to use Smalltalk Style
+cltn.useJavaExceptionHandling();
+
+</pre>
+<P>To check which Style a Collection Class is currently using, call the usingJavaExceptionHandling method on the Collection.  It returns a boolean value of True if Java Style Exceptions are in use, and false for the Smalltalk Style.  Here's a code fragment example on how you might print the status:
+<pre>
+// Instantiate a new Collection Class
+Collection cltn = new Collection();
+
+...
+
+// Check style of Exception handling currently on use and print message accordingly
+if(cltn.usingJavaExceptionHandling())
+	System.out.println("Using Java");
+else
+	System.out.println("Using Smalltalk");
+</pre>
+<P><HR>
+<BR><A NAME=fixnocol></A><H2>- Fix compile error message: Class &lt;classname&gt; not found in new.</H2>
+<BR>This is usually a sign that you didn't import the Nutmeg properly into your code.  See our reference on <A HREF="#importall">importing Java into your applet/application</A>
+<P><HR>
+<BR><A NAME=fixnotimp></A><H2>- Fix runtime error message: java.Nutmeg.NotImplementedInThisClass: Method Not Valid for Class &lt;classname&gt;.</H2>
+<BR>This message means that you are calling a method on a Class which is not appropriate.  An example would be to call the at() method on a Bag class - which does not support retrieving elements by their location within the Collection.
+<BR>The fix for this is to make sure that you've chosen the appropriate kind of Collection Class to do the operations that you wish.
+<P><HR>
+<BR><A NAME=deepcopy></A><H2>- DeepCopy a Collection and all of it's contained Objects.</H2>
+<BR>Normally Java Collections (those which come with the Java Developer's Kit) do not provide
+any mechanisms to DeepCopy (Clone not only themselves, but also the Objects they reference).
+<P>In Nutmeg, DeepCopy in a generic fashion is only possible if the Objects being collected implement the <A NAME="java.Nutmeg.NCloneable.html">NCloneable</A> or <A NAME="java.Nutmeg.CSortable.html">CSortable</A> interface.  If an Object is to be Cloned as part of the DeepCopy (instead of just referenced by default), then it must be derived from NCloneable or CSortable, and therefore implement the clone() method.
+<P><STRONG>Note:</STRONG> The Sortable interface is not derived from NCloneable, to use DeepCopy with SortedCollections, CSortable must be used instead.
+<P><HR><BR>
+<A NAME=pickclass></A><H2>- Pick Which Collection Class I should use?</H2>
+<BR>Each Class has it's own specific documentation, and class specific features, please refer to the <A HREF="tree_nutmeg.html">Class Hierarchy Documentation</A> for specific class information.  In brief you would use the following classes for the following purposes.
+<BR><BR><A HREF="java.Nutmeg.Collection.html">Collection</A> - Base Class, implements most fundamental behaviors
+<BR><BR><A HREF="java.Nutmeg.Bag.html">Bag</A> - Contains Objects, but they are not indexable - No order is guaranteed
+<BR><BR><A HREF="java.Nutmeg.Set.html">Set</A> - Allows only one instance of an Object in the Collection
+<BR><BR><A HREF="java.Nutmeg.NArray.html">NArray</A> - Functions like a traditional Array
+<BR><BR><A HREF="java.Nutmeg.FixedSizeCollection.html">FixedSizeCollection</A> - A Subclass of Array which has a fixed length determined by the Constructor
+<BR><BR><A HREF="java.Nutmeg.NDictionary.html">NDictionary</A> - Uses Key Value pairs to index Objects (uses NAssociation Objects)
+<BR><BR><A HREF="java.Nutmeg.OrderedCollection.html">OrderedCollection</A> - Order which Object is Entered is Order where it is.
+<BR><BR><A HREF="java.Nutmeg.IndexedCollection.html">IndexedCollection</A> - Indexable, both by using the Object as a key, and by the Location.
+<BR><BR><A HREF="java.Nutmeg.SortedCollection.html">SortedCollection</A> - Objects are Sorted based on how they compare with other Objects in the Collection
+<P>
+<HR>
+<A HREF="../index.html" BORDER=0><H2>Home Page<H2></A>
+
+</BODY>
+</HTML>

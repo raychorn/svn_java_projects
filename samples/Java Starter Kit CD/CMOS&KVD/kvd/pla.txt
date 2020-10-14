@@ -1,0 +1,198 @@
+
+
+
+PLA(5OCTTOOLS)    MISC. REFERENCE MANUAL PAGES     PLA(5OCTTOOLS)
+
+
+
+NAME
+     pla - Format for physical description of Programmable  Logic
+     Arrays.
+
+SYNOPSIS
+     pla
+
+DESCRIPTION
+     This format is used by programs  which  manipulate  plas  to
+     describe  the physical implementation.  Lines beginning with
+     a `#' are comments and are ignored.  Lines beginning with  a
+     `.'  contain  control information about the pla.  Currently,
+     the control information is given in the following order:
+          .i  <number of inputs>
+          .o  <number of outputs>
+          .p  <number of product terms (pterms)>
+          and optionally,
+          .na<name> (the name to be used for the pla)
+
+     What follows then is a description of the AND and OR  planes
+     of  the  pla with one line per product term.  Connections in
+     the AND plane are represented with a `1' for  connection  to
+     the  non-inverted input line and a `0' for connection to the
+     inverted input line.  No connection  to  an  input  line  is
+     indicated  with  'x',  'X', or '-' with '-' being preferred.
+     Connections in the OR plane are indicated by a '1'  with  no
+     connection  being  indicated with 'x', 'X', '0', or '-' with
+     '-' being preferred.  Spaces or tabs may be used freely  and
+     are ignored.
+
+     The end of the pla description is indicated with:
+          .e
+
+     Programs capable of handling split and folded arrays  employ
+     the following format:
+
+
+          AND PLANE
+
+               Column (1) Contact to input  (2) No contact to input
+
+               (1)     (2)
+                1       -     Normal contacts, no splits or folds
+                !       _          Split below
+                ;       ,          Fold to right
+                :       .          Split below and fold to right
+
+          OR PLANE
+
+               Column (1) Contact to output  (2) No contact to output
+
+               (1)     (2)
+
+
+
+Sun Release 4.1       Last change: 8/23/81                      1
+
+
+
+
+
+
+PLA(5OCTTOOLS)    MISC. REFERENCE MANUAL PAGES     PLA(5OCTTOOLS)
+
+
+
+                I       ~          Normal contacts, no splits or folds
+                i       =     Split below
+                |       '          Fold to right
+                j       "          Split below and fold to right
+
+          ADDITIONAL ELEMENTS
+
+                *        Input buffer
+                +        Output buffer
+                D        Depletion load associated with product term
+                N        No depletion load associated with product term
+
+
+     Note  that  the  decoding  function  of  the  AND  plane  is
+     separated  from the specification of its connectivity.  This
+     makes the AND and OR plane specifications identical.
+
+     These  programs  handle  the  following  more  general   set
+     of .parameters:
+
+          .il  <number of left-AND plane inputs>
+          .ir  <number of right-AND plane inputs>
+          .ol  <number of left-OR plane inputs>
+          .or  <number of right-OR plane inputs>
+          .p  <number of product terms>
+
+          .ilt  <labels left-top-AND plane>
+          .ilb  <labels left-bottom-AND plane>
+          .irt  <labels right-top-AND plane>
+          .irb  <labels right-bottom-AND plane>
+          .olb  <labels left-bottom-OR plane>
+          .olt  <labels left-top-OR plane>
+          .orb  <labels right-bottom-Or plane>
+          .ort  <labels right-top-Or plane>
+          .pl  <labels left product terms>
+          .pr  <labels right product terms>
+
+     The first group of parameters must precede the second group.
+     If there is only one AND or OR plane it is assumed to be the
+     left one and the companion .parameters may be  shortened  by
+     dropping their (left,right) designation character.
+
+     In order to better deal with  folded  and  split  PLAs,  the
+     following .parameters are proposed:
+
+          .ig  <input group>
+          .og  <output group>
+          .ins  <inputs excluded from splitting>
+          .inf  <inputs excluded from folding>
+          .ons  <outputs excluded from splitting>
+          .onf  <outputs excluded from folding>
+
+
+
+
+Sun Release 4.1       Last change: 8/23/81                      2
+
+
+
+
+
+
+PLA(5OCTTOOLS)    MISC. REFERENCE MANUAL PAGES     PLA(5OCTTOOLS)
+
+
+
+     In   order   to   build   finite   state    machines,    the
+     following .parameters are proposed:
+
+          .iltf  <left-top-AND feedback terms>
+          .ilbf  <left-bottom-AND feedback terms>
+          .irtf  <right-top-AND feedback terms>
+          .irbf  <right-bottom-AND feedback terms>
+          .oltf  <left-top-OR feedback terms>
+          .olbf  <left-bottom-OR feedback terms>
+          .ortf  <right-top-OR feedback terms>
+          .orbf  <right-bottom-OR feedback terms>
+
+          .ilr  <left re-ordered inputs>
+          .irr  <right re-ordered inputs>
+          .olrf  <left re-ordered outputs>
+          .orrf  <right re-ordered outputs>
+
+     The .XXXf parameters must occur  in  pairs,  with  the .oXXf
+     line  first.   Input and output terms must occur on the same
+     side (top, bottom) of the PLA.  Feedback terms must be given
+     in ascending order.  The re-order .parameters simplify feed-
+     back routing.
+
+
+SEE ALSO
+     espresso(1OCTTOOLS), espresso(5OCTTOOLS), misII(1OCTTOOLS)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sun Release 4.1       Last change: 8/23/81                      3
+
+
+

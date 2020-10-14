@@ -1,0 +1,111 @@
+<html>
+<head>
+<a name="_top_"></a>
+<title>
+Class collections.IncrImpl
+</title>
+</head>
+<body>
+<a name="_top_"></a>
+<pre>
+<a href="packages.html">All Packages</a>    <a href="collections.html">This Package</a>    <a href="collections.html">Previous</a>    <a href="collections.html">Next</a></pre>
+<hr>
+<h1>
+Class collections.IncrImpl
+</h1>
+<pre>
+<a href="java.lang.Object.html#_top_">java.lang.Object</a>
+   |
+   +----collections.IncrImpl
+</pre>
+<hr>
+<dl>
+<dt>
+class <b>
+IncrImpl</b>
+<dt>
+extends <a href="java.lang.Object.html#_top_">Object</a>
+<dt>
+implements <a href="collections.Immutable.html#_top_">Immutable</a>, <a href="collections.Collection.html#_top_">Collection</a>
+</dl>
+Base class for  Immutable Collection implementations.
+using `negative deltas'. That is, they update
+an internally held Collection and set it as the internal Collection
+for the Immutable Collection serving as the result, but also keep
+a record of how to undo this change on a copy of the update, so
+as to reconstruct the original Collection.
+<P>
+Since it's usually the case that applications use updates
+rather than their sources, negative deltas are generally
+more efficient than other schemes. Also, because updates don't
+point to their sources, when a source becomes unreferenced,
+it and all of its edit records can be garbage collected.
+The price you pay for these nice aspects is that
+reconstruction of old versions is not always all that fast or cheap.
+<P>
+The logic of reconstruction is to work our way to the UpdatableCollection
+serving as the source of the edits, and then apply each undo operation
+all the way back up to where we are. Subclasses specialize
+on the exact edit operation to do at each step. 
+<P>
+Reconstruction would be two-line recursive procedure of the form:
+<PRE>
+UpdatableCollection reconstruct() {
+  if (the lastest version) return a clone of the held UpdatableCollection
+  else return edit(nextVersion.reconstruct())
+}
+</PRE>
+Except for two problems:
+<OL>
+<LI> We need to prevent interference among concurrent reconstructions
+   and/or with operations on the collections themselves.
+   But we cannot afford to hold a lock (synch) on every single node in
+   the chain of edits at once. For long edit chains, it would 
+   require too many
+   simultaneous locks. The java runtime could even run out of them.
+<LI> The recursion could get very deep, which is not a good idea
+   in java because of how it uses the stack.
+</OL>
+<P>
+These problems are addressed by:
+<OL>  
+<LI> Using a condition variable, that causes each node to
+   lock without holding all of the locks at once. The
+   variable used, prevVersion_ happens to be the same
+   one used for...
+<LI> Putting next-links from each node to the one representing
+    the edit which is to follow. This way we can iterate rather
+    than use recursion. 
+</OL>
+<P>
+(All this would be a little prettier if we offloaded work
+into Edit Command objects. But since these operations must be
+coordinated with the Collection nodes, it works better to
+roll them together.)
+<P>
+The code is highly particularized for the operations
+currently supported in the collections package. It would
+not be very easy to add subclasses beyond those for the four
+basic flavors of collection subclasses currently implemented.
+<P>
+Some of the basic ideas for this class are due to Mark Miller
+and unknown people at Xerox Parc.
+<dl>
+<dt>
+<b>Author:</b>
+<dd>
+Doug Lea<dt>
+<b>Version:</b>
+<dd>
+0.93
+<P> For an introduction to this package see <A HREF="index.html"> Overview </A>.
+</dl>
+<p>
+<em>
+This class is not public and can therefore not be used outside this package.
+</em>
+<hr>
+<pre>
+<a href="packages.html">All Packages</a>    <a href="collections.html">This Package</a>    <a href="collections.html">Previous</a>    <a href="collections.html">Next</a></pre>
+</body>
+</html>

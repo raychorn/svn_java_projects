@@ -1,0 +1,201 @@
+<html>
+<head>
+<a name="_top_"></a>
+<title>
+Class MEXButtonList
+</title>
+</head>
+<body>
+<a name="_top_"></a>
+<h1>
+Class MEXButtonList
+</h1>
+<pre>
+<a href="java.lang.Object.html#_top_">java.lang.Object</a>
+   |
+   +----MEXButtonList
+</pre>
+<hr>
+<dl>
+<dt>
+class <b>
+MEXButtonList</b>
+<dt>
+extends <a href="java.lang.Object.html#_top_">Object</a>
+</dl>
+MEXButtonList is a header for a group of mutual
+exclusive buttons of type MEXButton.
+<dl>
+<dt>
+<b>See Also:</b>
+<dd>
+<a href="MEXButton.html#_top_">MEXButton</a><dt>
+<b>Version:</b>
+<dd>
+1.0f 25 Aug 1995
+<dt>
+<b>Author:</b>
+<dd>
+Georg He&szlig;mann</dl>
+<hr>
+<a name="index"></a>
+<h2>
+<img src="images/constructor-index.gif" width=275 height=38 alt="Constructor Index">
+</h2>
+<dl>
+<dt>
+<img src="images/yellow-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#MEXButtonList(java.awt.Font)"><b>MEXButtonList</b></a>(Font)
+<dd>
+Create the MEXButton list header.
+</dl>
+<h2>
+<img src="images/method-index.gif" width=207 height=38 alt="Method Index">
+</h2>
+<dl>
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#GetChoosedNum()"><b>GetChoosedNum</b></a>()
+<dd>
+
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#NewMEXButton(int, java.lang.String, int, int, int, int, java.awt.Font)"><b>NewMEXButton</b></a>(int, String, int, int, int, int, Font)
+<dd>
+Insert a new MEXButton into the list of mutual exclusive buttons.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#SetChoosedNum(int)"><b>SetChoosedNum</b></a>(int)
+<dd>
+Select MEXButton with given id-number.
+</dl>
+<a name="constructors"></a>
+<h2>
+<img src="images/constructors.gif" width=231 height=38 alt="Constructors">
+</h2>
+<a name="MEXButtonList"></a>
+<a name="MEXButtonList(java.awt.Font)">
+<img src="images/yellow-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<b>
+MEXButtonList
+</b>
+<pre>
+  public MEXButtonList(<a href="java.awt.Font.html#_top_">Font</a> fnt)
+</pre>
+<dl>
+<dd>
+Create the MEXButton list header.
+<dl>
+<dt>
+<b>Parameters:</b>
+<dd>
+fnt
+-
+ font used for the selected element
+</dl>
+</dl>
+<p>
+<a name="methods"></a>
+<h2>
+<img src="images/methods.gif" width=151 height=38 alt="Methods">
+</h2>
+<a name="NewMEXButton(int, java.lang.String, int, int, int, int, java.awt.Font)">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="NewMEXButton">
+<b>
+NewMEXButton
+</b>
+</a>
+<pre>
+  public void NewMEXButton(int bnum,
+                           <a href="java.lang.String.html#_top_">String</a> l,
+                           int x,
+                           int y,
+                           int w,
+                           int h,
+                           <a href="java.awt.Font.html#_top_">Font</a> f)
+</pre>
+<dl>
+<dd>
+Insert a new MEXButton into the list of mutual exclusive buttons.
+<dl>
+<dt>
+<b>Parameters:</b>
+<dd>
+bnum
+-
+ id number
+<dd>
+l
+-
+ label
+<dd>
+x
+-
+ x-ccordinate of the button
+<dd>
+y
+-
+ y-coordinate of the button
+<dd>
+w
+-
+ the size().width
+<dd>
+h
+-
+ the size().height
+<dd>
+f
+-
+ the font used for the not selected buttons
+</dl>
+</dl>
+<p>
+<a name="SetChoosedNum(int)">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="SetChoosedNum">
+<b>
+SetChoosedNum
+</b>
+</a>
+<pre>
+  public boolean SetChoosedNum(int num)
+</pre>
+<dl>
+<dd>
+Select MEXButton with given id-number.
+<dl>
+<dt>
+<b>Returns:</b>
+<dd>
+Returns, if something has changed and an repaint() is needed.
+</dl>
+</dl>
+<p>
+<a name="GetChoosedNum()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="GetChoosedNum">
+<b>
+GetChoosedNum
+</b>
+</a>
+<pre>
+  public int GetChoosedNum()
+</pre>
+<dl>
+<dd>
+<dl>
+<dt>
+<b>Returns:</b>
+<dd>
+id-number of the selected button
+</dl>
+</dl>
+<p>
+</body>
+</html>

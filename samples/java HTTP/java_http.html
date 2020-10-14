@@ -1,0 +1,33 @@
+<HTML>
+<HEAD>
+<TITLE>Java HTTP Classes</TITLE>
+</HEAD>
+<BODY BGCOLOR=FFFFFF>
+<H1 ALIGN=CENTER>Java HTTP Classes</H1>
+<H2>Retrieving Content</H2>
+<P>The class
+<A HREF=java/api/amm.http.HTTPConnect.html>HTTPConnect</A> <EM>(<A
+HREF=java/source/HTTPConnect.java>source</A>)</EM> actually handles the
+mechanics of connecting to an HTTP server to retrieve a URL.  It must
+be given an object implementing
+<A HREF=java/api/amm.http.HTTPClient.html>HTTPClient</A> <EM>(<A
+HREF=java/source/HTTPClient.java>source</A>)</EM> when created.
+When run, HTTPConnect creates the connection, then calls functions from
+it's HTTPClient which provide necessary information: a host to connect
+to, the file on the host, the transaction method (GET, HEAD, or POST),
+and the content for POST requests.  HTTPConnect parses the HTTP header,
+and then turns control over to the HTTPClient to actually handle the
+content.  Finally, HTTPConnect closes the connection.</P>
+<P>With these two classes, you can retrieve any sort of material from
+an HTTP server.  The program
+<A HREF=java/api/amm.http.HTMLEcho.html>HTMLEcho</A> <EM>(<A
+HREF=java/source/HTMLEcho.java>source</A>)</EM>, for example, lets you
+specify a URL, and name/value pairs for POST requests, and returns HTML
+or Ascii text from that location.  It implements HTTPClient, and starts
+a new HTTPConnect for each URL.</P>
+<P ALIGN=CENTER><EM><A HREF=java.html>Aaron's Java Classes</A></EM></P>
+<HR>
+<P><EM>Last modified on August 16, 1996.</EM></P>
+<ADDRESS><A HREF=mailer.html>ammulder@princeton.edu</A></ADDRESS>
+</BODY>
+</HTML>

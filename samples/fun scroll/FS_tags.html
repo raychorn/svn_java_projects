@@ -1,0 +1,66 @@
+<HTML>
+<HEAD>
+<TITLE>FunScroll Message Line Tags</TITLE>
+<!-- Changed by: Jan Andersson, 16-May-1996 -->
+
+</HEAD>
+<BODY BGCOLOR="#FFCC99">
+<H2>FunScroll Message Line Tags</H2>
+Each message line can contain tags, specifying the animation style.
+Each tag is (by default) deparated by the delimiters: "&lt;&gt;"
+(see the 
+<A HREF="FS_parameters.html">"delim"</A>
+parameter).
+<P>
+The following animation tags can be used:
+<P>
+<TABLE>
+<TH align=left> Tag <TH align=left> Description <TR>
+<TD> &lt;left&gt; <TD> scroll text to the left <TR>
+<TD> &lt;right&gt; <TD> scroll text to the right <TR>
+<TD> &lt;up&gt; <TD> scroll up  <TR>
+<TD> &lt;down&gt; <TD> scroll down <TR>
+<TD> &lt;explode&gt; <TD> Makes characters to "explode" <TR>
+<TD> &lt;nn&gt; <TD> delay nn seconds <TR>
+<TD> &lt;color=#rrggbb&gt; <TD> Set color as specified by RGB-value <TR>
+</TABLE>
+<P>
+Depending on if the tags are specified before or after the message string,
+animation or delays are done before the text is displayed (except for &lt;explode&gt
+that can anly be used  after the message string).
+<P>
+In addition there are tags to control the text style being
+used.
+<P>
+<TABLE>
+<TH align=left> Tag <TH align=left> Description <TR>
+<TD> &lt;nervous&gt; <TD> display text as "nervous" <TR>
+<TD> &lt;sine-wave&gt; <TD> display text, moving in a "sine-wave" style <TR>
+</TABLE>
+<P>
+Default is to display text as normal text.
+<P>
+A line can also be divided into more lines, all of 
+them animated the same way, by using the character "\n" in the line of text.
+In this case group of lines will be centered off the widest line 
+in the group.
+<P>
+Confusing? Well, it's probably easier if you check out the
+<A HREF="FS_examples.html">Examples</A>.
+<H2>Known Problem</H2>
+There seems as the choice of using the format: &lt;tag&gt; to
+specify tags in the message lines was not a good one. It breaks
+the parsing of the &lt;APPLET&gt; tag for non-Java enabled browsers.
+<P>
+If you are going to use FunScroll where it can be accessed (i.e not
+displayed) with Non-Java enanbled browsers there are two ways to solve
+this problem:
+<OL>
+<LI> Use: "&amp;lt;tag&amp;gt;" instead of "&lt;tag&gt;".
+<LI> Use the 
+<A HREF="FS_parameters.html">"delim"</A>
+parameter to specify another delimiter string than
+the default ("&lt;&gt;" ).
+</OL>
+</BODY>
+</HTML>

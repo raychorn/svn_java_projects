@@ -1,0 +1,184 @@
+<html>
+<head>
+   <title>Untitled</title>
+   <meta name="Author" content="">
+   <meta name="GENERATOR" content="Mozilla/2.01Gold (Win32)">
+</head>
+<body>
+<font COLOR="#800080"><font SIZE=+2><b>JPad FQA</b> </font></font>
+<p><b><i>Updated 4/13/96</i></b></p>
+
+<p>
+<hr width="100%"></p>
+
+<p><i>1. Do I need set the CLASSPATH environment variable in order to use
+JPad?</i></p>
+
+<p>No, JPad uses the -classpath command line parameter to pass information
+to Java tools. However, if you are using other environments in addition
+to JPad, such as Netscape, you may need to set the CLASSPATH environment
+variable. You may also need to set the CLASSPATH if you are using the Run
+Applet command. See <a href="Jpadfaq.html#Applet">below</a>.</p>
+
+<p>
+<hr width="100%"></p>
+
+<p><i>2. I just installed JPad but the Compile menu is disabled. What's
+wrong?</i></p>
+
+<p>If the Compile menu is disabled then that means that JPad cannot find
+javac.exe (the JDK compiler). To correct this you need to tell JPad where
+the java directory is located. First open JPad and then choose the Java
+Directory menu item from the Java menu. Then click browse and then open
+your java directory. </p>
+
+<p>Note: your java directory is the directory with a bin and lib subdirectory.
+The bin directory should contain javac.exe along with all the other JDK
+tools.</p>
+
+<p>
+<hr width="100%"></p>
+
+<p><i>3. I just tried to compile my first program but I get errors saying
+that one or more built-in java classes cannot be found? What's wrong?</i></p>
+
+<p>If built-in java classes cannot be found it means that the classes.zip
+entry in the JPad Package Directories dialog does not identify a valid
+file. To correct this choose the menu item Packages Directories from the
+Java menu and double click on the entry classes.zip and edit. For example,
+if your Java Directory is D:\java then the entry for classes.zip file should
+be D:\java\lib\classes.zip. To check that this is working open the HelloWorld.java
+file in JPad Examples directory, compile and then run. You should not get
+any errors while compiling and should see the message &quot;Hello World&quot;
+when you run the HelloWorld application. </p>
+
+<p>
+<hr width="100%"></p>
+
+<p><i>4. I'm trying to setup JPad but I can't find the classes.zip file
+in my JDK. Where is the classes.zip file?</i></p>
+
+<p>Most likely you have a earlier version of JDK. To check find the file
+javac.exe and check the date. If it was created before January 1996 then
+you do not have a current version of JDK. You need to download the latest
+version from <a href="http://java.sun.com/JDK-1.0">Sun</a> before you can
+use JPad. </p>
+
+<p>
+<hr width="100%"></p>
+
+<p><i>5. I'm trying to build my own Java package, but the compiler cannot
+find my classes. What's wrong?</i></p>
+
+<p>The first thing to check is to make sure that you have an entry in the
+JPad Package Directories dialog for the top folder containing your package.
+If you are defining subpackages then you also need to make sure that the
+folder structure matches the package structure. That's because JDK tools
+looks for a package by finding the corresponding folder starting with one
+of the entries in the JPad Package Directories dialog. For example, the
+package MyPackage.First should have a folder \MyPackage\First\ and the
+JPad Package Directories dialog should have an entry for the folder containing
+the folder MyPackage. For example, if MyPackage is a folder in the JPad
+folder then the entry would be C:\JPad</p>
+
+<p>
+<hr width="100%"></p>
+
+<p><i>6. When I try to run an applet, JPad displays a command line dialog.
+What should I enter on the command line?</i></p>
+
+<p>You should enter the URL of a html file that will test your applet.
+For example to run the example applet you would enter the following:</p>
+
+<p>file:&lt;path to your JPad directory&gt;/JPad/Applet/Hello.html</p>
+
+<p>For example, if JPad is installed in C:\JPad then the URL is file:C/JPad/Applet/Hello.html.
+Note that the directory separator is a forward slash rather than the usual
+Windows backward slash.</p>
+
+<p>
+<hr width="100%"></p>
+
+<p><i>7.<a name="Applet"></a> </i>When I try to run an applet using JPad,
+I get errors saying that one or more classes cannot be found? What's wrong?</p>
+
+<p>JDK's appletviewer is an exception to the other JDK tools in that it
+does not accept a classpath command line parameter. The simplest solution
+is to put all your applet classes in one folder together with your html
+test file(s) and to run the applet only when you have the source for one
+of your applets displayed in the front window. The other solution is to
+set the CLASSPATH environment variable to include the paths to your applet
+classes. </p>
+
+<p>
+<hr width="100%"></p>
+
+<p>8. My applet runs just fine under JPad but it does not seem to run when
+I open my html page using a browser. What's wrong?</p>
+
+<p>Check your browser documentation to see what you need to do to set it
+up to run Java applets.</p>
+
+<p>
+<hr width="100%"></p>
+
+<p><i>9. Can I use JPad with JDK Beta 2? </i></p>
+
+<p>JPad was built for JDK&nbsp;1.0 and we recommend that you use JDK 1.0
+or later. However if you must use JDK Beta 2 it appears, based on limited
+testing, that JPad is compatible. </p>
+
+<p>
+<hr width="100%"></p>
+
+<p><i>10. I'm trying to compile my first class and JPad stops responding
+or I get a system error message. What wrong?</i></p>
+
+<p>The most likely source of this problem is that you have something wrong
+with your JDK. Here are some things to check and do:</p>
+
+<p>a) Is your distribution file OK? Sun recommends that you make sure that
+the size of the downloaded file is correct. See Sun's JDK site for more
+<a href="http://java.sun.com/JDK-1.0">infomation</a></p>
+
+<p>b) Do you have multiple JDK's installed? If so remove all but the latest.</p>
+
+<p>c) If your distribution file looks OK try reinstalling JDK</p>
+
+<p>d) If all else fails then get a new copy of JDK and try reinstalling.</p>
+
+<p>
+<hr width="100%"></p>
+
+<p><i>11. How can I see or change the command line parameters that JPad
+passes to the JDK tools?</i></p>
+
+<p>If you need to see or change the command line arguments that JPad passes
+to the Java tools hold down the shift key while choosing a Java menu item</p>
+
+<p>
+<hr width="100%"></p>
+
+<p><i>12. Will JPad run on Windows NT 4.0?</i></p>
+
+<p>JPad was developed for Windows 95 and NT 3.51. ModelWorks has done limited
+testing of JPad with Windows NT 4.0 Beta and did not find any major problems.</p>
+
+<p>
+<hr width="100%"></p>
+
+<p><i>13. Will JPad run on Windows 3.1 or Windows NT 3.5?</i></p>
+
+<p>No, JPad was developed for Windows 95 and NT 3.51. There are no plans
+to support these operating systems.</p>
+
+<p>
+<hr width="100%"></p>
+
+<p>Copyright &copy; 1996, ModelWorks Software. All rights reserved. JPad
+and JPad Pro are trademarks of ModelWorks Software. Java is a trademark
+of Sun Microsystems, Inc. Windows is a registered trademark of Microsoft
+Corporation. </p>
+
+</body>
+</html>

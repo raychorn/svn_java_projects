@@ -1,0 +1,1187 @@
+<html>
+<head>
+<a name="_top_"></a>
+<title>
+Class Dance
+</title>
+</head>
+<body>
+<a name="_top_"></a>
+<h1>
+Class Dance
+</h1>
+<pre>
+<a href="java.lang.Object.html#_top_">java.lang.Object</a>
+   |
+   +----<a href="java.awt.Component.html#_top_">java.awt.Component</a>
+           |
+           +----<a href="java.awt.Container.html#_top_">java.awt.Container</a>
+                   |
+                   +----<a href="java.awt.Panel.html#_top_">java.awt.Panel</a>
+                           |
+                           +----<a href="java.applet.Applet.html#_top_">java.applet.Applet</a>
+                                   |
+                                   +----Dance
+</pre>
+<hr>
+<dl>
+<dt>
+public class <b>
+Dance</b>
+<dt>
+extends <a href="java.applet.Applet.html#_top_">Applet</a>
+</dl>
+Dance - java.applet.Applet<P>
+java.applet.Applet for learning how to dance.<P>
+You can choose one of four dances and for every
+dance one of some figures and one of some music
+titels and view the animation of the figur
+synchron to the music.<P>
+The applet uses three threads for the animation
+and does an gread effort to make the animation
+as flickerless as possible.<P>
+Three attributes are currently supported:<br>
+<tt>english</tt> - use english texts<br>
+<tt>audio</tt> - default audio on/off<br>
+<tt>fatborder</tt> - use fat or thin border for the buttons.<P>
+<dl><dt><b>Disclaimer:</b>
+<dd>Sorrie, my Java is better than my english.
+            (My dancing is even better. :)
+</dl>
+<dl>
+<dt>
+<b>See Also:</b>
+<dd>
+<a href="Figur.html#_top_">Figur</a>,
+<a href="Floor.html#_top_">Floor</a>,
+<a href="Foot.html#_top_">Foot</a>,
+<a href="Button.html#_top_">Button</a>,
+<a href="MEXButtonList.html#_top_">MEXButtonList</a>,
+<a href="MEXButton.html#_top_">MEXButton</a>,
+<a href="ToggleButton.html#_top_">ToggleButton</a>,
+<a href="Step.html#_top_">Step</a><dt>
+<b>Version:</b>
+<dd>
+1.1, 13 Sep 1995
+<dt>
+<b>Author:</b>
+<dd>
+Georg He&szlig;mann</dl>
+<hr>
+<a name="index"></a>
+<h2>
+<img src="images/variable-index.gif" width=207 height=38 alt="Variable Index">
+</h2>
+<dl>
+<dt>
+<img src="images/magenta-ball-small.gif" width=6 height=6 alt=" o ">
+<b>
+<a href="#buttonFont">buttonFont</a>
+</b>
+<dd>
+Font used for the buttons.
+<dt>
+<img src="images/magenta-ball-small.gif" width=6 height=6 alt=" o ">
+<b>
+<a href="#buttonFontBld">buttonFontBld</a>
+</b>
+<dd>
+Bold font used for the buttons.
+<dt>
+<img src="images/magenta-ball-small.gif" width=6 height=6 alt=" o ">
+<b>
+<a href="#choiceFont">choiceFont</a>
+</b>
+<dd>
+Font used for the sub-titels
+<dt>
+<img src="images/magenta-ball-small.gif" width=6 height=6 alt=" o ">
+<b>
+<a href="#engl">engl</a>
+</b>
+<dd>
+Use english or german for the strings
+<dt>
+<img src="images/magenta-ball-small.gif" width=6 height=6 alt=" o ">
+<b>
+<a href="#fatBorder">fatBorder</a>
+</b>
+<dd>
+Should have the buttons a two pixel border or only a one pixel border.
+<dt>
+<img src="images/magenta-ball-small.gif" width=6 height=6 alt=" o ">
+<b>
+<a href="#figur">figur</a>
+</b>
+<dd>
+Currently active figur.
+<dt>
+<img src="images/magenta-ball-small.gif" width=6 height=6 alt=" o ">
+<b>
+<a href="#foots">foots</a>
+</b>
+<dd>
+Foot object.
+<dt>
+<img src="images/magenta-ball-small.gif" width=6 height=6 alt=" o ">
+<b>
+<a href="#smallFont">smallFont</a>
+</b>
+<dd>
+Small font, currently not used.
+<dt>
+<img src="images/magenta-ball-small.gif" width=6 height=6 alt=" o ">
+<b>
+<a href="#smallFontBld">smallFontBld</a>
+</b>
+<dd>
+Small font bold.
+<dt>
+<img src="images/magenta-ball-small.gif" width=6 height=6 alt=" o ">
+<b>
+<a href="#titleFont">titleFont</a>
+</b>
+<dd>
+Font used for the applet titel
+</dl>
+<h2>
+<img src="images/constructor-index.gif" width=275 height=38 alt="Constructor Index">
+</h2>
+<dl>
+<dt>
+<img src="images/yellow-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#Dance()"><b>Dance</b></a>()
+<dd>
+
+</dl>
+<h2>
+<img src="images/method-index.gif" width=207 height=38 alt="Method Index">
+</h2>
+<dl>
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#actionAnimationHelpButton()"><b>actionAnimationHelpButton</b></a>()
+<dd>
+Function will be called if the "help" button within the animation page is hit.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#actionBackStepButton()"><b>actionBackStepButton</b></a>()
+<dd>
+Function will be called if the "step backw." button is hit.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#actionCommentButton(boolean)"><b>actionCommentButton</b></a>(boolean)
+<dd>
+Function will be called if the "slow/quick | toe/heal" button is hit.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#actionDanceButton(int)"><b>actionDanceButton</b></a>(int)
+<dd>
+Function will be called if one of the dance buttons are hit.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#actionFigurButton(int)"><b>actionFigurButton</b></a>(int)
+<dd>
+Function will be called, if one of the figur buttons are hit.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#actionInfoButton()"><b>actionInfoButton</b></a>()
+<dd>
+Function will be called if the "dance info" button is hit.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#actionMainHelpButton()"><b>actionMainHelpButton</b></a>()
+<dd>
+Function will be called if the "help" button within the main page is hit.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#actionMenuButton()"><b>actionMenuButton</b></a>()
+<dd>
+Function will be called if the "menu" button is hit.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#actionMusicButton(int)"><b>actionMusicButton</b></a>(int)
+<dd>
+Function will be called, if one of the music buttons are hit.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#actionPlayButton()"><b>actionPlayButton</b></a>()
+<dd>
+Function will be called if the "play" button is hit.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#actionPlayMusicButton()"><b>actionPlayMusicButton</b></a>()
+<dd>
+Function will be called if the "test music" button is hit.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#actionShowButton()"><b>actionShowButton</b></a>()
+<dd>
+Function will be called if the "show dance" button is hit.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#actionSoundButton(boolean)"><b>actionSoundButton</b></a>(boolean)
+<dd>
+Function will be called if the "audio on | slow motion" button is hit.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#actionStepButton()"><b>actionStepButton</b></a>()
+<dd>
+Function will be called if the "step forw." button is hit.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#getAppletInfo()"><b>getAppletInfo</b></a>()
+<dd>
+returns some info about author, version and copyright of the applet
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#getCurDance()"><b>getCurDance</b></a>()
+<dd>
+
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#getCurFigur()"><b>getCurFigur</b></a>()
+<dd>
+
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#getCurMusic()"><b>getCurMusic</b></a>()
+<dd>
+
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#getParameterInfo()"><b>getParameterInfo</b></a>()
+<dd>
+returns info about the parameters
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#init()"><b>init</b></a>()
+<dd>
+java.applet.Applet initialization function.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#killFigur()"><b>killFigur</b></a>()
+<dd>
+Change from the animation page back to the main page.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#mouseDown(java.awt.Event, int, int)"><b>mouseDown</b></a>(Event, int, int)
+<dd>
+java.applet.Applet function: mouseDown()
+Calls button.mouseDown() to check for button hits.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#mouseDrag(java.awt.Event, int, int)"><b>mouseDrag</b></a>(Event, int, int)
+<dd>
+java.applet.Applet function: mouseDrag()
+Calls button.mouseDrag() to check for button hits.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#mouseUp(java.awt.Event, int, int)"><b>mouseUp</b></a>(Event, int, int)
+<dd>
+java.applet.Applet function: mouseUp()
+Calls button.mouseUp() to check for button hits.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#newFigur()"><b>newFigur</b></a>()
+<dd>
+Change from the main page to the animation page.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#paint(java.awt.Graphics)"><b>paint</b></a>(Graphics)
+<dd>
+java.applet.Applet function: paint()
+Redraw completly the main (figur==null) or animation page (figur!=null).
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#setCurDance(int)"><b>setCurDance</b></a>(int)
+<dd>
+
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#setCurFigur(int)"><b>setCurFigur</b></a>(int)
+<dd>
+
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#setCurMusic(int)"><b>setCurMusic</b></a>(int)
+<dd>
+
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#start()"><b>start</b></a>()
+<dd>
+
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#stop()"><b>stop</b></a>()
+<dd>
+java.applet.Applet function: stop()
+Stops the dancing and the audio.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#toString()"><b>toString</b></a>()
+<dd>
+Returns a String object representing.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#update(java.awt.Graphics)"><b>update</b></a>(Graphics)
+<dd>
+java.applet.Applet function: update()
+Redraw only the changed things.
+<dt>
+<img src="images/red-ball-small.gif" width=6 height=6 alt=" o ">
+<a href="#useAudio()"><b>useAudio</b></a>()
+<dd>
+Should audio played while the animation runs?
+</dl>
+<a name="variables"></a>
+<h2>
+<img src="images/variables.gif" width=153 height=38 alt="Variables">
+</h2>
+<a name="engl">
+<img src="images/magenta-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<b>
+engl
+</b>
+<pre>
+  public boolean engl
+</pre>
+<dl>
+<dd>
+Use english or german for the strings
+</dl>
+<a name="foots">
+<img src="images/magenta-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<b>
+foots
+</b>
+<pre>
+  public <a href="Foot.html#_top_">Foot</a> foots
+</pre>
+<dl>
+<dd>
+Foot object. Needed for drawing foots.
+</dl>
+<a name="titleFont">
+<img src="images/magenta-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<b>
+titleFont
+</b>
+<pre>
+  public <a href="java.awt.Font.html#_top_">Font</a> titleFont
+</pre>
+<dl>
+<dd>
+Font used for the applet titel
+</dl>
+<a name="choiceFont">
+<img src="images/magenta-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<b>
+choiceFont
+</b>
+<pre>
+  public <a href="java.awt.Font.html#_top_">Font</a> choiceFont
+</pre>
+<dl>
+<dd>
+Font used for the sub-titels
+</dl>
+<a name="smallFont">
+<img src="images/magenta-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<b>
+smallFont
+</b>
+<pre>
+  public <a href="java.awt.Font.html#_top_">Font</a> smallFont
+</pre>
+<dl>
+<dd>
+Small font, currently not used.
+</dl>
+<a name="smallFontBld">
+<img src="images/magenta-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<b>
+smallFontBld
+</b>
+<pre>
+  public <a href="java.awt.Font.html#_top_">Font</a> smallFontBld
+</pre>
+<dl>
+<dd>
+Small font bold. Used for showing the current selection.
+</dl>
+<a name="buttonFont">
+<img src="images/magenta-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<b>
+buttonFont
+</b>
+<pre>
+  public <a href="java.awt.Font.html#_top_">Font</a> buttonFont
+</pre>
+<dl>
+<dd>
+Font used for the buttons.
+</dl>
+<a name="buttonFontBld">
+<img src="images/magenta-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<b>
+buttonFontBld
+</b>
+<pre>
+  public <a href="java.awt.Font.html#_top_">Font</a> buttonFontBld
+</pre>
+<dl>
+<dd>
+Bold font used for the buttons.
+</dl>
+<a name="figur">
+<img src="images/magenta-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<b>
+figur
+</b>
+<pre>
+  public <a href="Figur.html#_top_">Figur</a> figur
+</pre>
+<dl>
+<dd>
+Currently active figur.
+</dl>
+<a name="fatBorder">
+<img src="images/magenta-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<b>
+fatBorder
+</b>
+<pre>
+  public boolean fatBorder
+</pre>
+<dl>
+<dd>
+Should have the buttons a two pixel border or only a one pixel border.
+</dl>
+<a name="constructors"></a>
+<h2>
+<img src="images/constructors.gif" width=231 height=38 alt="Constructors">
+</h2>
+<a name="Dance"></a>
+<a name="Dance()">
+<img src="images/yellow-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<b>
+Dance
+</b>
+<pre>
+  public Dance()
+</pre>
+<a name="methods"></a>
+<h2>
+<img src="images/methods.gif" width=151 height=38 alt="Methods">
+</h2>
+<a name="init()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="init">
+<b>
+init
+</b>
+</a>
+<pre>
+  public void init()
+</pre>
+<dl>
+<dd>
+java.applet.Applet initialization function.
+Loads some fonts, reads the attributes "english", "audio" and
+"fatborder".
+<dl>
+<dt>
+<b>Overrides:</b>
+<dd>
+<a href="java.applet.Applet.html#init()">init</a> in class <a href="java.applet.Applet.html#_top_">Applet</a></dl>
+</dl>
+<p>
+<a name="start()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="start">
+<b>
+start
+</b>
+</a>
+<pre>
+  public void start()
+</pre>
+<a name="paint(java.awt.Graphics)">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="paint">
+<b>
+paint
+</b>
+</a>
+<pre>
+  public void paint(<a href="java.awt.Graphics.html#_top_">Graphics</a> g)
+</pre>
+<dl>
+<dd>
+java.applet.Applet function: paint()
+Redraw completly the main (figur==null) or animation page (figur!=null).
+<dl>
+<dt>
+<b>Overrides:</b>
+<dd>
+<a href="java.awt.Component.html#paint(java.awt.Graphics)">paint</a> in class <a href="java.awt.Component.html#_top_">Component</a></dl>
+</dl>
+<p>
+<a name="update(java.awt.Graphics)">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="update">
+<b>
+update
+</b>
+</a>
+<pre>
+  public void update(<a href="java.awt.Graphics.html#_top_">Graphics</a> g)
+</pre>
+<dl>
+<dd>
+java.applet.Applet function: update()
+Redraw only the changed things.
+<dl>
+<dt>
+<b>Overrides:</b>
+<dd>
+<a href="java.awt.Component.html#update(java.awt.Graphics)">update</a> in class <a href="java.awt.Component.html#_top_">Component</a></dl>
+</dl>
+<p>
+<a name="stop()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="stop">
+<b>
+stop
+</b>
+</a>
+<pre>
+  public void stop()
+</pre>
+<dl>
+<dd>
+java.applet.Applet function: stop()
+Stops the dancing and the audio.
+<dl>
+<dt>
+<b>Overrides:</b>
+<dd>
+<a href="java.applet.Applet.html#stop()">stop</a> in class <a href="java.applet.Applet.html#_top_">Applet</a></dl>
+</dl>
+<p>
+<a name="getAppletInfo()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="getAppletInfo">
+<b>
+getAppletInfo
+</b>
+</a>
+<pre>
+  public <a href="java.lang.String.html#_top_">String</a> getAppletInfo()
+</pre>
+<dl>
+<dd>
+returns some info about author, version and copyright of the applet
+<dl>
+<dt>
+<b>Overrides:</b>
+<dd>
+<a href="java.applet.Applet.html#getAppletInfo()">getAppletInfo</a> in class <a href="java.applet.Applet.html#_top_">Applet</a></dl>
+</dl>
+<p>
+<a name="getParameterInfo()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="getParameterInfo">
+<b>
+getParameterInfo
+</b>
+</a>
+<pre>
+  public <a href="java.lang.String.html#_top_">String</a>[][] getParameterInfo()
+</pre>
+<dl>
+<dd>
+returns info about the parameters
+<dl>
+<dt>
+<b>Overrides:</b>
+<dd>
+<a href="java.applet.Applet.html#getParameterInfo()">getParameterInfo</a> in class <a href="java.applet.Applet.html#_top_">Applet</a></dl>
+</dl>
+<p>
+<a name="mouseDown(java.awt.Event, int, int)">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="mouseDown">
+<b>
+mouseDown
+</b>
+</a>
+<pre>
+  public boolean mouseDown(<a href="java.awt.Event.html#_top_">Event</a> evt,
+                           int x,
+                           int y)
+</pre>
+<dl>
+<dd>
+java.applet.Applet function: mouseDown()
+Calls button.mouseDown() to check for button hits.
+<dl>
+<dt>
+<b>Overrides:</b>
+<dd>
+<a href="java.awt.Component.html#mouseDown(java.awt.Event, int, int)">mouseDown</a> in class <a href="java.awt.Component.html#_top_">Component</a><dt>
+<b>See Also:</b>
+<dd>
+<a href="Button.html#mouseDown">mouseDown</a>
+</dl>
+</dl>
+<p>
+<a name="mouseUp(java.awt.Event, int, int)">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="mouseUp">
+<b>
+mouseUp
+</b>
+</a>
+<pre>
+  public boolean mouseUp(<a href="java.awt.Event.html#_top_">Event</a> evt,
+                         int x,
+                         int y)
+</pre>
+<dl>
+<dd>
+java.applet.Applet function: mouseUp()
+Calls button.mouseUp() to check for button hits.
+<dl>
+<dt>
+<b>Overrides:</b>
+<dd>
+<a href="java.awt.Component.html#mouseUp(java.awt.Event, int, int)">mouseUp</a> in class <a href="java.awt.Component.html#_top_">Component</a><dt>
+<b>See Also:</b>
+<dd>
+<a href="Button.html#mouseUp">mouseUp</a>
+</dl>
+</dl>
+<p>
+<a name="mouseDrag(java.awt.Event, int, int)">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="mouseDrag">
+<b>
+mouseDrag
+</b>
+</a>
+<pre>
+  public boolean mouseDrag(<a href="java.awt.Event.html#_top_">Event</a> evt,
+                           int x,
+                           int y)
+</pre>
+<dl>
+<dd>
+java.applet.Applet function: mouseDrag()
+Calls button.mouseDrag() to check for button hits.
+<dl>
+<dt>
+<b>Overrides:</b>
+<dd>
+<a href="java.awt.Component.html#mouseDrag(java.awt.Event, int, int)">mouseDrag</a> in class <a href="java.awt.Component.html#_top_">Component</a><dt>
+<b>See Also:</b>
+<dd>
+<a href="Button.html#mouseDrag">mouseDrag</a>
+</dl>
+</dl>
+<p>
+<a name="getCurDance()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="getCurDance">
+<b>
+getCurDance
+</b>
+</a>
+<pre>
+  public int getCurDance()
+</pre>
+<a name="getCurFigur()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="getCurFigur">
+<b>
+getCurFigur
+</b>
+</a>
+<pre>
+  public int getCurFigur()
+</pre>
+<a name="getCurMusic()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="getCurMusic">
+<b>
+getCurMusic
+</b>
+</a>
+<pre>
+  public int getCurMusic()
+</pre>
+<a name="setCurDance(int)">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="setCurDance">
+<b>
+setCurDance
+</b>
+</a>
+<pre>
+  public void setCurDance(int num)
+</pre>
+<a name="setCurFigur(int)">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="setCurFigur">
+<b>
+setCurFigur
+</b>
+</a>
+<pre>
+  public void setCurFigur(int num)
+</pre>
+<a name="setCurMusic(int)">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="setCurMusic">
+<b>
+setCurMusic
+</b>
+</a>
+<pre>
+  public void setCurMusic(int num)
+</pre>
+<a name="killFigur()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="killFigur">
+<b>
+killFigur
+</b>
+</a>
+<pre>
+  public void killFigur()
+</pre>
+<dl>
+<dd>
+Change from the animation page back to the main page.
+</dl>
+<p>
+<a name="newFigur()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="newFigur">
+<b>
+newFigur
+</b>
+</a>
+<pre>
+  public synchronized void newFigur()
+</pre>
+<dl>
+<dd>
+Change from the main page to the animation page.
+Creates an object for the chooseen dance/figur.
+</dl>
+<p>
+<a name="useAudio()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="useAudio">
+<b>
+useAudio
+</b>
+</a>
+<pre>
+  public boolean useAudio()
+</pre>
+<dl>
+<dd>
+Should audio played while the animation runs?
+</dl>
+<p>
+<a name="actionMenuButton()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="actionMenuButton">
+<b>
+actionMenuButton
+</b>
+</a>
+<pre>
+  public void actionMenuButton()
+</pre>
+<dl>
+<dd>
+Function will be called if the "menu" button is hit.
+Change from the animation page back to the main page.
+<dl>
+<dt>
+<b>See Also:</b>
+<dd>
+<a href="Button.html#action">action</a>
+</dl>
+</dl>
+<p>
+<a name="actionStepButton()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="actionStepButton">
+<b>
+actionStepButton
+</b>
+</a>
+<pre>
+  public void actionStepButton()
+</pre>
+<dl>
+<dd>
+Function will be called if the "step forw." button is hit.
+Does one step forward.
+<dl>
+<dt>
+<b>See Also:</b>
+<dd>
+<a href="Figur.html#stepForw">stepForw</a>,
+<a href="Button.html#action">action</a>
+</dl>
+</dl>
+<p>
+<a name="actionBackStepButton()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="actionBackStepButton">
+<b>
+actionBackStepButton
+</b>
+</a>
+<pre>
+  public void actionBackStepButton()
+</pre>
+<dl>
+<dd>
+Function will be called if the "step backw." button is hit.
+Does one step backward.
+<dl>
+<dt>
+<b>See Also:</b>
+<dd>
+<a href="Figur.html#stepBackw">stepBackw</a>,
+<a href="Button.html#action">action</a>
+</dl>
+</dl>
+<p>
+<a name="actionPlayButton()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="actionPlayButton">
+<b>
+actionPlayButton
+</b>
+</a>
+<pre>
+  public void actionPlayButton()
+</pre>
+<dl>
+<dd>
+Function will be called if the "play" button is hit.
+Starts the animation. If an animation is already running, stops it.
+<dl>
+<dt>
+<b>See Also:</b>
+<dd>
+<a href="Button.html#action">action</a>
+</dl>
+</dl>
+<p>
+<a name="actionDanceButton(int)">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="actionDanceButton">
+<b>
+actionDanceButton
+</b>
+</a>
+<pre>
+  public void actionDanceButton(int Bnum)
+</pre>
+<dl>
+<dd>
+Function will be called if one of the dance buttons are hit.
+Sets the other (figur/music) buttons new.
+<dl>
+<dt>
+<b>See Also:</b>
+<dd>
+<a href="Button.html#action">action</a>
+</dl>
+</dl>
+<p>
+<a name="actionFigurButton(int)">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="actionFigurButton">
+<b>
+actionFigurButton
+</b>
+</a>
+<pre>
+  public void actionFigurButton(int Bnum)
+</pre>
+<dl>
+<dd>
+Function will be called, if one of the figur buttons are hit.
+<dl>
+<dt>
+<b>See Also:</b>
+<dd>
+<a href="Button.html#action">action</a>
+</dl>
+</dl>
+<p>
+<a name="actionMusicButton(int)">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="actionMusicButton">
+<b>
+actionMusicButton
+</b>
+</a>
+<pre>
+  public void actionMusicButton(int Bnum)
+</pre>
+<dl>
+<dd>
+Function will be called, if one of the music buttons are hit.
+<dl>
+<dt>
+<b>See Also:</b>
+<dd>
+<a href="Button.html#action">action</a>
+</dl>
+</dl>
+<p>
+<a name="actionShowButton()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="actionShowButton">
+<b>
+actionShowButton
+</b>
+</a>
+<pre>
+  public void actionShowButton()
+</pre>
+<dl>
+<dd>
+Function will be called if the "show dance" button is hit.
+Changes from the main page to the animation page.
+<dl>
+<dt>
+<b>See Also:</b>
+<dd>
+<a href="Button.html#action">action</a>
+</dl>
+</dl>
+<p>
+<a name="actionInfoButton()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="actionInfoButton">
+<b>
+actionInfoButton
+</b>
+</a>
+<pre>
+  public void actionInfoButton()
+</pre>
+<dl>
+<dd>
+Function will be called if the "dance info" button is hit.
+Opens an URL with information about the currently selected dance.
+<dl>
+<dt>
+<b>See Also:</b>
+<dd>
+<a href="Button.html#action">action</a>
+</dl>
+</dl>
+<p>
+<a name="actionPlayMusicButton()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="actionPlayMusicButton">
+<b>
+actionPlayMusicButton
+</b>
+</a>
+<pre>
+  public void actionPlayMusicButton()
+</pre>
+<dl>
+<dd>
+Function will be called if the "test music" button is hit.
+Start playing the selected music.
+<dl>
+<dt>
+<b>See Also:</b>
+<dd>
+<a href="Button.html#action">action</a>
+</dl>
+</dl>
+<p>
+<a name="actionMainHelpButton()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="actionMainHelpButton">
+<b>
+actionMainHelpButton
+</b>
+</a>
+<pre>
+  public void actionMainHelpButton()
+</pre>
+<dl>
+<dd>
+Function will be called if the "help" button within the main page is hit.
+Open an URL to a help page.
+<dl>
+<dt>
+<b>See Also:</b>
+<dd>
+<a href="Button.html#action">action</a>
+</dl>
+</dl>
+<p>
+<a name="actionAnimationHelpButton()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="actionAnimationHelpButton">
+<b>
+actionAnimationHelpButton
+</b>
+</a>
+<pre>
+  public void actionAnimationHelpButton()
+</pre>
+<dl>
+<dd>
+Function will be called if the "help" button within the animation page is hit.
+Open an URL to a help page.
+<dl>
+<dt>
+<b>See Also:</b>
+<dd>
+<a href="Button.html#action">action</a>
+</dl>
+</dl>
+<p>
+<a name="actionSoundButton(boolean)">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="actionSoundButton">
+<b>
+actionSoundButton
+</b>
+</a>
+<pre>
+  public void actionSoundButton(boolean on)
+</pre>
+<dl>
+<dd>
+Function will be called if the "audio on | slow motion" button is hit.
+<dl>
+<dt>
+<b>Parameters:</b>
+<dd>
+on
+-
+ state of the toggle button.
+<dt>
+<b>See Also:</b>
+<dd>
+<a href="Button.html#action">action</a>
+</dl>
+</dl>
+<p>
+<a name="actionCommentButton(boolean)">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="actionCommentButton">
+<b>
+actionCommentButton
+</b>
+</a>
+<pre>
+  public void actionCommentButton(boolean usehb)
+</pre>
+<dl>
+<dd>
+Function will be called if the "slow/quick | toe/heal" button is hit.
+<dl>
+<dt>
+<b>Parameters:</b>
+<dd>
+usehb
+-
+ state of the toggle button (use heal/toe).
+<dt>
+<b>See Also:</b>
+<dd>
+<a href="Button.html#action">action</a>,
+<a href="Figur@useComStrHT.html#_top_">Figur@useComStrHT</a>,
+<a href="Figur@useComStrTime.html#_top_">Figur@useComStrTime</a>
+</dl>
+</dl>
+<p>
+<a name="toString()">
+<img src="images/red-ball.gif" width=12 height=12 alt=" o ">
+</a>
+<a name="toString">
+<b>
+toString
+</b>
+</a>
+<pre>
+  public <a href="java.lang.String.html#_top_">String</a> toString()
+</pre>
+<dl>
+<dd>
+Returns a String object representing.
+<dl>
+<dt>
+<b>Overrides:</b>
+<dd>
+<a href="java.awt.Component.html#toString()">toString</a> in class <a href="java.awt.Component.html#_top_">Component</a></dl>
+</dl>
+<p>
+</body>
+</html>
